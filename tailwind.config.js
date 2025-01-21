@@ -4,7 +4,7 @@ export default {
 	theme: {
 		extend: {},
 		fontFamily: {
-			body: ['Noto Sans KR'],
+			body: ['Pretendard'],
 		},
 		fontSize: {
 			xs: [
