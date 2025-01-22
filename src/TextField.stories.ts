@@ -2,6 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { fn } from '@storybook/test';
 
 import TextField from './components/TextField';
+import { icons } from './components/IconTypes';
 
 const meta = {
   title: 'TextFields/TextField',
@@ -11,15 +12,14 @@ const meta = {
   },
   tags: ['autodocs'],
   argTypes: {
-    iconAlt: {
-      control: 'text',
-      description: '아이콘 이미지의 alt 속성',
-      defaultValue: 'icon',
-    },
-    iconPath: {
-      control: 'text',
-      description: '아이콘 이미지의 경로',
-      defaultValue: '',
+    iconType: {
+      control: {
+        type: 'select', // 드롭다운으로 설정
+        options: Object.keys(icons), // IconTypes의 키를 옵션으로 설정
+      },
+      mapping: icons, // 아이콘 타입에 경로를 매핑
+      description: '아이콘 타입 선택',
+      defaultValue: 'delete', // 기본값 설정
     },
     placeholder: {
       control: 'text',
@@ -34,10 +34,10 @@ const meta = {
     id: {
       control: 'text',
       description: '텍스트 필드의 id',
-      defaultValue: '',
+      defaultValue: 'text-field',
     },
     onChange: { action: 'changed', description: '텍스트 필드 값 변경 이벤트' },
-    onIconClick: { action: 'clicked', description: '버튼 클릭 이벤트' },
+    onIconClick: { action: 'clicked', description: '아이콘 클릭 이벤트' },
   },
   args: {
     onIconClick: fn(),
@@ -50,10 +50,9 @@ type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
   args: {
-    iconAlt: 'icon',
-    iconPath: 'https://kr.object.ncloudstorage.com/icons/ic-delete-dark.svg',
+    iconType: 'delete',
     placeholder: '텍스트를 입력해주세요',
     value: '',
-    id: 'email',
+    id: 'text-field',
   },
 };

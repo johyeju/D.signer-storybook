@@ -1,9 +1,9 @@
 import { useState } from 'react';
 import IconButton from './IconButton';
+import { IconType } from './IconTypes';
 
 interface ITextFieldProps {
-  iconPath: string;
-  iconAlt: string;
+  iconType: IconType; // IconType으로 수정
   onIconClick: React.MouseEventHandler<HTMLButtonElement>;
   placeholder: string;
   onChange: React.ChangeEventHandler<HTMLInputElement>;
@@ -13,8 +13,7 @@ interface ITextFieldProps {
 
 export default function TextField({
   id,
-  iconPath,
-  iconAlt,
+  iconType,
   onIconClick,
   placeholder,
   onChange,
@@ -32,11 +31,7 @@ export default function TextField({
       <div
         onFocus={() => setIsFocused(true)}
         onBlur={() => setIsFocused(false)}
-        className={`
-    text-primary
-    border-b
-    ${borderColor}
-    `}
+        className={`text-primary border-b ${borderColor}`}
       >
         <input
           data-testid={id}
@@ -47,9 +42,7 @@ export default function TextField({
           type="text"
           onChange={onChange}
         />
-        {!!value && (
-          <IconButton onClick={onIconClick} alt={iconAlt} iconPath={iconPath} />
-        )}
+        {!!value && <IconButton onClick={onIconClick} type={iconType} />}
       </div>
     </div>
   );

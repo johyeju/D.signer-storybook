@@ -1,17 +1,15 @@
-interface IIconButtonProps {
-  alt: string;
-  iconPath: string;
-  onClick: (e: React.MouseEvent<HTMLButtonElement>) => void;
-}
-
 export default function IconButton({
-  alt,
+  alt = 'icon', // 기본값 설정
   iconPath,
   onClick,
 }: IIconButtonProps) {
+  const resolvedIconPath = iconPath;
+
+  if (!resolvedIconPath) return null;
+
   return (
     <button onClick={onClick}>
-      <img alt={alt} src={iconPath} />
+      <img alt={alt} src={resolvedIconPath} />
     </button>
   );
 }

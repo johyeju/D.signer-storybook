@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { fn } from '@storybook/test';
-
 import PrimaryButton from '../components/PrimaryButton';
+import { icons } from '../components/IconTypes';
 
 const meta = {
   title: 'Buttons/PrimaryButton',
@@ -28,15 +28,30 @@ const meta = {
     },
     children: {
       control: 'text',
-      description: '버튼 text',
-      defaultValue: 'icon',
+      description: '버튼 텍스트',
+      defaultValue: 'Button',
     },
     disabled: {
       control: 'boolean',
       description: '버튼 비활성화 여부',
-      defaultValue: true,
+      defaultValue: false,
     },
-
+    icon: {
+      control: {
+        type: 'select', // 드롭다운으로 설정
+      },
+      options: Object.keys(icons),
+      mapping: Object.fromEntries(
+        Object.entries(icons).map(([key, value]) => [
+          key,
+          value
+            ? { alt: key, iconPath: value } // 각 키를 적절히 매핑
+            : undefined, // 'none'에 대한 처리
+        ])
+      ),
+      description: '아이콘 선택',
+      defaultValue: undefined, // 기본값은 undefined (아이콘 없음)
+    },
     onClick: { action: 'clicked', description: '버튼 클릭 이벤트' },
   },
   args: {
@@ -47,42 +62,20 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const Dark: Story = {
+export const Default: Story = {
   args: {
     children: 'Button',
     theme: 'dark',
     disabled: false,
+    icon: undefined, // 기본값: 아이콘 없음
   },
 };
 
-export const Light: Story = {
+export const WithIcon: Story = {
   args: {
-    children: 'Button',
-    theme: 'light',
-    disabled: false,
-  },
-};
-
-export const Social: Story = {
-  args: {
-    children: 'Button',
-    theme: 'social',
-    disabled: false,
-  },
-};
-
-export const Text: Story = {
-  args: {
-    children: 'Button',
-    theme: 'text',
-    disabled: false,
-  },
-};
-
-export const Disabled: Story = {
-  args: {
-    children: 'Button',
+    children: 'Button with Icon',
     theme: 'dark',
-    disabled: true,
+    disabled: false,
+    icon: { alt: 'delete', iconPath: icons.delete }, // delete 아이콘 사용
   },
 };

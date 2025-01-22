@@ -1,3 +1,5 @@
+import IconButton from './IconButton';
+
 type PrimaryButtonTheme = 'dark' | 'light' | 'social' | 'text';
 
 interface IPrimaryButtonProps {
@@ -5,6 +7,7 @@ interface IPrimaryButtonProps {
   disabled: boolean;
   children: string;
   onClick: React.MouseEventHandler<HTMLButtonElement>;
+  icon?: { alt: string; iconPath: string }; // 아이콘 옵션 추가
 }
 
 const dark = 'bg-primary text-white';
@@ -25,19 +28,20 @@ export default function PrimaryButton({
   children,
   onClick,
   disabled,
+  icon,
 }: IPrimaryButtonProps) {
   return (
     <button
-      className={`
-        rounded-button-default
-        w-full 
-        h-[59px] 
-        ${disabledStyle}
-        ${color[theme]}
-      `}
+      className={`rounded-button-default w-full h-[59px] ${disabledStyle} ${color[theme]}`}
       disabled={disabled}
       onClick={onClick}
     >
+      {icon && (
+        <IconButton
+          iconPath={icon.iconPath}
+          onClick={(e) => e.stopPropagation()} // 아이콘 클릭 이벤트는 버튼 클릭과 분리
+        />
+      )}
       {children}
     </button>
   );
