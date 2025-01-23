@@ -21,7 +21,7 @@ const meta = {
     theme: {
       control: {
         type: 'select',
-        options: ['dark', 'light', 'social', 'text'],
+        options: ['dark', 'light'],
       },
       description: '버튼 테마',
       defaultValue: 'dark',

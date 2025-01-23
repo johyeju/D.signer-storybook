@@ -1,5 +1,4 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { fn } from '@storybook/test';
 import IconButton from '../components/IconButton';
 
 const meta = {
@@ -10,17 +9,20 @@ const meta = {
   },
   tags: ['autodocs'],
   argTypes: {
-    alt: {
-      control: 'text',
-      description: '이미지의 alt 속성',
-      defaultValue: 'icon',
-    },
     iconPath: {
       control: 'text',
       description: '이미지의 경로',
       defaultValue: '',
     },
-    onClick: fn(),
+    type: {
+      control: 'text',
+      description: '버튼의 타입 또는 아이콘 설명',
+      defaultValue: 'icon',
+    },
+    onClick: {
+      action: 'clicked',
+      description: '버튼 클릭 이벤트 핸들러',
+    },
   },
   args: {
     onClick: () => {},
@@ -32,7 +34,7 @@ type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
   args: {
-    alt: 'icon',
     iconPath: 'https://kr.object.ncloudstorage.com/icons/ic-delete-dark.svg',
+    type: 'delete icon',
   },
 };
