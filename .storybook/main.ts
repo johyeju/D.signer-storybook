@@ -17,5 +17,8 @@ const config: StorybookConfig = {
     mergeConfig(config, {
       base: '/D.signer-storybook/',
     }),
+  core: {
+    builder: '@storybook/builder-vite',
+  },
 };
 export default config;
