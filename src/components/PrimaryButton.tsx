@@ -35,7 +35,9 @@ export default function PrimaryButton({
       {icon && (
         <IconButton
           iconPath={icon.iconPath}
-          onClick={(e) => e.stopPropagation()} // 아이콘 클릭 이벤트는 버튼 클릭과 분리
+          onClick={(e: React.MouseEvent<HTMLButtonElement>) =>
+            e.stopPropagation()
+          }
         />
       )}
       {children}
