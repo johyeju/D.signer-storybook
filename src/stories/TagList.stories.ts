@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { fn } from '@storybook/test';
 
-import TagList from './components/TagList';
+import TagList from '../components/TagList';
 
 const meta = {
   title: 'List/TagList',
