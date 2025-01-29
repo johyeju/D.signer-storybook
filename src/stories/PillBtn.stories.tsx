@@ -1,11 +1,11 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { fn } from '@storybook/test';
-import PrimaryButton from '../components/PrimaryButton';
+import PillBtn from '../components/PillBtn';
 import { icons } from '../components/IconTypes';
 
 const meta = {
-  title: 'Buttons/PrimaryButton',
-  component: PrimaryButton,
+  title: 'Buttons/PillBtn',
+  component: PillBtn,
   parameters: {
     layout: 'centered',
   },
@@ -57,7 +57,7 @@ const meta = {
   args: {
     onClick: fn(),
   },
-} satisfies Meta<typeof PrimaryButton>;
+} satisfies Meta<typeof PillBtn>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;

@@ -1,28 +1,28 @@
-interface ITextButtonProps {
+interface IActionBtnProps {
   children: string;
   isChecked: boolean;
   onClick: () => void;
 }
 
-export default function TextButton({
+export default function ActionBtn({
   children,
   isChecked,
   onClick,
-}: ITextButtonProps) {
-  const buttonStyle = isChecked
+}: IActionBtnProps) {
+  const BtnStyle = isChecked
     ? 'bg-white text-primary'
     : 'text-white bg-dark-opacity';
 
   return (
     <button
       className={`
-        rounded-Text-button
+        rounded-Action-Btn
         px-[10px] border
         border-white
         h-[33px]
         text-sm
         font-medium
-        ${buttonStyle}`}
+        ${BtnStyle}`}
       onClick={onClick}
     >
       {children}

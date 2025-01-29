@@ -1,14 +1,14 @@
-interface IFloatingBtnProps {
+interface ITextBtnProps {
   children: string;
   isChecked: boolean;
   onClick: () => void;
 }
 
-export default function FloatingBtn({
+export default function TextBtn({
   children,
   isChecked,
   onClick,
-}: IFloatingBtnProps) {
+}: ITextBtnProps) {
   const buttonStyle = isChecked
     ? 'bg-white text-primary'
     : 'text-white bg-dark-opacity';
@@ -16,7 +16,7 @@ export default function FloatingBtn({
   return (
     <button
       className={`
-        rounded-Floating-button
+        rounded-Text-button
         px-[10px] border
         border-white
         h-[33px]
