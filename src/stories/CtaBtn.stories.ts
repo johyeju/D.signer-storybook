@@ -1,39 +1,26 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { fn } from '@storybook/test';
-
 import CtaBtn from '../components/CtaBtn';
 
-const meta = {
-  title: 'CTA/CtaBtn',
-  component: CtaBtn,
-  parameters: {
-    layout: 'centered',
-  },
-  tags: ['autodocs'],
-  argTypes: {
-    children: {
-      control: 'text',
-      description: '버튼의 텍스트',
-      defaultValue: 'button',
-    },
-    isChecked: {
-      control: 'boolean',
-      description: '버튼 활성화 여부',
-      defaultValue: false,
-    },
-    onClick: { action: 'clicked', description: '버튼 클릭 이벤트' },
-  },
-  args: {
-    onClick: fn(),
-  },
-} satisfies Meta<typeof CtaBtn>;
+const meta: Meta<typeof CtaBtn> = {
+	title: 'CTA/CtaBtn',
+	component: CtaBtn,
+	parameters: {
+		layout: 'centered',
+	},
+	tags: ['autodocs'],
+	argTypes: {
+		leftButtonText: { control: 'text', defaultValue: '지금 출발' },
+		rightButtonText: { control: 'text', defaultValue: '완료' },
+	},
+};
 
 export default meta;
-type Story = StoryObj<typeof meta>;
+
+type Story = StoryObj<typeof CtaBtn>;
 
 export const Default: Story = {
-  args: {
-    children: 'button',
-    isChecked: false,
-  },
+	args: {
+		leftButtonText: '지금 출발',
+		rightButtonText: '완료',
+	},
 };
