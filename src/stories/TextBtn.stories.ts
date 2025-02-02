@@ -12,7 +12,7 @@ export default {
 	component: TextBtn,
 	argTypes: {
 		text: { control: 'text' },
-		isBlue: { control: 'boolean' },
+		color: { control: 'boolean' },
 	},
 } as Meta<typeof TextBtn>;
 
