@@ -11,6 +11,8 @@
 		"preview": "vite preview",
 		"chromatic": "chromatic --exit-zero-on-changes",
 		"storybook": "storybook dev -p 6006",
+		"predeploy": "npm run build-storybook",
+		"deploy": "gh-pages -d storybook-static",
 		"build-storybook": "storybook build"
 	},
 	"dependencies": {
