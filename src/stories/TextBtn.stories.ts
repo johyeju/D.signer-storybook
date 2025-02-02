@@ -1,39 +1,24 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { fn } from '@storybook/test';
-
 import TextBtn from '../components/TextBtn';
 
-const meta = {
-  title: 'Buttons/TextBtn',
-  component: TextBtn,
-  parameters: {
-    layout: 'centered',
-  },
-  tags: ['autodocs'],
-  argTypes: {
-    children: {
-      control: 'text',
-      description: '버튼의 텍스트',
-      defaultValue: 'button',
-    },
-    isChecked: {
-      control: 'boolean',
-      description: '버튼 활성화 여부',
-      defaultValue: false,
-    },
-    onClick: { action: 'clicked', description: '버튼 클릭 이벤트' },
-  },
-  args: {
-    onClick: fn(),
-  },
-} satisfies Meta<typeof TextBtn>;
+type TextBtnProps = React.ComponentProps<typeof TextBtn>;
 
-export default meta;
-type Story = StoryObj<typeof meta>;
+export default {
+	title: 'Buttons/TextBtn',
+	parameters: {
+		layout: 'centered',
+	},
+	tags: ['autodocs'],
+	component: TextBtn,
+	argTypes: {
+		text: { control: 'text' },
+		isBlue: { control: 'boolean' },
+	},
+} as Meta<typeof TextBtn>;
 
-export const Default: Story = {
-  args: {
-    children: 'button',
-    isChecked: false,
-  },
+export const Default: StoryObj<TextBtnProps> = {
+	args: {
+		text: 'contents',
+		isBlue: true,
+	},
 };

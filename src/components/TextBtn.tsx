@@ -1,31 +1,23 @@
-interface ITextBtnProps {
-  children: string;
-  isChecked: boolean;
-  onClick: () => void;
-}
+import React from 'react';
 
-export default function TextBtn({
-  children,
-  isChecked,
-  onClick,
-}: ITextBtnProps) {
-  const buttonStyle = isChecked
-    ? 'bg-white text-primary'
-    : 'text-white bg-dark-opacity';
+type TextBtnProps = {
+	text: string;
+	isBlue: boolean;
+};
 
-  return (
-    <button
-      className={`
-        rounded-Text-button
-        px-[10px] border
-        border-white
-        h-[33px]
-        text-sm
-        font-medium
-        ${buttonStyle}`}
-      onClick={onClick}
-    >
-      {children}
-    </button>
-  );
-}
+const TextBtn: React.FC<TextBtnProps> = ({ text, isBlue }) => {
+	return (
+		<button
+			style={{
+				color: isBlue ? 'blue' : 'black',
+				border: 'none',
+				background: 'none',
+				cursor: 'pointer',
+			}}
+		>
+			{text}
+		</button>
+	);
+};
+
+export default TextBtn;
