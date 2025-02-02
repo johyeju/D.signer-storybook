@@ -1,46 +1,34 @@
-import IconButton from './IconButton';
+// PillBtn.tsx
+import React from 'react';
+import { icons } from '../components/IconTypes';
 
-type PillBtnTheme = 'dark' | 'light';
+type Size = 's' | 'm' | 'l';
 
-interface IPillBtnProps {
-  theme: PillBtnTheme;
-  disabled: boolean;
-  children: string;
-  onClick: React.MouseEventHandler<HTMLButtonElement>;
-  icon?: { alt: string; iconPath: string }; // 아이콘 옵션 추가
-}
-
-const dark = 'bg-Pill text-white';
-const light = 'bg-white text-Pill';
-const disabledStyle = 'disabled:bg-mono100 disabled:text-mono200';
-
-const color: Record<PillBtnTheme, string> = {
-  dark,
-  light,
+type PillBtnProps = {
+	size?: Size;
+	showLeftIcon?: boolean;
+	leftIcon?: keyof typeof icons;
+	showRightIcon?: boolean;
+	rightIcon?: keyof typeof icons;
 };
 
-export default function PillBtn({
-  theme,
-  children,
-  onClick,
-  disabled,
-  icon,
-}: IPillBtnProps) {
-  return (
-    <button
-      className={`rounded-button-default w-full h-[59px] ${disabledStyle} ${color[theme]}`}
-      disabled={disabled}
-      onClick={onClick}
-    >
-      {icon && (
-        <IconButton
-          iconPath={icon.iconPath}
-          onClick={(e: React.MouseEvent<HTMLButtonElement>) =>
-            e.stopPropagation()
-          }
-        />
-      )}
-      {children}
-    </button>
-  );
-}
+const PillBtn: React.FC<PillBtnProps> = ({
+	showLeftIcon = false,
+	leftIcon,
+	showRightIcon = false,
+	rightIcon,
+}) => {
+	return (
+		<button>
+			{showLeftIcon && leftIcon && icons[leftIcon] && (
+				<img src={icons[leftIcon]} alt={leftIcon} />
+			)}
+			버튼
+			{showRightIcon && rightIcon && icons[rightIcon] && (
+				<img src={icons[rightIcon]} alt={rightIcon} />
+			)}
+		</button>
+	);
+};
+
+export default PillBtn;
