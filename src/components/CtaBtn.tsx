@@ -1,33 +1,29 @@
-import { useState } from 'react';
+import React from 'react';
 
-interface CtaBtnProps {
+type CtaBtnProps = {
 	leftButtonText?: string;
-	rightButtonText?: string;
-}
+	leftButtonVisible: boolean;
+	rightButtonText: string;
+};
 
-const CtaBtn = ({
-	leftButtonText = '지금 출발',
-	rightButtonText = '완료',
-}: CtaBtnProps) => {
-	const [isOn, setIsOn] = useState(false);
-
-	const handleToggle = () => {
-		setIsOn((prev) => !prev);
-	};
-
+const CtaBtn: React.FC<CtaBtnProps> = ({
+	leftButtonText,
+	leftButtonVisible,
+	rightButtonText,
+}) => {
 	return (
-		<div className="flex justify-between items-center p-4 bg-white rounded-lg shadow-md w-full">
-			<button
-				onClick={handleToggle}
-				className={`px-4 py-2 rounded-md text-sm font-medium transition-colors ${
-					isOn ? 'text-blue-500 font-bold' : 'text-gray-500'
-				}`}
-			>
-				{isOn ? 'ON' : leftButtonText}
-			</button>
-			<button className="px-4 py-2 text-blue-500 text-sm font-medium">
-				{rightButtonText}
-			</button>
+		<div
+			style={{
+				display: 'flex',
+				justifyContent: leftButtonVisible ? 'space-around' : 'center',
+				padding: '10px',
+				gap: '10px',
+			}}
+		>
+			{leftButtonVisible && leftButtonText && (
+				<button style={{ color: 'gray' }}>{leftButtonText}</button>
+			)}
+			<button style={{ color: 'blue' }}>{rightButtonText}</button>
 		</div>
 	);
 };

@@ -1,26 +1,26 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import CtaBtn from '../components/CtaBtn';
 
-const meta: Meta<typeof CtaBtn> = {
+type CtaBtnProps = React.ComponentProps<typeof CtaBtn>;
+
+export default {
 	title: 'CTA/CtaBtn',
-	component: CtaBtn,
 	parameters: {
 		layout: 'centered',
 	},
 	tags: ['autodocs'],
+	component: CtaBtn,
 	argTypes: {
-		leftButtonText: { control: 'text', defaultValue: '지금 출발' },
-		rightButtonText: { control: 'text', defaultValue: '완료' },
+		leftButtonVisible: { control: 'boolean' },
+		leftButtonText: { control: 'text', if: { arg: 'leftButtonVisible' } },
+		rightButtonText: { control: 'text' },
 	},
-};
+} as Meta<typeof CtaBtn>;
 
-export default meta;
-
-type Story = StoryObj<typeof CtaBtn>;
-
-export const Default: Story = {
+export const Default: StoryObj<CtaBtnProps> = {
 	args: {
-		leftButtonText: '지금 출발',
-		rightButtonText: '완료',
+		leftButtonVisible: true,
+		leftButtonText: '왼쪽',
+		rightButtonText: '오른쪽',
 	},
 };
