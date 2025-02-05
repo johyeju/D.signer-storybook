@@ -1,14 +1,14 @@
-interface ITagButtonProps {
+interface ILocationBtnProps {
   children: string;
   isChecked: boolean;
   onClick: () => void;
 }
 
-export default function TagButton({
+export default function LocationBtn({
   children,
   isChecked,
   onClick,
-}: ITagButtonProps) {
+}: ILocationBtnProps) {
   const buttonStyle = isChecked
     ? 'bg-white text-primary'
     : 'text-white bg-dark-opacity';
