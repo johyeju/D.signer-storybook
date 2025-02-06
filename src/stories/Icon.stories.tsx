@@ -1,22 +1,8 @@
 import { Meta, StoryFn } from '@storybook/react';
 import Icon from '../components/Icon';
+import { iconNames } from '../components/IIconTypes';
 
-// 아이콘 목록을 자동으로 가져오기
-const iconNames = [
-  'badge',
-  'cafe',
-  'call',
-  'convenience_store',
-  'naver_reservation',
-  'restaurant',
-  'down_arrow',
-  'edit',
-  'left_arrow',
-  'right_arrow',
-  'share',
-];
-
-// 제한된 사이즈 목록
+// 사이즈 제한
 const iconSizes = [12, 14, 16, 18, 24, 32];
 
 export default {
