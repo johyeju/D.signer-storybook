@@ -1,7 +1,8 @@
-// PillBtn.stories.ts
 import type { Meta, StoryObj } from '@storybook/react';
 import PillBtn from '../components/PillBtn';
-import { icons } from '../components/IconTypes';
+import { iconNames } from '../components/IIconTypes';
+
+const buttonSizes = ['s', 'm', 'l'];
 
 const meta: Meta<typeof PillBtn> = {
   title: 'Buttons/PillBtn',
@@ -10,35 +11,35 @@ const meta: Meta<typeof PillBtn> = {
     layout: 'centered',
   },
   argTypes: {
+    children: {
+      control: 'text',
+      description: '버튼 내 텍스트 수정 가능',
+      defaultValue: 'contents',
+    },
     size: {
       control: { type: 'radio' },
-      options: ['s', 'm', 'l'],
+      options: buttonSizes,
       description: '버튼 크기 선택',
-      defaultValue: 'm',
     },
     showLeftIcon: {
       control: 'boolean',
-      description: '좌측 아이콘 on/off',
+      description: 'IcoLeft on/off 스위치',
     },
     leftIcon: {
-      control: {
-        type: 'select',
-        options: Object.keys(icons),
-      },
-      description: '좌측 아이콘 선택',
-      if: { arg: 'showLeftIcon' },
+      control: { type: 'select' }, // ✅ 드롭다운에서 선택 가능
+      options: iconNames, // ✅ iconNames에서 목록 불러오기
+      description: 'IcoLeft 아이콘 변경 가능',
+      if: { arg: 'showLeftIcon' }, // ✅ IcoLeft가 활성화될 때만 드롭다운 표시
     },
     showRightIcon: {
       control: 'boolean',
-      description: '우측 아이콘 on/off',
+      description: 'IcoRight on/off 스위치',
     },
     rightIcon: {
-      control: {
-        type: 'select',
-        options: Object.keys(icons),
-      },
-      description: '우측 아이콘 선택',
-      if: { arg: 'showRightIcon' },
+      control: { type: 'select' }, // ✅ 드롭다운에서 선택 가능
+      options: iconNames, // ✅ iconNames에서 목록 불러오기
+      description: 'IcoRight 아이콘 변경 가능',
+      if: { arg: 'showRightIcon' }, // ✅ IcoRight가 활성화될 때만 드롭다운 표시
     },
   },
 } satisfies Meta<typeof PillBtn>;
@@ -48,6 +49,7 @@ type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
   args: {
+    children: '버튼',
     size: 'm',
     showLeftIcon: false,
     leftIcon: undefined,
@@ -68,6 +70,7 @@ export const InfoEx: Story = {
     controls: { disable: true },
   },
 };
+
 export const MyPlacesFilter: Story = {
   args: {
     size: 'm',
