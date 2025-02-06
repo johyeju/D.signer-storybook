@@ -3,7 +3,6 @@ name: Deploy static content to Pages
 on:
   push:
     branches: ['main']
-
   workflow_dispatch:
 
 permissions:
@@ -35,10 +34,13 @@ jobs:
         run: npm run build
       - name: Setup Pages
         uses: actions/configure-pages@v3
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
+      - name: Upload artifact # ✅ upload-artifact@v4 사용
+        uses: actions/upload-artifact@v4
         with:
+          name: github-pages # ✅ 아티팩트 이름 지정
           path: './dist'
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v2
+        with:
+          artifact_name: github-pages # ✅ 동일한 이름 사용
