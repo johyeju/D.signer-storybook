@@ -1,3 +1,5 @@
+//삭제예정
+
 import type { Meta, StoryObj } from '@storybook/react';
 import IconButton from '../components/IconButton';
 

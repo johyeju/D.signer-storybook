@@ -6,3 +6,5 @@ export const icons = {
   add: 'https://kr.object.ncloudstorage.com/icons/ic-add-dark.svg',
   close: 'https://kr.object.ncloudstorage.com/icons/ic-close-dark.svg',
 };
+
+//삭제예정
