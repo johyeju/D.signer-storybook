@@ -26,20 +26,20 @@ const meta: Meta<typeof PillBtn> = {
       description: 'IcoLeft on/off 스위치',
     },
     leftIcon: {
-      control: { type: 'select' }, // ✅ 드롭다운에서 선택 가능
-      options: iconNames, // ✅ iconNames에서 목록 불러오기
+      control: { type: 'select' }, // 드롭다운에서 선택 가능
+      options: iconNames, // iconNames에서 목록 불러오기
       description: 'IcoLeft 아이콘 변경 가능',
-      if: { arg: 'showLeftIcon' }, // ✅ IcoLeft가 활성화될 때만 드롭다운 표시
+      if: { arg: 'showLeftIcon' }, // IcoLeft가 활성화될 때만 드롭다운 표시
     },
     showRightIcon: {
       control: 'boolean',
       description: 'IcoRight on/off 스위치',
     },
     rightIcon: {
-      control: { type: 'select' }, // ✅ 드롭다운에서 선택 가능
-      options: iconNames, // ✅ iconNames에서 목록 불러오기
+      control: { type: 'select' }, // 드롭다운에서 선택 가능
+      options: iconNames, // iconNames에서 목록 불러오기
       description: 'IcoRight 아이콘 변경 가능',
-      if: { arg: 'showRightIcon' }, // ✅ IcoRight가 활성화될 때만 드롭다운 표시
+      if: { arg: 'showRightIcon' }, // IcoRight가 활성화될 때만 드롭다운 표시
     },
   },
 } satisfies Meta<typeof PillBtn>;

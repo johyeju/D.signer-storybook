@@ -1,5 +1,5 @@
 import React from 'react';
-import { icons } from './IIconTypes'; // ✅ 아이콘 목록 가져오기
+import { icons } from './IIconTypes'; // 아이콘 목록 가져오기
 
 type Size = 's' | 'm' | 'l';
 
@@ -30,7 +30,7 @@ const PillBtn: React.FC<PillBtnProps> = ({
         padding: '8px 16px',
         borderRadius: '999px',
         border: '1px solid black',
-        backgroundColor: 'white', // 배경색 설정
+        backgroundColor: 'white', // 배경 설정
         color: 'black', // 텍스트 기본 색상 설정
       }}
     >
