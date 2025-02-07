@@ -30,7 +30,6 @@ export const Default: Story = {
       control: { type: 'number', min: 0, max: 99 }, // 숫자 입력 가능
     },
     backgroundColor: {
-      // 배경색 선택 라디오
       control: { type: 'radio' },
       options: ['#FFFFFF', '#3D4A57'],
       labels: {
@@ -39,7 +38,6 @@ export const Default: Story = {
       },
     },
     icon: {
-      // 아이콘 드롭다운 추가
       control: { type: 'select' },
       options: iconNames,
       description: '아이콘 선택 가능',
@@ -62,7 +60,6 @@ export const Translucent: Story = {
       control: { type: 'number', min: 0, max: 99 }, // 숫자 입력 가능
     },
     icon: {
-      // 아이콘 드롭다운 추가
       control: { type: 'select' },
       options: iconNames,
       description: '아이콘 선택 가능',
@@ -80,7 +77,6 @@ export const RoundSquare: Story = {
       control: { type: 'text' }, // 텍스트 입력 가능
     },
     icon: {
-      // 아이콘 드롭다운 추가
       control: { type: 'select' },
       options: iconNames,
       description: '아이콘 선택 가능',
@@ -91,14 +87,13 @@ export const RoundSquare: Story = {
 export const Ellipse: Story = {
   args: {
     label: 'text', // 문자열로 변경
-    icon: undefined, // ✅ 아이콘 초기값
+    icon: undefined, // 아이콘 초기값
   },
   argTypes: {
     label: {
       control: { type: 'text' }, // 텍스트 입력 가능
     },
     icon: {
-      // ✅ 아이콘 드롭다운 추가
       control: { type: 'select' },
       options: iconNames,
       description: '아이콘 선택 가능',

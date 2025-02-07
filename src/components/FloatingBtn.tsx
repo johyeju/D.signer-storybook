@@ -30,6 +30,110 @@ const FloatingBtn: React.FC<FloatingBtnProps> = ({
     }
   };
 
+  // 아이콘 크기 조절 로직
+  const getIconSize = () => {
+    if (size === 50) return 32;
+    return 24;
+  };
+
+  const renderContent = () => {
+    switch (variant) {
+      case 'default':
+        return (
+          <span
+            style={{
+              position: 'relative',
+              display: 'inline-flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+            }}
+          >
+            {icon && (
+              <span
+                className="icon"
+                style={{
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  width: `${getIconSize()}px`,
+                  height: `${getIconSize()}px`,
+                }}
+              >
+                {React.cloneElement(icons[icon] as React.ReactElement, {
+                  fill: 'currentColor',
+                })}
+                <span
+                  style={{
+                    position: 'absolute',
+                    top: '50%',
+                    left: '50%',
+                    transform: 'translate(-50%, -50%)',
+                    color: 'white',
+                    fontWeight: 'bold',
+                  }}
+                >
+                  {label}
+                </span>
+              </span>
+            )}
+          </span>
+        );
+      case 'translucent':
+      case 'roundSquare':
+        return (
+          <div
+            style={{
+              display: 'flex',
+              flexDirection: 'column',
+              alignItems: 'center',
+            }}
+          >
+            {icon && (
+              <span
+                className="icon"
+                style={{
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  width: `${getIconSize()}px`,
+                  height: `${getIconSize()}px`,
+                }}
+              >
+                {React.cloneElement(icons[icon] as React.ReactElement, {
+                  fill: 'currentColor',
+                })}
+              </span>
+            )}
+            <span>{label}</span>
+          </div>
+        );
+      case 'ellipse':
+        return (
+          <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+            {icon && (
+              <span
+                className="icon"
+                style={{
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  width: `${getIconSize()}px`,
+                  height: `${getIconSize()}px`,
+                }}
+              >
+                {React.cloneElement(icons[icon] as React.ReactElement, {
+                  fill: 'currentColor',
+                })}
+              </span>
+            )}
+            <span>{label}</span>
+          </div>
+        );
+      default:
+        return <span>{label}</span>;
+    }
+  };
+
   return (
     <button
       className={`absolute top-4 left-4 p-4 ${getClassName()}`}
@@ -41,27 +145,12 @@ const FloatingBtn: React.FC<FloatingBtnProps> = ({
         border: 'none',
         outline: 'none',
         boxShadow: '0px 2px 12px rgba(0, 0, 0, 0.15)',
-        display: 'inline-flex', // 아이콘과 텍스트 정렬
+        display: 'inline-flex',
         alignItems: 'center',
-        gap: '8px',
+        justifyContent: 'center',
       }}
     >
-      {icon && (
-        <span
-          className="icon"
-          style={{
-            display: 'inline-flex',
-            alignItems: 'center',
-            width: '20px',
-            height: '20px',
-          }}
-        >
-          {React.cloneElement(icons[icon] as React.ReactElement, {
-            fill: 'currentColor',
-          })}
-        </span>
-      )}
-      {label || '0'}
+      {renderContent()}
     </button>
   );
 };
