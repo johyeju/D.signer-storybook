@@ -77,14 +77,144 @@ export default {
           { lineHeight: 'auto', fontWeight: '400' },
         ],
       },
+
       colors: {
-        primary: '#1d2745',
-        secondary: '#1de5d4',
-        tertiary: '#f52c50',
-        white: '#ffffff',
-        mono100: '#f1f1f1',
-        error: '#d01e1e',
-        social: '#395997',
+        // Blue 컬러
+        blue: {
+          ic: {
+            fill: { primary: '#006CFF' },
+            stroke: { primary: '#006CFF', secondary: '#437BFE' },
+          },
+          txt: {
+            fill: {
+              primary: '#006CFF',
+              secondary: '#437BFE',
+              tertiary: '#0068C3',
+              quaternary: '#1AA7B5',
+            },
+          },
+          btn: {
+            fill: { primary: '#006CFF', secondary: '#437BFE' },
+            stroke: { primary: '#006CFF' },
+          },
+          bg: {
+            fill: {
+              primary: '#7EDAE0',
+              secondary: '#7EDAE0',
+              tertiary: '#7EDAE0',
+              quaternary: '#7EDAE0',
+            },
+            opacity: { tertiary: '0.35', quaternary: '0.25' },
+          },
+        },
+
+        // Gray 컬러
+        gray: {
+          ic: {
+            fill: {
+              white: '#FFFFFF',
+              cool: { primary: '#8899AC', weak: '#CAD1DB' },
+              warm: { primary: '#444447', secondary: '#656565' },
+            },
+            stroke: {
+              cool: {
+                primary: '#222225',
+                secondary: '#444447',
+                tertiary: '#4D5A6A',
+                quaternary: '#6B7C92',
+                weak: '#F0F0F3',
+              },
+              warm: {
+                primary: '#656565',
+                secondary: '#939396',
+                weak: '#C5C5C7',
+              },
+            },
+          },
+          txt: {
+            fill: {
+              white: '#FFFFFF',
+              warm: {
+                primary: '#222225',
+                secondary: '#373737',
+                tertiary: '#656565',
+                quaternary: '#939396',
+                weak: '#C5C5C7',
+              },
+              cool: {
+                primary: '#444447',
+                secondary: '#4D5A6A',
+                tertiary: '#6B7C92',
+                quaternary: '#8899AC',
+              },
+            },
+          },
+          bg: {
+            fill: {
+              white: '#FFFFFF',
+              warm: { primary: '#EDEDED' },
+              cool: {
+                primary: '#E5EAF1',
+                secondary: '#F8F9FB',
+                opacity: { primary: '#222225' },
+              },
+            },
+            stroke: { weak: '#F0F4FF' },
+          },
+          btn: {
+            stroke: {
+              cool: {
+                primary: '#E5EAF1',
+                secondary: '#CAD1DB',
+                tertiary: '#36424E',
+              },
+            },
+            fill: {
+              white: '#FFFFFF',
+              cool: {
+                tertiary: '#CAD1DB',
+                primary: '#8899AC',
+                secondary: '#3D4A57',
+                quaternary: '#F5F6F9',
+              },
+              warm: { primary: '#C5C5C7' },
+            },
+          },
+        },
+
+        // Green 컬러
+        green: {
+          ic: { fill: { primary: '#03AA5A' } },
+          txt: { fill: { primary: '#03AA5A' } },
+        },
+
+        // Orange 컬러
+        orange: {
+          ic: { fill: { primary: '#FDB852', secondary: '#FEB901' } },
+          txt: { fill: { highlight: { primary_fill: '#F5683C' } } },
+        },
+
+        // Red 컬러
+        red: {
+          txt: {
+            fill: {
+              warning: { primary: '#F61024', secondary: '#FF4043' },
+              highlight: { primary: '#F61024', secondary: '#FF4043' },
+            },
+          },
+          ic: {
+            fill: {
+              warning: { primary: '#F61024', secondary: '#FF4043' },
+              highlight: { primary: '#F61024', secondary: '#FF4043' },
+            },
+          },
+          btn: {
+            stroke: {
+              warning: { primary: '#FF4043' },
+              highlight: { primary: '#F61024', secondary: '#FF4043' },
+            },
+          },
+        },
       },
     },
   },
