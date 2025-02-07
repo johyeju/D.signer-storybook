@@ -1,24 +1,24 @@
-import type { Meta, StoryObj } from '@storybook/react';
+import { Meta, StoryObj } from '@storybook/react';
 import TextBtn from '../components/TextBtn';
 
-type TextBtnProps = React.ComponentProps<typeof TextBtn>;
+const meta: Meta<typeof TextBtn> = {
+  title: 'Buttons/TextBtn',
+  component: TextBtn,
+  parameters: {
+    layout: 'centered',
+  },
 
-export default {
-	title: 'Buttons/TextBtn',
-	parameters: {
-		layout: 'centered',
-	},
-	tags: ['autodocs'],
-	component: TextBtn,
-	argTypes: {
-		text: { control: 'text' },
-		color: { control: 'boolean' },
-	},
-} as Meta<typeof TextBtn>;
+  argTypes: {
+    text: { control: 'text' },
+  },
+};
 
-export const Default: StoryObj<TextBtnProps> = {
-	args: {
-		text: 'contents',
-		isBlue: true,
-	},
+export default meta;
+
+type Story = StoryObj<typeof TextBtn>;
+
+export const Default: Story = {
+  args: {
+    text: 'contents',
+  },
 };
