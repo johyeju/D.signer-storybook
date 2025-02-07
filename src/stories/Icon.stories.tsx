@@ -6,7 +6,7 @@ import { iconNames } from '../components/IIconTypes';
 const iconSizes = [12, 14, 16, 18, 24, 32];
 
 export default {
-  title: 'Components/Icon',
+  title: 'Buttons/Icon',
   component: Icon,
   parameters: {
     layout: 'centered',
