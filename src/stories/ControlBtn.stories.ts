@@ -23,6 +23,11 @@ const meta: Meta<typeof ControlBtn> = {
       control: false, // 텍스트 수정 비활성화
       description: '변경 불가',
     },
+    num: {
+      control: { type: 'number', min: 0, max: 99 }, // 최대 두 자리 숫자
+      description: '우측에 표시될 최대 두 자리 숫자',
+      defaultValue: 33, // 기본값 33
+    },
   },
 } satisfies Meta<typeof ControlBtn>;
 
@@ -38,15 +43,17 @@ export const MoveInfo: Story = {
   },
   parameters: {
     controls: {
-      exclude: ['leftIcon'], // MoveInfo 스토리 leftIcon 패널 숨김
+      exclude: ['leftIcon', 'num'], // MoveInfo 스토리에서 leftIcon, num 숨김
     },
   },
 };
 
 export const Alert: Story = {
   args: {
-    text: '폐업했거나 정보가 없는 장소', //고정 텍스트
+    text: '폐업했거나 정보가 없는 장소', // 고정 텍스트
     icon: undefined,
     leftIcon: undefined,
+    num: 33, // 기본 숫자값 설정
+    variant: 'alert',
   },
 };
