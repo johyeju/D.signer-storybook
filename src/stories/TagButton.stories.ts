@@ -4,7 +4,7 @@ import { fn } from '@storybook/test';
 import TagButton from '../components/TagButton';
 
 const meta = {
-  title: 'Buttons/TagButton',
+  title: 'del/TagButton',
   component: TagButton,
   parameters: {
     layout: 'centered',

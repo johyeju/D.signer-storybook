@@ -4,7 +4,7 @@ import { fn } from '@storybook/test';
 import TagList from '../components/TagList';
 
 const meta = {
-  title: 'List/TagList',
+  title: 'del/TagList',
   component: TagList,
   parameters: {
     layout: 'centered',
