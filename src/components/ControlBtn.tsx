@@ -3,10 +3,11 @@ import { icons } from './IIconTypes';
 
 interface ControlBtnProps {
   text: string;
-  icon?: keyof typeof icons;
+  icon?: keyof typeof icons; // 우측 아이콘
+  leftIcon?: keyof typeof icons; // 좌측 아이콘 추가
 }
 
-const ControlBtn: React.FC<ControlBtnProps> = ({ text, icon }) => {
+const ControlBtn: React.FC<ControlBtnProps> = ({ text, icon, leftIcon }) => {
   return (
     <button
       className="control-btn"
@@ -16,20 +17,40 @@ const ControlBtn: React.FC<ControlBtnProps> = ({ text, icon }) => {
         gap: '8px',
         padding: '8px 16px',
         backgroundColor: 'white',
-        color: '#333333', // 텍스트 컬러
-        border: 'none', // 테두리 제거
-        borderRadius: '4px', // 둥글기 적용
+        color: '#333333',
+        border: 'none',
+        borderRadius: '4px',
         cursor: 'pointer',
       }}
     >
+      {/* 좌측 아이콘 렌더링 */}
+      {leftIcon && (
+        <span
+          className="control-btn__left-icon"
+          style={{
+            display: 'inline-flex',
+            alignItems: 'center',
+            width: '24px',
+            height: '24px',
+          }}
+        >
+          {React.cloneElement(icons[leftIcon] as React.ReactElement, {
+            fill: 'currentColor',
+          })}
+        </span>
+      )}
+
+      {/* 텍스트 */}
       <span className="text-body-13-regular-auto">{text}</span>
+
+      {/* 우측 아이콘 렌더링 */}
       {icon && (
         <span
           className="control-btn__icon"
           style={{
             display: 'inline-flex',
             alignItems: 'center',
-            width: '24px', // 아이콘 사이즈
+            width: '24px',
             height: '24px',
           }}
         >
