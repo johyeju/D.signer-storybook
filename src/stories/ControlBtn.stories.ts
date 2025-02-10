@@ -9,15 +9,14 @@ const meta: Meta<typeof ControlBtn> = {
     layout: 'centered',
   },
   argTypes: {
-    text: {
-      control: 'text',
-      description: '텍스트 수정 가능',
-      defaultValue: 'content',
-    },
     icon: {
       control: { type: 'select' },
       options: iconNames,
       description: '우측 아이콘 선택 드롭다운',
+    },
+    text: {
+      control: false, // Controls 패널에서 비활성화
+      description: '변경 불가',
     },
   },
 } satisfies Meta<typeof ControlBtn>;
@@ -28,7 +27,7 @@ type Story = StoryObj<typeof meta>;
 
 export const MoveInfo: Story = {
   args: {
-    text: 'content',
+    text: '버스 도착정보 더보기', // 고정된 텍스트
     icon: undefined,
   },
 };
