@@ -1,4 +1,5 @@
-import type { Preview } from "@storybook/react";
+import type { Preview } from '@storybook/react';
+import '../src/index.css'; // Pretendard 폰트
 
 const preview: Preview = {
   parameters: {
@@ -10,7 +11,7 @@ const preview: Preview = {
     },
   },
 
-  tags: ["autodocs"]
+  tags: ['autodocs'],
 };
 
 export default preview;
