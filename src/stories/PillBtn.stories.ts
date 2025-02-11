@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import PillBtn from '../components/PillBtn';
 import { iconNames } from '../components/IIconTypes';
 
-const buttonSizes = ['s', 'm', 'l'];
+const buttonSizes = ['xs', 's', 'm', 'l'];
 
 const meta: Meta<typeof PillBtn> = {
   title: 'Buttons/PillBtn',

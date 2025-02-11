@@ -1,0 +1,76 @@
+.pill-btn {
+  border-radius: 34px;
+  border: 1px solid var(--btn-stroke-cool-primary, #e5eaf1);
+  background: var(--btn-fill-white, #fff);
+  display: inline-flex;
+  align-items: center;
+  color: var(--btn-text-color, black);
+  cursor: pointer;
+  gap: 10px;
+}
+
+.pill-btn:hover {
+  background: var(--btn-fill-cool-primary_pressed, #dadde6);
+}
+
+.pill-btn-xs {
+  padding: 7px 10px;
+  font-size: 12px;
+}
+
+.pill-btn-xs .icon-left {
+  width: 14px;
+  height: 14px;
+}
+
+.pill-btn-xs .icon-right {
+  width: 10px;
+  height: 10px;
+}
+
+.pill-btn-s {
+  padding: 6px 10px;
+  font-size: 12px;
+}
+
+.pill-btn-s .icon-left {
+  width: 18px;
+  height: 18px;
+}
+
+.pill-btn-s .icon-right {
+  width: 10px;
+  height: 10px;
+}
+
+.pill-btn-m {
+  padding: 6px 12px 6px 8px;
+  font-size: 14px;
+}
+
+.pill-btn-m .icon-left {
+  width: 18px;
+  height: 18px;
+}
+
+.pill-btn-m .icon-right {
+  width: 10px;
+  height: 10px;
+}
+
+.pill-btn-l {
+  padding: 9px 16px 10px 16px;
+  font-size: 14px;
+}
+
+.pill-btn-l .icon-left,
+.pill-btn-l .icon-right {
+  width: 16px;
+  height: 16px;
+}
+
+.icon-left,
+.icon-right {
+  display: inline-flex;
+  align-items: center;
+}
