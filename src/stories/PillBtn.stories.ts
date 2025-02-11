@@ -67,7 +67,7 @@ export const InfoEx: Story = {
     leftIcon: undefined,
     showRightIcon: true,
     rightIcon: undefined,
-    className: 'info-ex-style',
+    className: 'info-ex-style', //style
   },
   argTypes: {
     rightIcon: {
@@ -83,11 +83,12 @@ export const InfoEx: Story = {
 
 export const MyPlacesFilter: Story = {
   args: {
-    size: 'm',
+    size: 'l',
     showLeftIcon: false,
     leftIcon: undefined,
     showRightIcon: false,
     rightIcon: undefined,
+    className: 'my-place-filter-style', //style
   },
   parameters: {
     controls: { disable: true },
@@ -101,6 +102,7 @@ export const CategoryFilter: Story = {
     leftIcon: undefined,
     showRightIcon: false,
     rightIcon: undefined,
+    className: 'category-filter', //style
   },
   parameters: {
     controls: { disable: true },
