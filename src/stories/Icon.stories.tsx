@@ -25,7 +25,7 @@ export default {
           >
             <h2 style={{ marginTop: 0 }}>Anatomy</h2>
             <img
-              src="/src/assets/anatomy.png"
+              src="/docs/anatomy.png"
               alt="아이콘 구조 설명"
               style={{ maxWidth: '100%', marginBottom: '10px' }}
             />
@@ -92,7 +92,7 @@ export default {
                   </li>
                 </ul>
                 <img
-                  src="/src/assets/icon-do1.png"
+                  src="/docs/icon-do1.png"
                   alt="Do Example"
                   style={{ width: '100%' }}
                 />
@@ -112,7 +112,7 @@ export default {
                   </li>
                 </ul>
                 <img
-                  src="/src/assets/icon-dont1.png"
+                  src="/docs/icon-dont1.png"
                   alt="Don't Example"
                   style={{ width: '100%' }}
                 />
