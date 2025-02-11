@@ -11,6 +11,7 @@ interface PillBtnProps {
   showRightIcon?: boolean;
   rightIcon?: keyof typeof icons;
   text?: string;
+  className?: string;
 }
 
 const PillBtn: React.FC<PillBtnProps> = ({
@@ -20,9 +21,10 @@ const PillBtn: React.FC<PillBtnProps> = ({
   showRightIcon = false,
   rightIcon,
   text = 'content',
+  className,
 }) => {
   return (
-    <button className={`pill-btn pill-btn-${size}`}>
+    <button className={`pill-btn pill-btn-${size} ${className || ''}`}>
       {showLeftIcon && leftIcon && (
         <span className="icon-left">
           {React.cloneElement(icons[leftIcon] as React.ReactElement, {

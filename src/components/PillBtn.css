@@ -74,3 +74,13 @@
   display: inline-flex;
   align-items: center;
 }
+
+.info-ex-style {
+  background: var(--bg-fill-cool-secondary, #f8f9fb);
+  border: none;
+}
+
+.info-ex-style:active {
+  background: var(--btn-fill-cool-primary_pressed, #dadde6);
+  border: none;
+}
