@@ -78,33 +78,53 @@ export const InfoEx: Story = {
     size: { control: false },
     showLeftIcon: { control: false },
     showRightIcon: { control: false },
+    className: { control: false },
   },
 };
 
 export const MyPlacesFilter: Story = {
   args: {
+    text: 'content',
     size: 'l',
-    showLeftIcon: false,
+    showLeftIcon: true,
     leftIcon: undefined,
-    showRightIcon: false,
+    showRightIcon: true,
     rightIcon: undefined,
     className: 'my-place-filter-style', //style
   },
-  parameters: {
-    controls: { disable: true },
+  argTypes: {
+    leftIcon: {
+      control: { type: 'select' },
+      options: iconNames,
+      description: '우측 아이콘 변경 가능',
+    },
+    size: { control: false },
+    showLeftIcon: { control: false },
+    showRightIcon: { control: false },
+
+    className: { control: false },
   },
 };
 
 export const CategoryFilter: Story = {
   args: {
+    text: 'content',
     size: 'l',
-    showLeftIcon: false,
+    showLeftIcon: true,
     leftIcon: undefined,
     showRightIcon: false,
     rightIcon: undefined,
-    className: 'category-filter', //style
+    className: 'category-filter-style', //style
   },
-  parameters: {
-    controls: { disable: true },
+  argTypes: {
+    leftIcon: {
+      control: { type: 'select' },
+      options: iconNames,
+      description: '우측 아이콘 변경 가능',
+    },
+    size: { control: false },
+    showLeftIcon: { control: false },
+    showRightIcon: { control: false },
+    className: { control: false },
   },
 };
