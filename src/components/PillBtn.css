@@ -9,7 +9,7 @@
   gap: 10px;
 }
 
-.pill-btn:hover {
+.pill-btn:active {
   background: var(--btn-fill-cool-primary_pressed, #dadde6);
 }
 
