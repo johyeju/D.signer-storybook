@@ -60,14 +60,22 @@ export const Default: Story = {
 
 export const InfoEx: Story = {
   args: {
-    size: 'm',
+    text: 'content',
+    size: 'l',
     showLeftIcon: false,
     leftIcon: undefined,
-    showRightIcon: false,
+    showRightIcon: true,
     rightIcon: undefined,
   },
-  parameters: {
-    controls: { disable: true },
+  argTypes: {
+    rightIcon: {
+      control: { type: 'select' },
+      options: iconNames,
+      description: '우측 아이콘 변경 가능',
+    },
+    size: { control: false },
+    showLeftIcon: { control: false },
+    showRightIcon: { control: false },
   },
 };
 
