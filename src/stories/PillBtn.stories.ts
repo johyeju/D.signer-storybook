@@ -11,10 +11,10 @@ const meta: Meta<typeof PillBtn> = {
     layout: 'centered',
   },
   argTypes: {
-    children: {
+    text: {
       control: 'text',
       description: '버튼 내 텍스트 수정 가능',
-      defaultValue: 'contents',
+      defaultValue: 'content',
     },
     size: {
       control: { type: 'radio' },
@@ -49,7 +49,7 @@ type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
   args: {
-    children: '버튼',
+    text: 'content',
     size: 'm',
     showLeftIcon: false,
     leftIcon: undefined,
