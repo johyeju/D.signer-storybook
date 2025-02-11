@@ -51,7 +51,7 @@ type Story = StoryObj<typeof meta>;
 export const Default: Story = {
   args: {
     text: 'content',
-    size: 'm',
+    size: 'l',
     showLeftIcon: false,
     leftIcon: undefined,
     showRightIcon: false,
@@ -97,7 +97,7 @@ export const MyPlacesFilter: Story = {
 
 export const CategoryFilter: Story = {
   args: {
-    size: 'm',
+    size: 'l',
     showLeftIcon: false,
     leftIcon: undefined,
     showRightIcon: false,
