@@ -1,5 +1,5 @@
 import type { Preview } from '@storybook/react';
-import '../src/index.css'; // Pretendard 폰트
+import '../src/index.css'; //Global Css
 
 const preview: Preview = {
   parameters: {
