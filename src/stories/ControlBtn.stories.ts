@@ -1,6 +1,7 @@
 import { Meta, StoryObj } from '@storybook/react';
 import ControlBtn from '../components/ControlBtn';
 import { iconNames } from '../components/IIconTypes';
+import '../components/ControlBtn.css';
 
 const meta: Meta<typeof ControlBtn> = {
   title: 'Buttons/ControlBtn',
@@ -28,6 +29,10 @@ const meta: Meta<typeof ControlBtn> = {
       description: '우측에 표시될 최대 두 자리 숫자',
       defaultValue: 33, // 기본값 33
     },
+    className: {
+      control: { type: 'text' },
+      description: ' 스타일 클래스',
+    },
   },
 } satisfies Meta<typeof ControlBtn>;
 
@@ -43,7 +48,7 @@ export const MoveInfo: Story = {
   },
   parameters: {
     controls: {
-      exclude: ['leftIcon', 'num'], // MoveInfo 스토리에서 leftIcon, num 숨김
+      exclude: ['leftIcon', 'num', 'className'], // 패널 숨김
     },
   },
 };
@@ -54,6 +59,11 @@ export const Alert: Story = {
     icon: undefined,
     leftIcon: undefined,
     num: 33, // 기본 숫자값 설정
-    variant: 'alert',
+    className: 'alert-style', // 스타일 클래스 적용
+  },
+  parameters: {
+    controls: {
+      exclude: ['className'], // 패널 숨김
+    },
   },
 };

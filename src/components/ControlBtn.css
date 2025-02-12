@@ -1,0 +1,45 @@
+.control-btn {
+  align-items: center;
+  display: inline-flex;
+}
+
+.default-style {
+  color: #333333;
+  border: none;
+}
+
+.alert-style {
+  color: #f61024;
+  border: 1px solid #f61024;
+  border-radius: 6px;
+  border: 1px solid var(--btn-stroke-warning-primary, #ff4043);
+  display: flex;
+  width: 339px;
+  height: 40px;
+  padding: 12px 9px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+  flex: 1 0 0;
+}
+
+.control-btn__left-icon,
+.control-btn__icon {
+  display: inline-flex;
+  align-items: center;
+  width: 24px;
+  height: 24px;
+}
+
+.text-body-13-regular-auto {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.control-btn__num {
+  color: #f61024;
+  font-size: 14px;
+  font-weight: bold;
+}
