@@ -1,7 +1,11 @@
 .cta-btn {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   border-radius: 160px;
+  flex-shrink: 0;
+  border-radius: 160px;
+  box-sizing: border-box;
 }
 
 .cta-btn.m {
@@ -17,6 +21,11 @@
 .cta-btn.primary {
   background: var(--btn-fill-primary, #006cff);
   border: none;
+  color: #fff;
+  font-family: 'Noto Sans KR';
+  font-size: 14px;
+  font-style: normal;
+  line-height: normal;
 }
 
 .cta-btn.secondary {
@@ -27,4 +36,25 @@
 .cta-btn.tertiary {
   border: 1px solid var(--btn-stroke-cool-secondary, #cad1db);
   background: var(--btn-fill-white, #fff);
+}
+
+.cta-btn.m.primary {
+  font-weight: 500; /* Medium */
+}
+
+.cta-btn.r.primary {
+  font-weight: 400; /* Regular */
+}
+
+.cta-btn .icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 18px;
+  height: 18px;
+}
+
+.cta-btn.m.primary .icon {
+  width: 16px;
+  height: 16px;
 }
