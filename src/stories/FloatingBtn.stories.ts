@@ -18,7 +18,6 @@ export const Default: Story = {
   args: {
     label: '33', // 초기 숫자값
     size: 40,
-    backgroundColor: '#FFFFFF', // 초기 배경색
     icon: undefined, // 아이콘 초기값
   },
   argTypes: {
@@ -28,14 +27,6 @@ export const Default: Story = {
     },
     label: {
       control: { type: 'number', min: 0, max: 99 }, // 숫자 입력 가능
-    },
-    backgroundColor: {
-      control: { type: 'radio' },
-      options: ['#FFFFFF', '#3D4A57'],
-      labels: {
-        '#FFFFFF': 'White',
-        '#3D4A57': 'Dark Gray',
-      },
     },
     icon: {
       control: { type: 'select' },

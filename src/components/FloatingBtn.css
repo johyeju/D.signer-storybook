@@ -1,0 +1,69 @@
+.floating-btn {
+  position: absolute;
+  display: flex;
+  padding: 8px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+  box-shadow: 0px 2px 12px 0px rgba(0, 0, 0, 0.15);
+}
+
+/* default s */
+.floating-btn.s {
+  width: 40px;
+  height: 40px;
+}
+
+.floating-btn.default.size-s {
+  border-radius: 20px;
+  background: var(--btn-fill-white, #fff);
+}
+
+.floating-btn.default.size-s .icon {
+  width: 24px;
+  height: 24px;
+}
+
+/* default m */
+.floating-btn.m {
+  width: 44px;
+  height: 44px;
+}
+
+.floating-btn.default.size-m {
+  border-radius: 22px;
+  background: var(--btn-fill-white, #fff);
+}
+
+.floating-btn.default.size-m .icon {
+  width: 24px;
+  height: 24px;
+}
+
+/* default l */
+
+.floating-btn.default.size-l {
+  width: 50px;
+  height: 50px;
+  border-radius: 25px;
+  border: 1px solid var(--btn-stroke-cool-tertiary, #36424e);
+  background: var(--btn-fill-cool-secondary, #3d4a57);
+}
+
+.floating-btn.default.size-l .icon {
+  width: 32px;
+  height: 32px;
+}
+
+.floating-btn .label {
+  position: absolute;
+  right: 17px;
+  top: 18px;
+  color: var(--txt-fill-white, #fff);
+  font-family: Pretendard;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
