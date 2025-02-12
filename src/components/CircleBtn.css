@@ -12,7 +12,7 @@
 
 .circle-btn:active {
   background-color: var(--btn-fill-cool-primary_pressed, #dadde6);
-  border: 1px var(--btn-stroke-cool-primary, #e5eaf1);
+  border: 1px solid var(--btn-stroke-cool-primary, #e5eaf1);
 }
 
 .circle-btn.s {
