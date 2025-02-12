@@ -1,0 +1,25 @@
+.filter-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  background-color: white;
+  color: #333333;
+  border: none;
+  cursor: pointer;
+}
+
+.filter-btn--regular {
+  font-size: 13px;
+}
+
+.filter-btn--medium {
+  font-size: 14px;
+}
+
+.filter-btn__icon {
+  display: inline-flex;
+  align-items: center;
+  width: 24px;
+  height: 24px;
+}
