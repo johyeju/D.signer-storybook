@@ -1,0 +1,41 @@
+.text-btn {
+  all: unset;
+  padding: 4px 8px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.text-btn.disabled {
+  cursor: not-allowed;
+  color: #999999;
+  opacity: 0.5;
+}
+
+.default-style {
+  display: inline-flex;
+  padding: 2px 4px;
+  align-items: center;
+  gap: 10px;
+}
+
+.modal-style {
+  display: inline-flex;
+  height: 55px;
+  padding: 16px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+}
+
+.text-btn.primary:not(.disabled) {
+  color: #006cff;
+}
+
+.text-btn.secondary:not(.disabled) {
+  color: #373737;
+}
+
+.text-btn.active {
+  background-color: rgba(0, 0, 0, 0.4);
+}

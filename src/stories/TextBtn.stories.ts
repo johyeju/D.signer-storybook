@@ -1,5 +1,6 @@
 import { Meta, StoryObj } from '@storybook/react';
 import TextBtn from '../components/TextBtn';
+import '../components/TextBtn.css';
 
 const meta: Meta<typeof TextBtn> = {
   title: 'Buttons/TextBtn',
@@ -19,7 +20,9 @@ type Story = StoryObj<typeof TextBtn>;
 export const Default: Story = {
   args: {
     text: 'content',
+    className: 'default-style', //style
   },
+  argTypes: { className: { control: false } },
 };
 
 export const Modal: Story = {
@@ -27,6 +30,7 @@ export const Modal: Story = {
     text: 'content',
     state: 'Default',
     type: 'Primary',
+    className: 'modal-style', //style
   },
   argTypes: {
     state: {
@@ -38,5 +42,6 @@ export const Modal: Story = {
       options: ['Primary', 'Secondary'],
       if: { arg: 'state', eq: 'Default' }, // 'Default' 상태일 때만 표시
     },
+    className: { control: false },
   },
 };
