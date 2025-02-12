@@ -1,0 +1,52 @@
+.circle-btn {
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  background-color: var(--btn-fill-white, #fff);
+  border-radius: 50%;
+  border: 1px solid var(--btn-stroke-cool-primary, #e5eaf1); /* border-style: solid 추가 */
+  cursor: pointer;
+}
+
+.circle-btn:active {
+  background-color: var(--btn-fill-cool-primary_pressed, #dadde6);
+  border: 1px var(--btn-stroke-cool-primary, #e5eaf1);
+}
+
+.circle-btn.s {
+  width: 24px;
+  height: 24px;
+}
+
+.circle-btn.m {
+  width: 30px;
+  height: 30px;
+}
+
+.circle-btn.l {
+  width: 36px;
+  height: 36px;
+}
+
+.circle-btn .icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.circle-btn.s .icon {
+  width: 10px;
+  height: 10px;
+}
+
+.circle-btn.m .icon {
+  width: 20px;
+  height: 20px;
+}
+
+.circle-btn.l .icon {
+  width: 12px;
+  height: 12px;
+}
