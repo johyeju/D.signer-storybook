@@ -48,7 +48,7 @@ export const MoveInfo: Story = {
   },
   parameters: {
     controls: {
-      exclude: ['leftIcon', 'num', 'className'], // 패널 숨김
+      exclude: ['text', 'leftIcon', 'num', 'className'], // 패널 숨김
     },
   },
 };
@@ -63,7 +63,7 @@ export const Alert: Story = {
   },
   parameters: {
     controls: {
-      exclude: ['className'], // 패널 숨김
+      exclude: ['className', 'text'], // 패널 숨김
     },
   },
 };
