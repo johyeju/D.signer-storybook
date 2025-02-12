@@ -1,6 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import LinkBtn from '../components/LinkBtn';
 import { iconNames } from '../components/IIconTypes';
+import '../components/LinkBtn.css';
 
 const meta: Meta<typeof LinkBtn> = {
   title: 'Buttons/LinkBtn',

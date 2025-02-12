@@ -1,0 +1,42 @@
+.link-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background-color: transparent;
+  color: var(--txt-fill-tertiary, #0068c3);
+  text-decoration: none;
+  cursor: pointer;
+
+  /* kr/title/14/regular */
+  font-family: 'Noto Sans KR';
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+
+  padding: 9px 14px;
+  height: 40px;
+  box-sizing: border-box;
+  position: relative;
+  border-radius: 2px;
+}
+
+.link-btn:active::after {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 2px;
+  pointer-events: none;
+  z-index: -1;
+}
+
+.link-btn .icon {
+  display: inline-flex;
+  align-items: center;
+  width: 18px;
+  height: 18px;
+}
