@@ -1,0 +1,30 @@
+.photo-badge {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 25px 29px 26px 28px; /* 위, 오른쪽, 아래, 왼쪽 */
+  gap: 1px;
+  background: var(--bg-fill-cool-opacity-primary, rgba(34, 34, 37, 0.5));
+}
+
+.photo-badge-icon {
+  width: 24px;
+  height: 24px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0; /* 아이콘 크기 축소 방지 */
+}
+
+.photo-badge-count {
+  font-family: Pretendard;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  color: var(--txt-fill-white, #fff); /* 피그마 색상 적용 */
+  min-width: 32px; /* 숫자 공간 최소값 */
+  text-align: center;
+  box-sizing: border-box;
+}
