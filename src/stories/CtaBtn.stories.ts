@@ -38,11 +38,24 @@ export default meta;
 
 type Story = StoryObj<typeof meta>;
 
-export const Default: Story = {
+export const Ellipse: Story = {
   args: {
     label: 'content',
     size: 'M',
     type: 'Primary',
     icon: undefined,
+  },
+};
+
+export const RoundSquare: Story = {
+  args: {
+    label: 'content',
+    type: 'Primary',
+    icon: undefined,
+  },
+  parameters: {
+    controls: {
+      exclude: ['size'], // 패널 숨김
+    },
   },
 };
