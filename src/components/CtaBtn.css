@@ -1,0 +1,30 @@
+.cta-btn {
+  display: inline-flex;
+  align-items: center;
+  border-radius: 160px;
+}
+
+.cta-btn.m {
+  padding: 8px 10px 8px 14px;
+  gap: 2px;
+}
+
+.cta-btn.r {
+  padding: 8px 22px;
+  gap: 6px;
+}
+
+.cta-btn.primary {
+  background: var(--btn-fill-primary, #006cff);
+  border: none;
+}
+
+.cta-btn.secondary {
+  border: 1px solid var(--btn-stroke-primary, #006cff);
+  background: var(--btn-fill-white, #fff);
+}
+
+.cta-btn.tertiary {
+  border: 1px solid var(--btn-stroke-cool-secondary, #cad1db);
+  background: var(--btn-fill-white, #fff);
+}

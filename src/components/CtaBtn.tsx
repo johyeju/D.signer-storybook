@@ -1,31 +1,48 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { icons } from './IIconTypes'; // 아이콘 목록 가져오기
 
-type CtaBtnProps = {
-	leftButtonText?: string;
-	leftButtonVisible: boolean;
-	rightButtonText: string;
-};
+interface CtaBtnProps {
+  label?: string;
+  size?: 'M' | 'R';
+  type?: 'Primary' | 'Secondary' | 'Tertiary';
+  icon?: keyof typeof icons;
+  onClick?: () => void;
+}
 
 const CtaBtn: React.FC<CtaBtnProps> = ({
-	leftButtonText,
-	leftButtonVisible,
-	rightButtonText,
+  label = 'CTA 버튼',
+  size = 'M',
+  type = 'Primary',
+  icon,
+  onClick,
 }) => {
-	return (
-		<div
-			style={{
-				display: 'flex',
-				justifyContent: leftButtonVisible ? 'space-around' : 'center',
-				padding: '10px',
-				gap: '10px',
-			}}
-		>
-			{leftButtonVisible && leftButtonText && (
-				<button style={{ color: 'gray' }}>{leftButtonText}</button>
-			)}
-			<button style={{ color: 'blue' }}>{rightButtonText}</button>
-		</div>
-	);
+  const [isPressed, setIsPressed] = useState(false);
+
+  // 아이콘 크기 설정
+  const iconSize = size === 'M' && type === 'Tertiary' ? 16 : 18;
+
+  return (
+    <button
+      className={`cta-btn ${size.toLowerCase()} ${type.toLowerCase()} ${
+        isPressed ? 'pressed' : ''
+      }`}
+      onMouseDown={() => setIsPressed(true)}
+      onMouseUp={() => setIsPressed(false)}
+      onMouseLeave={() => setIsPressed(false)}
+      onClick={onClick}
+    >
+      {icon && (
+        <span className="icon">
+          {React.cloneElement(icons[icon] as React.ReactElement, {
+            fill: 'currentColor',
+            width: iconSize,
+            height: iconSize,
+          })}
+        </span>
+      )}
+      <span>{label}</span>
+    </button>
+  );
 };
 
 export default CtaBtn;
