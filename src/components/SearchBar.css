@@ -1,0 +1,45 @@
+.search-bar {
+  display: flex;
+  align-items: center;
+  width: 289px;
+  height: 48px;
+  padding: 12px;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0px 2px 12px 0px rgba(0, 0, 0, 0.25);
+}
+
+.search-bar .icon-left,
+.search-bar .icon-right {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+}
+
+.search-bar-title {
+  flex: 1;
+  color: #afafaf;
+  font-size: 16px;
+}
+
+.search-bar-title {
+  flex: 1;
+  color: #cacaca;
+
+  /* 아이콘 패딩 */
+  padding-left: 4px;
+  padding-right: 4px;
+
+  /* kr/title/16/regular */
+  font-family: 'Noto Sans KR', sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.search-bar:active .search-bar-title {
+  opacity: 0.2;
+}
