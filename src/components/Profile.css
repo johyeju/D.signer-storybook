@@ -1,0 +1,68 @@
+.profile-container {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  max-width: 500px;
+}
+
+.profile-image {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.nickname-style {
+  overflow: hidden;
+  color: var(--txt-fill-warm-primary, #222225);
+  text-overflow: ellipsis;
+
+  /* kr/title/16/semibold */
+  font-family: 'Noto Sans KR';
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+
+  max-width: 115px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-weight: bold;
+}
+
+.blogName-style {
+  max-width: 120px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: #888;
+  font-size: 14px;
+
+  overflow: hidden;
+  color: var(--txt-fill-warm-quaternary, #939396);
+  text-overflow: ellipsis;
+
+  /* num/caption/12/regular */
+  font-family: Pretendard;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.date-style {
+  color: var(--txt-fill-warm-quaternary, #939396);
+
+  /* num/caption/13/regular */
+  font-family: Pretendard;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+svg {
+  width: 32px;
+  height: 32px;
+}
