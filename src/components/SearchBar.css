@@ -38,6 +38,10 @@
   font-style: normal;
   font-weight: 400;
   line-height: normal;
+
+  /*텍스트 넘어갈 때 처리 */
+  white-space: nowrap;
+  overflow: hidden;
 }
 
 .search-bar:active .search-bar-title {

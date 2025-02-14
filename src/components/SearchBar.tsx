@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import { icons } from './IIconTypes';
 
 interface SearchBarProps {
@@ -16,6 +16,14 @@ const SearchBar: React.FC<SearchBarProps> = ({
   showRightIcon = true,
   rightIcon,
 }) => {
+  const textRef = useRef<HTMLSpanElement>(null);
+
+  useEffect(() => {
+    if (textRef.current) {
+      textRef.current.scrollLeft = textRef.current.scrollWidth;
+    }
+  }, [title]); // title이 변경될 때마다 최신 내용을 자동으로 표시
+
   return (
     <div className="search-bar">
       {showLeftIcon && leftIcon && (
@@ -25,7 +33,9 @@ const SearchBar: React.FC<SearchBarProps> = ({
           })}
         </span>
       )}
-      <span className="search-bar-title">{title}</span>
+      <span className="search-bar-title" ref={textRef}>
+        {title}
+      </span>
       {showRightIcon && rightIcon && (
         <span className="icon-right">
           {React.cloneElement(icons[rightIcon] as React.ReactElement, {
