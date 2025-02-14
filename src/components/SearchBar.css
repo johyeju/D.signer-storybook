@@ -11,22 +11,12 @@
 
 .search-bar .icon-left,
 .search-bar .icon-right {
-  display: flex;
-  align-items: center;
-  justify-content: center;
   width: 24px;
   height: 24px;
 }
 
 .search-bar-title {
   flex: 1;
-  color: #afafaf;
-  font-size: 16px;
-}
-
-.search-bar-title {
-  flex: 1;
-  color: #cacaca;
 
   /* 아이콘 패딩 */
   padding-left: 4px;
@@ -44,6 +34,35 @@
   overflow: hidden;
 }
 
-.search-bar:active .search-bar-title {
+/* active는 default, lead-only에만 적용 */
+.default-style:active .search-bar-title,
+.lead-only-style:active .search-bar-title {
   opacity: 0.2;
+}
+
+.default-style,
+.edit-style {
+  color: #cacaca;
+}
+
+.lead-only-style {
+  border-radius: 2px;
+  border: 1px solid #e5e5e5;
+  background: #ededed;
+
+  color: #767676;
+}
+
+.edit-style {
+  width: 375px;
+  padding: 12px;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+}
+
+.edit-style .icon-left,
+.edit-style .icon-right {
+  width: 32px;
+  height: 32px;
 }

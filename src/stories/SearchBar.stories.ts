@@ -23,9 +23,9 @@ const meta = {
     },
     leftIcon: {
       control: { type: 'select' },
-      options: iconNames, // iconNames에서 목록 불러오기
+      options: iconNames,
       description: '좌측 아이콘 선택',
-      if: { arg: 'showLeftIcon' }, // showLeftIcon이 true일 때만 노출
+      if: { arg: 'showLeftIcon' },
     },
     showRightIcon: {
       control: 'boolean',
@@ -34,9 +34,9 @@ const meta = {
     },
     rightIcon: {
       control: { type: 'select' },
-      options: iconNames, // iconNames에서 목록 불러오기
+      options: iconNames,
       description: '우측 아이콘 선택',
-      if: { arg: 'showRightIcon' }, // showRightIcon이 true일 때만 노출
+      if: { arg: 'showRightIcon' },
       defaultValue: 'close',
     },
   },
@@ -52,10 +52,11 @@ export const Default: Story = {
     leftIcon: 'call',
     showRightIcon: true,
     rightIcon: 'call',
+    className: 'default-style',
   },
   parameters: {
     controls: {
-      exclude: ['showLeftIcon', 'showRightIcon'], // 패널 숨김
+      exclude: ['showLeftIcon', 'showRightIcon', 'className'], // 패널 숨김
     },
   },
 };
@@ -66,10 +67,11 @@ export const LeadOnly: Story = {
     showLeftIcon: false,
     showRightIcon: true,
     rightIcon: 'call',
+    className: 'lead-only-style',
   },
   parameters: {
     controls: {
-      exclude: ['leftIcon', 'showLeftIcon'], // 패널 숨김
+      exclude: ['leftIcon', 'showLeftIcon', 'className'], // 패널 숨김
     },
   },
 };
@@ -81,10 +83,11 @@ export const Edit: Story = {
     leftIcon: 'call',
     showRightIcon: true,
     rightIcon: 'call',
+    className: 'edit-style',
   },
   parameters: {
     controls: {
-      exclude: ['showLeftIcon', 'showRightIcon'], // 패널 숨김
+      exclude: ['showLeftIcon', 'showRightIcon', 'className'], // 패널 숨김
     },
   },
 };

@@ -7,6 +7,7 @@ interface SearchBarProps {
   leftIcon?: keyof typeof icons;
   showRightIcon?: boolean;
   rightIcon?: keyof typeof icons;
+  className?: string;
 }
 
 const SearchBar: React.FC<SearchBarProps> = ({
@@ -15,6 +16,7 @@ const SearchBar: React.FC<SearchBarProps> = ({
   leftIcon,
   showRightIcon = true,
   rightIcon,
+  className,
 }) => {
   const textRef = useRef<HTMLSpanElement>(null);
 
@@ -25,7 +27,7 @@ const SearchBar: React.FC<SearchBarProps> = ({
   }, [title]); // title이 변경될 때마다 최신 내용을 자동으로 표시
 
   return (
-    <div className="search-bar">
+    <div className={`search-bar ${className || ''}`}>
       {showLeftIcon && leftIcon && (
         <span className="icon-left">
           {React.cloneElement(icons[leftIcon] as React.ReactElement, {
