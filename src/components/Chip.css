@@ -1,0 +1,16 @@
+.chip {
+  display: inline-flex;
+  height: 35px;
+  padding: 7px 10px 8px 10px;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+  border-radius: 17.5px;
+  background: var(--bg-fill-cool-secondary, #f8f9fb);
+}
+
+.chip-active {
+  border: 1px solid var(--ic-stroke-warm-primary, #656565);
+  background: var(--bg-fill-cool-secondary, #f8f9fb);
+}
