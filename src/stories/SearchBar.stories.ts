@@ -59,3 +59,32 @@ export const Default: Story = {
     },
   },
 };
+
+export const LeadOnly: Story = {
+  args: {
+    title: 'Title',
+    showLeftIcon: false,
+    showRightIcon: true,
+    rightIcon: 'call',
+  },
+  parameters: {
+    controls: {
+      exclude: ['leftIcon', 'showLeftIcon'], // 패널 숨김
+    },
+  },
+};
+
+export const Edit: Story = {
+  args: {
+    title: 'Title',
+    showLeftIcon: true,
+    leftIcon: 'call',
+    showRightIcon: true,
+    rightIcon: 'call',
+  },
+  parameters: {
+    controls: {
+      exclude: ['showLeftIcon', 'showRightIcon'], // 패널 숨김
+    },
+  },
+};
