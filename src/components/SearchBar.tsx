@@ -1,5 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import { icons } from './IIconTypes';
+import CircleBtn from './CircleBtn';
 
 interface SearchBarProps {
   title?: string;
@@ -7,6 +8,8 @@ interface SearchBarProps {
   leftIcon?: keyof typeof icons;
   showRightIcon?: boolean;
   rightIcon?: keyof typeof icons;
+  circleBtn?: boolean;
+  circleBtnIcon?: keyof typeof icons;
   className?: string;
 }
 
@@ -16,15 +19,18 @@ const SearchBar: React.FC<SearchBarProps> = ({
   leftIcon,
   showRightIcon = true,
   rightIcon,
+  circleBtn = false,
+  circleBtnIcon,
   className,
 }) => {
   const textRef = useRef<HTMLSpanElement>(null);
 
+  // title 길어지면 자동 스크롤 설정
   useEffect(() => {
     if (textRef.current) {
       textRef.current.scrollLeft = textRef.current.scrollWidth;
     }
-  }, [title]); // title이 변경될 때마다 최신 내용을 자동으로 표시
+  }, [title]); // title 업데이트 될 때마다 실행
 
   return (
     <div className={`search-bar ${className || ''}`}>
@@ -38,12 +44,19 @@ const SearchBar: React.FC<SearchBarProps> = ({
       <span className="search-bar-title" ref={textRef}>
         {title}
       </span>
-      {showRightIcon && rightIcon && (
-        <span className="icon-right">
-          {React.cloneElement(icons[rightIcon] as React.ReactElement, {
-            fill: 'currentColor',
-          })}
-        </span>
+
+      {/* circleBtn true일 때 CircleBtn 컴포넌트 렌더링 */}
+      {circleBtn ? (
+        <CircleBtn size={24} icon={circleBtnIcon} />
+      ) : (
+        showRightIcon &&
+        rightIcon && (
+          <span className="icon-right">
+            {React.cloneElement(icons[rightIcon] as React.ReactElement, {
+              fill: 'currentColor',
+            })}
+          </span>
+        )
       )}
     </div>
   );

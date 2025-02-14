@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import Header from '../components/SearchBar';
-import { iconNames } from '../components/IIconTypes'; // icons 대신 iconNames 사용
+import { iconNames } from '../components/IIconTypes';
 import '../components/SearchBar.css';
 
 const meta = {
@@ -39,6 +39,17 @@ const meta = {
       if: { arg: 'showRightIcon' },
       defaultValue: 'close',
     },
+    circleBtn: {
+      control: 'boolean',
+      description: 'CircleBtn 사용 여부',
+      defaultValue: false,
+    },
+    circleBtnIcon: {
+      control: { type: 'select' },
+      options: iconNames,
+      description: 'CircleBtn 아이콘 선택',
+      if: { arg: 'circleBtn' }, // circleBtn이 true일 때만 활성화
+    },
   },
 } satisfies Meta<typeof Header>;
 
@@ -56,7 +67,7 @@ export const Default: Story = {
   },
   parameters: {
     controls: {
-      exclude: ['showLeftIcon', 'showRightIcon', 'className'], // 패널 숨김
+      exclude: ['showLeftIcon', 'showRightIcon', 'className', 'circleBtn'], // 패널 숨김
     },
   },
 };
@@ -65,13 +76,19 @@ export const LeadOnly: Story = {
   args: {
     title: 'Title',
     showLeftIcon: false,
-    showRightIcon: true,
-    rightIcon: 'call',
+    circleBtn: true, // CircleBtn 불러오기
+    circleBtnIcon: 'call',
     className: 'lead-only-style',
   },
   parameters: {
     controls: {
-      exclude: ['leftIcon', 'showLeftIcon', 'className'], // 패널 숨김
+      exclude: [
+        'leftIcon',
+        'showLeftIcon',
+        'showRightIcon',
+        'rightIcon',
+        'className',
+      ],
     },
   },
 };
@@ -87,7 +104,7 @@ export const Edit: Story = {
   },
   parameters: {
     controls: {
-      exclude: ['showLeftIcon', 'showRightIcon', 'className'], // 패널 숨김
+      exclude: ['showLeftIcon', 'showRightIcon', 'className', 'circleBtn'], // 패널 숨김
     },
   },
 };
