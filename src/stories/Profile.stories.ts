@@ -28,6 +28,17 @@ const meta: Meta<typeof Profile> = {
       description: '날짜 설정 (YYYYMMDD 입력 가능)',
       defaultValue: '241225',
     },
+    visitNum: {
+      control: 'number',
+      description: '방문 횟수',
+      defaultValue: 1,
+    },
+    paymentType: {
+      control: 'radio',
+      options: ['간편결제', '영수증'],
+      description: '결제 방식 선택',
+      defaultValue: '간편결제',
+    },
   },
 } satisfies Meta<typeof Profile>;
 
@@ -40,5 +51,25 @@ export const Blog: Story = {
     nickName: '닉네임',
     blogName: '블로그명',
     date: '241225',
+  },
+  parameters: {
+    controls: {
+      exclude: ['visitNum', 'paymentType'], // 패널 숨김
+    },
+  },
+};
+
+export const Review: Story = {
+  args: {
+    profileImg: '',
+    nickName: '닉네임',
+    date: '241225',
+    visitNum: 3,
+    paymentType: '간편결제',
+  },
+  parameters: {
+    controls: {
+      exclude: ['blogName'], // 패널 숨김
+    },
   },
 };

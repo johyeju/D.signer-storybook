@@ -4,8 +4,10 @@ import './Profile.css';
 interface ProfileProps {
   profileImg?: string;
   nickName: string;
-  blogName: string;
+  blogName?: string;
   date: string;
+  visitNum?: number;
+  paymentType?: '간편결제' | '영수증';
 }
 
 const ProfileIcon = () => {
@@ -67,18 +69,34 @@ const Profile: React.FC<ProfileProps> = ({
   nickName,
   blogName,
   date,
+  visitNum,
+  paymentType,
 }) => {
+  const infoArray = [
+    blogName ? <span className="blogName-style">{blogName}</span> : null,
+    <span className="date-style">{date}</span>,
+    visitNum !== undefined ? (
+      <span className="visit-num-style">{visitNum}번째 방문</span>
+    ) : null,
+    paymentType ? (
+      <span className="payment-type-style">{paymentType}</span>
+    ) : null,
+  ].filter(Boolean);
+
   return (
     <div className="profile-container">
-      {/* 이미지가 있으면 해당 이미지 표시, 없으면 기본 SVG 표시 */}
       {profileImg ? (
         <img src={profileImg} alt="Profile" className="profile-image" />
       ) : (
         <ProfileIcon />
       )}
       <span className="nickname-style">{nickName}</span>
-      <span className="blogName-style">{blogName}</span>
-      <span className="date-style"> · {date}</span>
+      {infoArray.map((item, index) => (
+        <React.Fragment key={index}>
+          {index !== 0 && <span className="dot-style"> · </span>}
+          {item}
+        </React.Fragment>
+      ))}
     </div>
   );
 };

@@ -5,7 +5,8 @@
   max-width: 500px;
 }
 
-.profile-image {
+.profile-image,
+svg {
   width: 32px;
   height: 32px;
   border-radius: 50%;
@@ -40,29 +41,33 @@
   font-size: 14px;
 
   overflow: hidden;
-  color: var(--txt-fill-warm-quaternary, #939396);
   text-overflow: ellipsis;
-
-  /* num/caption/12/regular */
   font-family: Pretendard;
   font-size: 12px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: normal;
 }
 
 .date-style {
-  color: var(--txt-fill-warm-quaternary, #939396);
-
-  /* num/caption/13/regular */
   font-family: Pretendard;
   font-size: 13px;
+}
+
+.visit-num-style,
+.payment-type-style {
+  font-family: 'Noto Sans KR';
+  font-size: 12px;
+}
+
+.blogName-style,
+.visit-num-style,
+.payment-type-style,
+.date-style {
+  color: var(--txt-fill-warm-quaternary, #939396);
   font-style: normal;
   font-weight: 400;
   line-height: normal;
 }
 
-svg {
-  width: 32px;
-  height: 32px;
+.dot-style {
+  color: var(--txt-fill-warm-weak, #c5c5c7);
+  margin: 0 4px;
 }
