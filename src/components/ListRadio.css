@@ -1,0 +1,43 @@
+.list-radio {
+  width: 300px;
+  display: flex;
+  align-items: center;
+  padding: 18px 24px;
+  border-radius: 8px;
+  cursor: pointer;
+  border: 1px solid #ccc;
+  position: relative; /* ✅ 아이콘 배치를 위해 relative 추가 */
+  gap: 10px;
+}
+
+.text-container {
+  display: flex;
+  max-width: 212px;
+  flex-direction: column; /* ✅ 오토레이아웃 (세로 정렬) */
+  gap: 4px; /* ✅ label과 description 간격 */
+}
+
+.label {
+  color: #006cff;
+}
+
+.list-radio.active {
+  color: var(--txt-fill-warm-secondary, #373737);
+}
+
+.description {
+  font-size: 14px;
+  color: #666;
+}
+
+.icon-container {
+  display: flex;
+  width: 24px;
+  height: 24px;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  right: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+}
