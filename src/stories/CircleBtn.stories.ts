@@ -17,7 +17,7 @@ type Story = StoryObj<typeof CircleBtn>;
 export const Default: Story = {
 	args: {
 		size: 24,
-		icon: undefined, // 아이콘 초기값
+		icon: undefined,
 		disabled: false,
 	},
 	argTypes: {
@@ -33,7 +33,7 @@ export const Default: Story = {
 	},
 	parameters: {
 		controls: {
-			exclude: ['disabled'],
+			exclude: ['disabled'], //패널 제거
 		},
 	},
 };
