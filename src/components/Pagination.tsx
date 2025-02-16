@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import CircleBtn from './CircleBtn';
+import './Pagination.css';
 
 export interface PaginationProps {
 	startNum: number;
@@ -11,7 +12,7 @@ const Pagination: React.FC<PaginationProps> = ({ startNum, finalNum }) => {
 
 	return (
 		<div className="pagination-container">
-			{/* 이전 페이지 버튼 */}
+			{/* 왼쪽 버튼 */}
 			<CircleBtn
 				size={36}
 				icon="left_arrow"
@@ -19,12 +20,14 @@ const Pagination: React.FC<PaginationProps> = ({ startNum, finalNum }) => {
 				onClick={() => setCurrentPage((prev) => Math.max(1, prev - 1))}
 			/>
 
-			{/* 페이지 구분 슬래시 */}
-			<span className="pagination-text">
-				{currentPage} / {finalNum}
-			</span>
+			{/* 페이지 숫자 영역 */}
+			<div className="pagination-content">
+				<span className="pagination-start">{currentPage}</span>
+				<span className="pagination-slash"> / </span>
+				<span className="pagination-final">{finalNum}</span>
+			</div>
 
-			{/* 다음 페이지 버튼 */}
+			{/* 오른쪽 버튼 */}
 			<CircleBtn
 				size={36}
 				icon="right_arrow"

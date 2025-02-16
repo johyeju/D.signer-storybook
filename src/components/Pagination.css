@@ -1,0 +1,20 @@
+.pagination-container {
+	display: inline-flex;
+	align-items: center;
+	gap: 20px;
+
+	font-family: Pretendard;
+	font-size: 15px;
+	font-style: normal;
+	font-weight: 500;
+	line-height: normal;
+}
+
+.pagination-start {
+	color: var(--txt-fill-primary, #03aa5a);
+}
+
+.pagination-slash,
+.pagination-final {
+	color: var(--txt-fill-warm-secondary, #373737);
+}
