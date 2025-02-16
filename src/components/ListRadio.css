@@ -1,43 +1,60 @@
 .list-radio {
-  width: 300px;
-  display: flex;
-  align-items: center;
-  padding: 18px 24px;
-  border-radius: 8px;
-  cursor: pointer;
-  border: 1px solid #ccc;
-  position: relative; /* ✅ 아이콘 배치를 위해 relative 추가 */
-  gap: 10px;
+	width: 300px;
+	display: flex;
+	align-items: center;
+	padding: 18px 24px;
+	cursor: pointer;
+	position: relative; /* 아이콘 배치를 위해 relative 추가 */
+	gap: 10px;
+}
+
+.list-radio.active .label {
+	color: var(--txt-fill-primary, #006cff);
+}
+
+.label.s {
+	font-size: 14px;
 }
 
 .text-container {
-  display: flex;
-  max-width: 212px;
-  flex-direction: column; /* ✅ 오토레이아웃 (세로 정렬) */
-  gap: 4px; /* ✅ label과 description 간격 */
+	display: flex;
+	max-width: 212px;
+	flex-direction: column;
+	gap: 4px;
+
+	font-family: 'Noto Sans KR';
+	font-style: normal;
 }
 
 .label {
-  color: #006cff;
-}
+	color: var(--txt-fill-warm-secondary, #373737);
 
-.list-radio.active {
-  color: var(--txt-fill-warm-secondary, #373737);
+	/* kr/title/16/medium */
+	font-size: 16px;
+	font-weight: 500;
+	line-height: normal;
+	letter-spacing: -0.16px;
 }
 
 .description {
-  font-size: 14px;
-  color: #666;
+	font-size: 14px;
+	color: var(--txt-fill-warm-quaternary, #939396);
+
+	/* kr/body/13/regular */
+	font-size: 13px;
+	font-weight: 400;
+	line-height: 110%; /* 14.3px */
 }
 
 .icon-container {
-  display: flex;
-  width: 24px;
-  height: 24px;
-  justify-content: center;
-  align-items: center;
-  position: absolute;
-  right: 16px;
-  top: 50%;
-  transform: translateY(-50%);
+	display: flex;
+	width: 24px;
+	height: 24px;
+	justify-content: center;
+	align-items: center;
+
+	position: absolute;
+	right: 16px;
+	top: 50%;
+	transform: translateY(-50%);
 }
