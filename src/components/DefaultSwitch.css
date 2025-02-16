@@ -1,0 +1,78 @@
+.switch {
+	position: relative;
+
+	width: 47px;
+	height: 24px;
+	flex-shrink: 0;
+	display: flex;
+	align-items: center;
+	cursor: pointer;
+	background: var(--btn-fill-warm-primary, #c5c5c7);
+
+	border-radius: 12px;
+	border: none;
+	outline: none;
+
+	transition: background-color 0.3s ease-in-out;
+}
+
+/* 기본 텍스트 */
+.switch-text {
+	position: absolute;
+	right: 3px;
+	left: auto;
+
+	color: var(--txt-fill-white, #fff);
+
+	/* num/title/11/bold */
+	font-family: Pretendard;
+	font-size: 11px;
+	font-style: normal;
+	font-weight: 700;
+	line-height: normal;
+}
+
+.switch.checked {
+	background: var(--btn-fill-primary, #006cff);
+}
+
+.switch.checked .switch-text {
+	position: absolute;
+
+	right: auto;
+	left: 7px;
+}
+
+.switch-handle {
+	width: 18px;
+	height: 18px;
+	background-color: var(--ic-fill-white, #fff);
+	border-radius: 50%;
+	position: absolute;
+	top: 3px;
+	bottom: 3px;
+	left: 3px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.switch.checked .switch-handle {
+	left: auto;
+	right: 3px;
+}
+
+.switch.pressed .switch-text,
+.switch.pressed .switch-handle {
+	color: var(--txt-fill-warm-tertiary, #656565);
+}
+
+.switch.pressed {
+	background: var(--ic-fill-warm-primary, #444447);
+	outline: none;
+	box-shadow: none;
+}
+
+.switch.pressed .switch-icon circle {
+	fill: var(--ic-fill-warm-secondary, #656565);
+}
