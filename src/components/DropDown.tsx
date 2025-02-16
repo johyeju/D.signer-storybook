@@ -1,16 +1,32 @@
 import React from 'react';
-import { icons } from './IIconTypes'; // 아이콘을 관리하는 파일
+import { icons } from './IIconTypes';
 
 export interface DropDownProps {
 	state: boolean;
 	onToggle: () => void;
+	item1: string;
+	item2: string;
+	item3: string;
 }
 
-const DropDown: React.FC<DropDownProps> = ({ state, onToggle }) => {
+const DropDown: React.FC<DropDownProps> = ({
+	state,
+	onToggle,
+	item1,
+	item2,
+	item3,
+}) => {
+	// item1, item2, item3을 숫자로 변환 후 합산 (NaN 방지를 위해 기본값 0 처리)
+	const totalValue =
+		(Number(item1) || 0) + (Number(item2) || 0) + (Number(item3) || 0);
+
+	// 최대 99까지 표시, 그 이상이면 "99+" 처리
+	const total = totalValue > 99 ? '99+' : totalValue.toString();
+
 	return (
 		<div>
 			<div className="dropdown-header" onClick={onToggle}>
-				<span className="title">전체 리스트 10</span>
+				<span className="title">전체 리스트 {total}</span>
 				<div className="icon-container">
 					{React.cloneElement(icons['call'] as React.ReactElement, {
 						fill: 'currentColor',
@@ -20,14 +36,17 @@ const DropDown: React.FC<DropDownProps> = ({ state, onToggle }) => {
 			</div>
 			{state && (
 				<div className="dropdown-content">
-					<div className="item">
-						Content <span className="highlight">NN</span>
+					<div className="item-style">
+						<span className="content-style">Content</span>{' '}
+						<span className="number-style">{item1}</span>
 					</div>
-					<div className="item">
-						Content <span className="highlight">NN</span>
+					<div className="item-style">
+						<span className="content-style">Content</span>{' '}
+						<span className="number-style">{item2}</span>
 					</div>
-					<div className="item">
-						Content <span className="highlight">NN</span>
+					<div className="item-style">
+						<span className="content-style">Content</span>{' '}
+						<span className="number-style">{item3}</span>
 					</div>
 				</div>
 			)}
