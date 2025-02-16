@@ -1,5 +1,6 @@
 import React from 'react';
 import { icons } from './IIconTypes';
+import './DropDown.css';
 
 export interface DropDownProps {
 	state: boolean;
@@ -24,9 +25,11 @@ const DropDown: React.FC<DropDownProps> = ({
 	const total = totalValue > 99 ? '99+' : totalValue.toString();
 
 	return (
-		<div>
+		<div className="dropdown-container">
 			<div className="dropdown-header" onClick={onToggle}>
-				<span className="title">전체 리스트 {total}</span>
+				<span className="title">
+					전체 리스트 <span className="number">{total}</span>
+				</span>
 				<div className="icon-container">
 					{React.cloneElement(icons['call'] as React.ReactElement, {
 						fill: 'currentColor',
@@ -37,15 +40,15 @@ const DropDown: React.FC<DropDownProps> = ({
 			{state && (
 				<div className="dropdown-content">
 					<div className="item-style">
-						<span className="content-style">Content</span>{' '}
+						<span className="content-style">Content</span>
 						<span className="number-style">{item1}</span>
 					</div>
 					<div className="item-style">
-						<span className="content-style">Content</span>{' '}
+						<span className="content-style">Content</span>
 						<span className="number-style">{item2}</span>
 					</div>
-					<div className="item-style">
-						<span className="content-style">Content</span>{' '}
+					<div className="item-style last-item">
+						<span className="content-style">Content</span>
 						<span className="number-style">{item3}</span>
 					</div>
 				</div>

@@ -1,0 +1,102 @@
+.dropdown-container {
+	display: flex;
+	width: 145px;
+	flex-direction: column;
+	align-items: flex-start;
+	gap: 8px;
+}
+
+.dropdown-header {
+	display: flex;
+	align-items: center;
+	gap: 4px;
+	width: 100%;
+	position: relative;
+
+	/* 헤더 중복 폰트값 */
+	color: var(--txt-fill-warm-primary, #222225);
+	font-size: 16px;
+	font-style: normal;
+	font-weight: 600;
+}
+
+.icon-container {
+	position: absolute;
+	display: flex;
+	width: 14px;
+	height: 14px;
+
+	justify-content: center;
+	align-items: center;
+
+	flex-shrink: 0;
+	right: 0;
+	top: 50%;
+}
+
+.title {
+	font-family: 'Noto Sans', sans-serif;
+}
+
+.title .number {
+	font-family: 'Pretendard', sans-serif;
+	letter-spacing: 0.32px;
+}
+
+/*드롭다운 컨텐츠 영역*/
+.dropdown-content {
+	display: flex;
+	width: 100%;
+
+	/*얘*/
+	/* padding: 14px 8px; */
+
+	flex-direction: column;
+	align-items: flex-start;
+	align-self: stretch; /*수직중앙정렬*/
+
+	border-radius: 12px;
+	border: 1px solid var(--btn-stroke-cool-primary, #e5eaf1);
+	box-shadow: 0px 2px 6px 0px rgba(0, 0, 0, 0.1);
+}
+
+/*개별 드롭다운 아이템*/
+.item-style {
+	display: flex;
+	padding: 0px 7px;
+	align-items: center;
+	flex-direction: row;
+	justify-content: flex-start;
+	width: 100%;
+	gap: 4px;
+
+	box-sizing: border-box;
+	border-bottom: 1px solid var(--btn-stroke-cool-primary, #e5eaf1);
+	background: var(--bg-fill-white, #fff);
+
+	font-family: 'Noto Sans KR';
+	font-size: 14px;
+	font-style: normal;
+	line-height: normal;
+}
+
+.item-style:first-child {
+	border-top-left-radius: 12px;
+	border-top-right-radius: 12px;
+}
+
+.item-style:last-child {
+	border-bottom-left-radius: 12px;
+	border-bottom-right-radius: 12px;
+	border-bottom: none;
+}
+
+.content-style {
+	color: var(--txt-fill-warm-secondary, #373737);
+	font-weight: 400;
+}
+
+.number-style {
+	color: var(--txt-fill-secondary, #437bfe);
+	font-weight: 600;
+}
