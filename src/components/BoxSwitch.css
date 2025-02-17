@@ -1,0 +1,30 @@
+.box-container {
+  display: inline-flex;
+  padding: 10px 8px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.box-container {
+  gap: 10px;
+}
+
+.box-text {
+  color: var(--txt-fill-warm-tertiary, #656565);
+
+  /* kr/body/13/medium */
+  font-family: 'Noto Sans KR';
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  letter-spacing: -0.78px;
+}
+
+.box--svg {
+  display: flex;
+  width: 24px;
+  height: 24px;
+  align-items: center;
+  justify-content: center;
+}

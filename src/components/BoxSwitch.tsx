@@ -1,6 +1,7 @@
 import React from 'react';
 import IconSwitch from './IconSwitch';
 import { iconSwitches } from './IconSwitchType';
+import './BoxSwitch.css';
 
 interface BoxSwitchProps {
   name: keyof typeof iconSwitches;
@@ -22,12 +23,13 @@ const BoxSwitch: React.FC<BoxSwitchProps> = ({
   };
 
   return (
-    <div className="box-switch">
+    <div className="box-container">
       <IconSwitch name={name} isOn={isOn} type={type} />
+      <div className="box-content">
+        {text && <span className="box-text">{text}</span>}
 
-      {text && <span className="box-switch-text">{text}</span>}
-
-      <button className="box-switch-btn" onClick={handleClick} />
+        <button className="box-icon" onClick={handleClick} />
+      </div>
     </div>
   );
 };
