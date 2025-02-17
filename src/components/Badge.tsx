@@ -3,9 +3,10 @@ import './Badge.css';
 
 interface BadgeProps {
 	className?: string;
-	type?: 'Artery' | 'WideArea' | 'Default';
+	type?: 'Artery' | 'WideArea' | 'Default' | 'translucent';
 	congestion?: 'Default' | 'Usually' | 'crowded' | 'last';
 	text: string;
+	num?: number;
 }
 
 const Badge: React.FC<BadgeProps> = ({
@@ -13,6 +14,7 @@ const Badge: React.FC<BadgeProps> = ({
 	type = 'Default',
 	congestion = 'Default',
 	text,
+	num,
 }) => {
 	return (
 		<span
@@ -20,6 +22,7 @@ const Badge: React.FC<BadgeProps> = ({
 				congestion ? `badge--${congestion.toLowerCase()}` : ''
 			} ${className}`.trim()}
 		>
+			{num}
 			{text}
 		</span>
 	);
