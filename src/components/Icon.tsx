@@ -1,5 +1,5 @@
 import React from 'react';
-import { icons } from './IIconTypes'; // ✅ 아이콘 데이터 분리된 파일에서 가져옴
+import { icons } from './IIconTypes'; // 아이콘 데이터 분리된 파일에서 가져옴
 
 interface IconProps {
   name: keyof typeof icons;
