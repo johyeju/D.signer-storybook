@@ -1,0 +1,36 @@
+.avatar {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-shrink: 0;
+	aspect-ratio: 1/1;
+	align-self: stretch;
+
+	background: url(<path-to-image>) lightgray 50% / cover no-repeat;
+}
+
+.avatar-small {
+	width: 16px;
+	height: 16px;
+	border-radius: 16px;
+	flex: 1 0 0;
+
+	border-radius: 16px;
+
+	/* 0_2_6_10% */
+	box-shadow: 0px 2px 6px 0px rgba(0, 0, 0, 0.1);
+}
+
+.avatar-large {
+	width: 32px;
+	height: 32px;
+	border-radius: 32px;
+	opacity: 0.8;
+	flex: 1 0 0;
+
+	border-radius: 32px;
+	border: 1px solid #fff;
+
+	/* 0_0_4_25% */
+	box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.25);
+}
