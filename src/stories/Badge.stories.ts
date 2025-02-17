@@ -130,3 +130,16 @@ export const TransportState: Story = {
 		},
 	},
 };
+
+export const Profile: Story = {
+	args: {
+		text: 'nickname',
+		className: 'profile-style',
+		isProfile: true,
+	},
+	parameters: {
+		controls: {
+			exclude: ['congestion', 'num', 'type', 'className', 'label', 'isProfile'],
+		},
+	},
+};

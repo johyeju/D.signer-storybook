@@ -216,3 +216,37 @@
 	font-weight: 400;
 	line-height: normal;
 }
+
+[data-story='profile-style'] {
+	display: inline-flex;
+	align-items: center;
+	gap: 4px;
+}
+
+[data-story='profile-style'].badge-icon {
+	width: 16px;
+	height: 16px;
+	justify-content: center;
+	align-items: center;
+	gap: 10px;
+	flex-shrink: 0;
+	aspect-ratio: 1/1;
+
+	border-radius: 30px;
+
+	flex: 1 0 0;
+	align-self: stretch;
+
+	background: url(<path-to-image>) lightgray 50% / cover no-repeat;
+}
+
+[data-story='profile-style'].badge-text {
+	color: var(--txt-fill-white, #fff);
+
+	/* num/title/14/semibold */
+	font-family: Pretendard;
+	font-size: 14px;
+	font-style: normal;
+	font-weight: 600;
+	line-height: normal;
+}
