@@ -1,0 +1,14 @@
+.badge--artery {
+	border-radius: 3px;
+	border: 1px solid var(--btn-stroke-highlight-secondary, #ff4043);
+}
+
+.badge--widearea {
+	border-radius: 3px;
+	border: 1px solid var(--btn-stroke-primary, #006cff);
+}
+
+.badge--default {
+	border-radius: 3px;
+	border: 1px solid var(--txt-fill-village-bus, #87c700);
+}
