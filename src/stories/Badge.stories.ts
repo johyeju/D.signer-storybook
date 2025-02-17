@@ -11,6 +11,13 @@ const meta: Meta<typeof Badge> = {
 				options: ['Artery', 'WideArea', 'Default'],
 			},
 		},
+		congestion: {
+			control: {
+				type: 'radio',
+				options: ['Default', 'Usually', 'crowded', 'last'],
+			},
+		},
+
 		text: {
 			control: 'text',
 		},
@@ -30,6 +37,29 @@ export const BusNum: Story = {
 		type: {
 			control: 'radio',
 			options: ['Artery', 'WideArea', 'Default'],
+		},
+	},
+	parameters: {
+		controls: {
+			exclude: ['congestion'],
+		},
+	},
+};
+
+export const StopLocation: Story = {
+	args: {
+		congestion: 'Default',
+		text: '1234',
+	},
+	argTypes: {
+		congestion: {
+			control: 'radio',
+			options: ['Default', 'Usually', 'crowded', 'last'],
+		},
+	},
+	parameters: {
+		controls: {
+			exclude: ['type'],
 		},
 	},
 };
