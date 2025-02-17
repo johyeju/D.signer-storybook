@@ -25,6 +25,7 @@ export const PinIcon: React.FC<{ fill?: string }> = ({ fill = '#CAD1DB' }) => (
   </svg>
 );
 
+// eslint-disable-next-line react-refresh/only-export-components
 export const iconSwitches = {
   pin: {
     off: <PinIcon fill="#CAD1DB" />, // off 상태
