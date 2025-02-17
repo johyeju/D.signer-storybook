@@ -1,14 +1,30 @@
-.badge--artery {
+[data-story='bus-num-style'] {
+	display: inline-flex;
+	padding: 2px 4px;
+	justify-content: center;
+	align-items: center;
+
 	border-radius: 3px;
-	border: 1px solid var(--btn-stroke-highlight-secondary, #ff4043);
+
+	/* num/title/11/bold */
+	font-family: Pretendard;
+	font-size: 11px;
+	font-style: normal;
+	font-weight: 700;
+	line-height: normal;
 }
 
-.badge--widearea {
-	border-radius: 3px;
-	border: 1px solid var(--btn-stroke-primary, #006cff);
-}
-
-.badge--default {
-	border-radius: 3px;
+[data-story='bus-num-style'].badge--default {
 	border: 1px solid var(--txt-fill-village-bus, #87c700);
+	color: var(--txt-fill-village-bus, #87c700);
+} /*우선순위 처리*/
+
+[data-story='bus-num-style'].badge--artery {
+	border: 1px solid var(--btn-stroke-highlight-secondary, #ff4043);
+	color: var(--txt-fill-warning-praimary, #f61024);
+}
+
+[data-story='bus-num-style'].badge--widearea {
+	border: 1px solid var(--btn-stroke-primary, #006cff);
+	color: var(--txt-fill-primary, #006cff);
 }
