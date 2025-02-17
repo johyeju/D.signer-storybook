@@ -3,7 +3,7 @@ import IconSwitch from '../components/IconSwitch';
 import { iconSwitchNames } from '../components/IconSwitchType';
 
 const meta: Meta<typeof IconSwitch> = {
-  title: 'Buttons/IconSwitch',
+  title: 'Switch/IconSwitch',
   component: IconSwitch,
   parameters: {
     layout: 'centered',
