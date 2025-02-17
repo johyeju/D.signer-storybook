@@ -8,7 +8,7 @@ export default {
 		layout: 'centered',
 	},
 	argTypes: {
-		size: { control: 'radio', options: ['s', 'm'], description: '사이즈' },
+		size: { control: 'radio', options: ['S', 'M'], description: '사이즈' },
 		isActive: { control: 'boolean', description: '활성화 여부' },
 		label: { control: 'text', description: '상단 텍스트' },
 		description: { control: 'text', description: '설명 텍스트' },
@@ -19,7 +19,7 @@ type Story = StoryObj<ListRadioProps>;
 
 export const MoveInfo: Story = {
 	args: {
-		size: 's',
+		size: 'S',
 		isActive: false,
 		label: '최적 경로순',
 		description:
