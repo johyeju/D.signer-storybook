@@ -112,6 +112,9 @@ export const Village: Story = {
 		controls: {
 			exclude: ['congestion', 'text', 'num', 'className', 'label'],
 		},
+		backgrounds: {
+			default: 'dark', //백그라운드 추가
+		},
 	},
 };
 
