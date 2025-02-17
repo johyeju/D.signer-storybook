@@ -23,8 +23,8 @@ const Badge: React.FC<BadgeProps> = ({
 			} ${className}`.trim()}
 			data-story={className} //스토리별 클래스 분류
 		>
-			{num}
-			{text}
+			{num && <span className="badge-num">{num}</span>}
+			{text && <span className="badge-text">{text}</span>}
 		</span>
 	);
 };
