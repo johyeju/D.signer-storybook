@@ -16,10 +16,8 @@ const meta: Meta<typeof Badge> = {
 			},
 		},
 		congestion: {
-			control: {
-				type: 'radio',
-				options: ['Default', 'Usually', 'crowded', 'last'],
-			},
+			control: 'radio',
+			options: ['Default', 'Usually', 'crowded', 'last'],
 		},
 
 		text: {
@@ -43,7 +41,7 @@ export const ImageCount: Story = {
 	},
 	parameters: {
 		controls: {
-			exclude: ['congestion', 'text', 'type', 'className'],
+			exclude: ['congestion', 'text', 'type', 'className', 'label'],
 		},
 	},
 };
@@ -62,7 +60,7 @@ export const BusNum: Story = {
 	},
 	parameters: {
 		controls: {
-			exclude: ['congestion', 'num', 'className'],
+			exclude: ['congestion', 'num', 'className', 'label'],
 		},
 	},
 };
@@ -76,7 +74,7 @@ export const RemainingSeats: Story = {
 	argTypes: {},
 	parameters: {
 		controls: {
-			exclude: ['congestion', 'text', 'type', 'className'],
+			exclude: ['congestion', 'text', 'type', 'className', 'label'],
 		},
 	},
 };
@@ -84,7 +82,6 @@ export const RemainingSeats: Story = {
 export const StopLocation: Story = {
 	args: {
 		congestion: 'Default',
-		text: '1234',
 		className: 'stop-location-style',
 	},
 	argTypes: {
@@ -95,11 +92,10 @@ export const StopLocation: Story = {
 	},
 	parameters: {
 		controls: {
-			exclude: ['type', 'num', 'className'],
+			exclude: ['type', 'num', 'className', 'text'],
 		},
 	},
 };
-
 export const Village: Story = {
 	args: {
 		text: '마을',
@@ -114,7 +110,7 @@ export const Village: Story = {
 	},
 	parameters: {
 		controls: {
-			exclude: ['congestion', 'text', 'num', 'className'],
+			exclude: ['congestion', 'text', 'num', 'className', 'label'],
 		},
 	},
 };
@@ -126,7 +122,7 @@ export const TransportState: Story = {
 	},
 	parameters: {
 		controls: {
-			exclude: ['congestion', 'text', 'num', 'type', 'className'],
+			exclude: ['congestion', 'text', 'num', 'type', 'className', 'label'],
 		},
 	},
 };
