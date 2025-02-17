@@ -196,3 +196,23 @@
 	font-weight: 400;
 	line-height: normal;
 }
+
+[data-story='transport-state-style'] {
+	display: flex;
+	padding: 2px 3px;
+	justify-content: center;
+	align-items: center;
+	gap: 10px;
+
+	border-radius: 12px;
+	border: 1px solid var(--ic-stroke-cool-weak, #f0f0f3);
+
+	color: var(--txt-fill-cool-quaternary, #8b99ac);
+
+	/* kr/caption/10/regular */
+	font-family: 'Noto Sans KR';
+	font-size: 10px;
+	font-style: normal;
+	font-weight: 400;
+	line-height: normal;
+}

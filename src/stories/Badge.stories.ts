@@ -126,6 +126,7 @@ export const TransportState: Story = {
 	parameters: {
 		controls: {
 			exclude: ['congestion', 'text', 'num', 'type', 'className', 'label'],
+			//controls패널 false처리
 		},
 	},
 };
