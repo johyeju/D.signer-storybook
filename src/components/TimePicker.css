@@ -1,0 +1,57 @@
+.time-picker {
+  display: flex;
+  justify-content: center;
+  flex: 1 0 0;
+  align-self: stretch;
+  gap: 10px;
+  padding: 12px;
+  border-radius: 8px;
+  overflow: hidden;
+  position: relative;
+
+  border-top: 1px solid var(--bg-stroke-weak, #f0f4ff);
+  border-bottom: 1px solid var(--bg-stroke-weak, #f0f4ff);
+  background: var(--bg-fill-cool-secondary, #f8f9fb);
+}
+
+/* 선택바 */
+.selection-bar {
+  position: absolute;
+  width: 248px;
+  height: 32px;
+  top: 74px;
+  transform: translateY(-50%);
+  background: var(--bg-fill-warm-primary, #ededed);
+  border-radius: 6px;
+  pointer-events: none; /* 클릭 방지 */
+}
+
+.picker-column {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  width: 50px;
+  height: 120px;
+  overflow-y: scroll;
+  text-align: center;
+  scrollbar-width: none;
+  position: relative;
+}
+
+.picker-column::-webkit-scrollbar {
+  display: none;
+}
+
+.picker-column li {
+  padding: 6px 0;
+  font-size: 14px;
+  color: var(--txt-fill-warm-weak, #c5c5c7);
+  transition: color 0.2s ease-in-out;
+  scroll-snap-align: center;
+}
+
+.picker-column li.selected {
+  font-weight: bold;
+  color: var(--txt-fill-secondary, #437bfe);
+  width: 100%;
+}
