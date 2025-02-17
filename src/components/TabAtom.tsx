@@ -8,7 +8,7 @@ interface TabAtomProps {
 	Icon?: keyof typeof icons;
 	className?: string;
 	selected?: boolean;
-	onClick?: () => void; // ✅ 부모에서 관리할 클릭 이벤트 핸들러
+	onClick?: () => void; // 부모에서 관리할 클릭 이벤트 핸들러
 }
 
 const TabAtom: React.FC<TabAtomProps> = ({
