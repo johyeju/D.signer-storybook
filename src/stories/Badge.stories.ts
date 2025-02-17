@@ -4,6 +4,10 @@ import Badge from '../components/Badge';
 const meta: Meta<typeof Badge> = {
 	title: 'Content/Badge',
 	component: Badge,
+	parameters: {
+		layout: 'centered',
+	},
+
 	argTypes: {
 		type: {
 			control: {

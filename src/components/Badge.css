@@ -28,3 +28,26 @@
 	border: 1px solid var(--btn-stroke-primary, #006cff);
 	color: var(--txt-fill-primary, #006cff);
 }
+
+[data-story='image-count-style'] {
+	display: inline-flex;
+	height: 22px;
+	padding: 3px 4px;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	gap: 8px;
+	flex-shrink: 0;
+
+	border-radius: 11px;
+	background: var(--bg-fill-cool-opacity-primary, rgba(34, 34, 37, 0.5));
+
+	color: var(--txt-fill-white, #fff);
+
+	/* num/title/11/bold */
+	font-family: Pretendard;
+	font-size: 11px;
+	font-style: normal;
+	font-weight: 700;
+	line-height: normal;
+}
