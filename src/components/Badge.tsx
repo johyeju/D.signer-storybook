@@ -21,6 +21,7 @@ const Badge: React.FC<BadgeProps> = ({
 			className={`badge ${type ? `badge--${type.toLowerCase()}` : ''} ${
 				congestion ? `badge--${congestion.toLowerCase()}` : ''
 			} ${className}`.trim()}
+			data-story={className} //스토리별 클래스 분류
 		>
 			{num}
 			{text}

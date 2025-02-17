@@ -35,6 +35,7 @@ type Story = StoryObj<typeof Badge>;
 export const ImageCount: Story = {
 	args: {
 		num: 33,
+		className: 'image-count-style',
 	},
 	parameters: {
 		controls: {
@@ -47,6 +48,7 @@ export const BusNum: Story = {
 	args: {
 		type: 'Default',
 		text: '1234',
+		className: 'bus-num-style',
 	},
 	argTypes: {
 		type: {
@@ -56,7 +58,7 @@ export const BusNum: Story = {
 	},
 	parameters: {
 		controls: {
-			exclude: ['congestion', 'num'],
+			exclude: ['congestion', 'num', 'className'],
 		},
 	},
 };
@@ -65,11 +67,12 @@ export const RemainingSeats: Story = {
 	args: {
 		num: 33,
 		text: '석',
+		className: 'remaining-seats-style',
 	},
 	argTypes: {},
 	parameters: {
 		controls: {
-			exclude: ['congestion', 'text', 'type'],
+			exclude: ['congestion', 'text', 'type', 'className'],
 		},
 	},
 };
@@ -78,6 +81,7 @@ export const StopLocation: Story = {
 	args: {
 		congestion: 'Default',
 		text: '1234',
+		className: 'stop-location-style',
 	},
 	argTypes: {
 		congestion: {
@@ -87,7 +91,7 @@ export const StopLocation: Story = {
 	},
 	parameters: {
 		controls: {
-			exclude: ['type', 'num'],
+			exclude: ['type', 'num', 'className'],
 		},
 	},
 };
@@ -96,6 +100,7 @@ export const Village: Story = {
 	args: {
 		text: '마을',
 		type: 'Default',
+		className: 'village-style',
 	},
 	argTypes: {
 		type: {
@@ -105,7 +110,7 @@ export const Village: Story = {
 	},
 	parameters: {
 		controls: {
-			exclude: ['congestion', 'text', 'num'],
+			exclude: ['congestion', 'text', 'num', 'className'],
 		},
 	},
 };
@@ -113,7 +118,7 @@ export const Village: Story = {
 export const TransportState: Story = {
 	args: {
 		text: '중앙',
-		className: 'TransportState',
+		className: 'transport-state-style',
 	},
 	parameters: {
 		controls: {
