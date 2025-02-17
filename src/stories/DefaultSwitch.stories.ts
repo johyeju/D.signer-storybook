@@ -4,6 +4,9 @@ import DefaultSwitch from '../components/DefaultSwitch';
 const meta: Meta<typeof DefaultSwitch> = {
 	title: 'Switch/DefaultSwitch',
 	component: DefaultSwitch,
+	parameters: {
+		layout: 'centered',
+	},
 	argTypes: {
 		checked: { control: 'boolean' },
 		text: { control: 'text' },
