@@ -1,47 +1,60 @@
 import React, { useState } from 'react';
 import { iconSwitches } from './IconSwitchType';
+import './IconSwitch.css';
 
 interface IconSwitchProps {
   name: keyof typeof iconSwitches;
+  type?: 'blue' | 'green'; // star의 경우 선택적으로 사용
+  isOn: boolean;
 }
 
-const IconSwitch: React.FC<IconSwitchProps> = ({ name }) => {
+const IconSwitch: React.FC<IconSwitchProps> = ({ name, type, isOn }) => {
   const [isActive, setIsActive] = useState(false);
 
   const handleMouseDown = () => {
     if (name === 'pin') {
-      setIsActive(true); // 마우스 누르면 active 상태로 변경
+      setIsActive(true);
     }
   };
 
   const handleMouseUp = () => {
     if (name === 'pin') {
-      setIsActive(false); // 마우스 떼면 다시 default 상태로 변경
+      setIsActive(false);
     }
   };
 
   const handleMouseLeave = () => {
     if (name === 'pin') {
-      setIsActive(false); // 마우스가 버튼 영역을 벗어나도 default 상태로 변경
+      setIsActive(false);
     }
   };
 
-  const icon =
-    name === 'pin' && typeof iconSwitches.pin === 'function'
-      ? iconSwitches.pin(isActive ? 'active' : 'default')
-      : iconSwitches[name];
+  const icon = (() => {
+    if (name === 'pin') {
+      return iconSwitches.pin[isActive ? 'active' : isOn ? 'on' : 'off'];
+    }
+    if (name === 'maker') {
+      return iconSwitches.maker[isOn ? 'on' : 'off'];
+    }
+    if (name === 'star' && type) {
+      return iconSwitches.star(type, isOn);
+    }
+    return null;
+  })();
 
-  if (!icon || typeof icon === 'function') {
+  if (!icon) {
     console.warn(`Invalid icon: ${name}`);
     return null;
   }
 
   return (
     <span
+      className={`icon-switch ${
+        name === 'pin' ? 'icon-switch--pin icon-switch--clickable' : ''
+      } ${isActive ? 'icon-switch--active' : ''}`}
       onMouseDown={handleMouseDown}
       onMouseUp={handleMouseUp}
       onMouseLeave={handleMouseLeave}
-      style={{ cursor: name === 'pin' ? 'pointer' : 'default' }}
     >
       {icon}
     </span>

@@ -1,0 +1,17 @@
+.icon-switch {
+  display: flex;
+  width: 24px;
+  height: 24px;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.icon-switch--clickable {
+  cursor: pointer;
+}
+
+.icon-switch--pin {
+  padding: 2px 4.21px;
+  aspect-ratio: 1/1;
+}
