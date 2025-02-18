@@ -25,8 +25,8 @@ const TabAtom: React.FC<TabAtomProps> = ({
 
   return (
     <button
-      className={`tab-atom ${selected ? 'active' : ''} ${className || ''}`}
-      onClick={onClick} // 클릭 이벤트를 TabList에서 관리
+      className={`tab-atom ${selected ? 'active' : ''} ${className || ''}`} // selected가 true면 active 추가
+      onClick={onClick}
     >
       {/* 아이콘 표시 */}
       {showIcon && Icon && (
@@ -37,7 +37,7 @@ const TabAtom: React.FC<TabAtomProps> = ({
         </span>
       )}
       {/* 탭 텍스트 */}
-      <span>{text}</span>
+      {text && <span>{text}</span>}
       {/* 숫자 (뱃지 형태로 표시 가능) */}
       {maxNum !== undefined && <span className="tab-num">{maxNum}</span>}
     </button>
