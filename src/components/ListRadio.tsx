@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { icons } from './IIconTypes'; // 아이콘을 관리하는 파일
 import './ListRadio.css';
 
@@ -7,6 +7,8 @@ export interface ListRadioProps {
   title: string;
   isSubText?: boolean;
   subText?: string;
+  isSelected?: boolean;
+  onClick?: () => void;
 }
 
 const ListRadio: React.FC<ListRadioProps> = ({
@@ -14,19 +16,15 @@ const ListRadio: React.FC<ListRadioProps> = ({
   title,
   isSubText = false,
   subText,
+  isSelected = false,
+  onClick,
 }) => {
-  const [isSelected, setIsSelected] = useState(false);
-
-  const handleClick = () => {
-    setIsSelected((prev) => !prev);
-  };
-
   const shouldShowSubText = size === 'M' && isSubText && subText;
 
   return (
     <div
       className={`list-radio ${isSelected ? 'active' : ''}`}
-      onClick={handleClick}
+      onClick={onClick}
     >
       <div className="text-container">
         <span className={`title ${size}`}>{title}</span>
