@@ -1,10 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { icons } from './IIconTypes'; // 아이콘을 관리하는 파일
 import './ListRadio.css';
 
 export interface ListRadioProps {
   size?: 'S' | 'M';
-  isActive?: boolean;
   title: string;
   isSubText?: boolean;
   subText?: string;
@@ -12,15 +11,23 @@ export interface ListRadioProps {
 
 const ListRadio: React.FC<ListRadioProps> = ({
   size = 'M',
-  isActive = false,
   title,
   isSubText = false,
   subText,
 }) => {
+  const [isSelected, setIsSelected] = useState(false);
+
+  const handleClick = () => {
+    setIsSelected((prev) => !prev);
+  };
+
   const shouldShowSubText = size === 'M' && isSubText && subText;
 
   return (
-    <div className={`list-radio ${isActive ? 'active' : ''}`}>
+    <div
+      className={`list-radio ${isSelected ? 'active' : ''}`}
+      onClick={handleClick}
+    >
       <div className="text-container">
         <span className={`title ${size}`}>{title}</span>
         {shouldShowSubText && <span className="subText">{subText}</span>}
@@ -28,7 +35,7 @@ const ListRadio: React.FC<ListRadioProps> = ({
       <div className="icon-container">
         {React.cloneElement(icons['call'] as React.ReactElement, {
           fill: 'currentColor',
-          className: `icon-svg ${isActive ? 'active-icon' : ''}`,
+          className: `icon-svg ${isSelected ? 'active-icon' : ''}`,
         })}
       </div>
     </div>
