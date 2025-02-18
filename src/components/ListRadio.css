@@ -11,6 +11,10 @@
   background: var(--bg-fill-white, #fff);
 }
 
+.list-radio.active {
+  color: var(--txt-fill-primary, #006cff);
+}
+
 .list-radio.active .title {
   color: var(--txt-fill-primary, #006cff);
 }
