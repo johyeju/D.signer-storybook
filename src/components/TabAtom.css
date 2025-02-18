@@ -105,6 +105,10 @@
   color: var(--txt-fill-white, #fff);
 }
 
+.e-style.active .text-style {
+  color: var(--txt-fill-white, #fff);
+}
+
 .f-style {
   display: inline-flex;
   width: 70px;
