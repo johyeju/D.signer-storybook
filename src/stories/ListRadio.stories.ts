@@ -9,7 +9,6 @@ export default {
   },
   argTypes: {
     size: { control: 'radio', options: ['S', 'M'], description: '사이즈' },
-    isActive: { control: 'boolean', description: '활성화 여부' },
     title: { control: 'text', description: 'Title 텍스트' },
     isSubText: {
       control: 'boolean',
@@ -30,15 +29,15 @@ type Story = StoryObj<ListRadioProps>;
 export const MoveInfo: Story = {
   args: {
     size: 'M',
-    isActive: false,
     title: '최적 경로순',
     isSubText: false,
     subText:
       '소요 시간 및 운행 정보, 환승 횟수 등을 종합적으로 고려한 경로 순서입니다.',
   },
   parameters: {
+    exclude: ['isSelected'],
     backgrounds: {
-      default: 'dark', //백그라운드 추가
+      default: 'dark', // 백그라운드 추가
     },
   },
 };
