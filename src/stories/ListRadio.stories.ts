@@ -21,6 +21,11 @@ export default {
       description: '설명 텍스트',
       if: { arg: 'isSubText', truthy: true, and: { arg: 'size', eq: 'M' } },
     },
+
+    isSelected: {
+      control: 'boolean',
+      description: 'selected',
+    },
   },
 } as Meta<ListRadioProps>;
 
@@ -33,6 +38,8 @@ export const MoveInfo: Story = {
     isSubText: false,
     subText:
       '소요 시간 및 운행 정보, 환승 횟수 등을 종합적으로 고려한 경로 순서입니다.',
+
+    isSelected: false,
   },
   parameters: {
     exclude: ['isSelected'],
