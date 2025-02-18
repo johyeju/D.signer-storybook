@@ -91,7 +91,7 @@ export const TabC: Story = {
 
 export const TabE: Story = {
   args: {
-    text: '분',
+    text: '33분',
     selected: false,
     showIcon: true,
     Icon: 'call',
@@ -106,7 +106,7 @@ export const TabE: Story = {
 
 export const TabF: Story = {
   args: {
-    text: 'content 필버튼스타일임',
+    text: 'content',
     selected: false,
     showIcon: false,
     Icon: undefined,

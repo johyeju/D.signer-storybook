@@ -28,18 +28,20 @@ const TabAtom: React.FC<TabAtomProps> = ({
       className={`tab-atom ${selected ? 'active' : ''} ${className || ''}`} // selected가 true면 active 추가
       onClick={onClick}
     >
-      {/* 아이콘 표시 */}
-      {showIcon && Icon && (
-        <span className="icon-left">
-          {React.cloneElement(icons[Icon] as React.ReactElement, {
-            fill: 'currentColor',
-          })}
-        </span>
-      )}
-      {/* 탭 텍스트 */}
-      {text && <span>{text}</span>}
-      {/* 숫자 (뱃지 형태로 표시 가능) */}
-      {maxNum !== undefined && <span className="tab-num">{maxNum}</span>}
+      <div className="text-container">
+        {/* 아이콘 표시 */}
+        {showIcon && Icon && (
+          <span className="icon-left">
+            {React.cloneElement(icons[Icon] as React.ReactElement, {
+              fill: 'currentColor',
+            })}
+          </span>
+        )}
+        {/* 탭 텍스트 */}
+        {text && <span className="text-style">{text}</span>}
+        {/* 숫자 (뱃지 형태로 표시 가능) */}
+        {maxNum !== undefined && <span className="tab-num">{maxNum}</span>}
+      </div>
     </button>
   );
 };
