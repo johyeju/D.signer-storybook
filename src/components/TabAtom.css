@@ -1,0 +1,10 @@
+.a-style {
+  color: var(--txt-fill-warm-quaternary, #939396);
+
+  /* kr/title/16/regular */
+  font-family: 'Noto Sans KR';
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
