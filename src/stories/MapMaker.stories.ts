@@ -2,46 +2,96 @@ import { Meta, StoryObj } from '@storybook/react';
 import MapMaker from '../components/MapMaker';
 
 const meta: Meta<typeof MapMaker> = {
-  title: 'Content/BadgeIcons',
+  title: 'Content/MapMaker',
   component: MapMaker,
   parameters: {
     layout: 'centered',
   },
-
   argTypes: {
-    iconName: {
-      control: 'radio',
-      options: ['star_maker', 'spot', 'pin'],
-    },
-
-    theme: {
-      control: 'radio',
-      options: ['Green', 'Red'],
-      defaultValue: 'Green',
-      if: { arg: 'iconName', eq: 'spot' },
-    },
-    color: {
-      control: 'radio',
-      options: ['Red', 'Blue'],
-      defaultValue: 'Red',
-      if: { arg: 'iconName', eq: 'pin' },
-    },
     size: {
       control: 'radio',
       options: ['R', 'L'],
       defaultValue: 'R',
-      if: { arg: 'iconName', eq: 'pin' },
+    },
+    theme: {
+      control: 'radio',
+      options: ['Green', 'Red', 'Blue'],
+      defaultValue: 'Green',
+    },
+    color: {
+      control: 'color',
+      defaultValue: '#CAD1DB',
+    },
+    text: {
+      control: 'radio',
+      options: ['출발', '도착'],
+      if: { arg: 'iconName', eq: 'spot' },
     },
   },
 };
 
 export default meta;
-
 type Story = StoryObj<typeof MapMaker>;
 
-export const Default: Story = {
+/**
+ * `star_maker` 아이콘 스토리
+ */
+export const StarMaker: Story = {
+  args: {
+    iconName: 'star_maker',
+    size: 'L',
+    color: '#CAD1DB',
+  },
+  parameters: {
+    controls: {
+      exclude: ['iconName', 'theme'],
+    },
+  },
+};
+
+/**
+ * `pin` 아이콘 스토리
+ */
+export const Pin: Story = {
+  args: {
+    iconName: 'pin',
+    size: 'L',
+    theme: 'Red',
+  },
+  argTypes: {
+    theme: {
+      control: 'radio',
+      options: ['Red', 'Blue'],
+    },
+  },
+
+  parameters: {
+    controls: {
+      exclude: ['iconName', 'color'],
+    },
+  },
+};
+
+/**
+ * `spot` 아이콘 스토리
+ */
+export const Spot: Story = {
   args: {
     iconName: 'spot',
-    theme: 'Green',
+    size: 'L',
+    theme: 'Red',
+    text: '출발',
+  },
+  argTypes: {
+    theme: {
+      control: 'radio',
+      options: ['Red', 'Green'],
+    },
+  },
+
+  parameters: {
+    controls: {
+      exclude: ['iconName', 'color'],
+    },
   },
 };
