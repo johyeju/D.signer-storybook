@@ -56,7 +56,12 @@ const IconSwitch: React.FC<IconSwitchProps> = ({ name, type, isOn, style }) => {
       onMouseDown={handleMouseDown}
       onMouseUp={handleMouseUp}
       onMouseLeave={handleMouseLeave}
-      style={style}
+      style={{
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+        ...style,
+      }}
     >
       {React.cloneElement(icon as React.ReactElement, {
         style: { ...style },
