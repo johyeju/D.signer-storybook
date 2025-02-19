@@ -6,9 +6,10 @@ interface IconSwitchProps {
   name: keyof typeof iconSwitches;
   type?: 'blue' | 'green' | 'red'; // star의 경우 선택적으로 사용
   isOn: boolean;
+  style?: React.CSSProperties;
 }
 
-const IconSwitch: React.FC<IconSwitchProps> = ({ name, type, isOn }) => {
+const IconSwitch: React.FC<IconSwitchProps> = ({ name, type, isOn, style }) => {
   const [isActive, setIsActive] = useState(false);
 
   const handleMouseDown = () => {
@@ -55,8 +56,11 @@ const IconSwitch: React.FC<IconSwitchProps> = ({ name, type, isOn }) => {
       onMouseDown={handleMouseDown}
       onMouseUp={handleMouseUp}
       onMouseLeave={handleMouseLeave}
+      style={style}
     >
-      {icon}
+      {React.cloneElement(icon as React.ReactElement, {
+        style: { ...style },
+      })}
     </span>
   );
 };
