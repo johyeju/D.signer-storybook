@@ -4,7 +4,7 @@ import './IconSwitch.css';
 
 interface IconSwitchProps {
   name: keyof typeof iconSwitches;
-  type?: 'blue' | 'green'; // star의 경우 선택적으로 사용
+  type?: 'blue' | 'green' | 'red'; // star의 경우 선택적으로 사용
   isOn: boolean;
 }
 
