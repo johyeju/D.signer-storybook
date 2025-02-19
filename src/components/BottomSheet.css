@@ -1,0 +1,160 @@
+.bottom-sheet {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 375px;
+  max-width: 100%;
+  background: white;
+  border-radius: 20px 20px 0 0;
+  box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.content {
+  padding: 0px 16px;
+  margin-bottom: 26px;
+}
+.stage-1 {
+  transform: translateX(-50%);
+}
+
+.header {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 0;
+}
+
+.text-group {
+  .text-group {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+  }
+}
+
+.state {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 14px;
+  color: #6c757d;
+}
+
+.text-title {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.title {
+  color: var(--txt-fill-primary, #006cff);
+  /* kr/title/20/medium */
+  font-family: 'Noto Sans KR';
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  letter-spacing: -1.2px;
+}
+
+.subtitle {
+  color: var(--txt-fill-cool-tertiary, #6b7c92);
+
+  /* kr/title/14/regular */
+  font-family: 'Noto Sans KR';
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.thumbnail {
+  position: absolute;
+  display: flex;
+  right: 16px;
+
+  align-items: flex-start;
+  width: 88px;
+  height: 88px;
+  background: #00e5ff;
+  border-radius: 10px;
+  font-weight: bold;
+  color: white;
+}
+
+.thumbnail .image {
+  position: absolute;
+  bottom: 4px;
+  right: 2px;
+  width: 20px;
+  height: 20px;
+  font-size: 12px;
+  font-weight: bold;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.bold-style {
+  color: #484848;
+  font-family: Pretendard;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+.reviews {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 14px;
+}
+
+.black-style {
+  color: var(--txt-fill-warm-secondary, #373737);
+
+  /* kr/body/14/regular */
+  font-family: 'Noto Sans KR';
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.location {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 12px;
+  color: #6c757d;
+}
+
+.buttons {
+  border-top: 1px solid var(--btn-stroke-cool-primary, #e5eaf1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex: 1 0 0;
+  padding: 8px 16px;
+}
+
+.icons {
+  display: flex;
+  align-items: center;
+  width: 69px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.button-active-style {
+  display: flex;
+  gap: 6px;
+  justify-content: space-between;
+  margin-top: 10px;
+}
