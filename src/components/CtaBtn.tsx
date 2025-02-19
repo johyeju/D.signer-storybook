@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { icons } from './IIconTypes'; // 아이콘 목록 가져오기
+import './CtaBtn.css';
 
 interface CtaBtnProps {
   label?: string;
