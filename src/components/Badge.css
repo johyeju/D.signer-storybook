@@ -1,252 +1,284 @@
 [data-story='bus-num-style'] {
-	display: inline-flex;
-	padding: 2px 4px;
-	justify-content: center;
-	align-items: center;
+  display: inline-flex;
+  padding: 2px 4px;
+  justify-content: center;
+  align-items: center;
 
-	border-radius: 3px;
+  border-radius: 3px;
 
-	/* num/title/11/bold */
-	font-family: Pretendard;
-	font-size: 11px;
-	font-style: normal;
-	font-weight: 700;
-	line-height: normal;
+  /* num/title/11/bold */
+  font-family: Pretendard;
+  font-size: 11px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
 }
 
 [data-story='bus-num-style'].badge--default {
-	border: 1px solid var(--txt-fill-village-bus, #87c700);
-	color: var(--txt-fill-village-bus, #87c700);
+  border: 1px solid var(--txt-fill-village-bus, #87c700);
+  color: var(--txt-fill-village-bus, #87c700);
 } /*우선순위 처리*/
 
 [data-story='bus-num-style'].badge--artery {
-	border: 1px solid var(--btn-stroke-highlight-secondary, #ff4043);
-	color: var(--txt-fill-warning-praimary, #f61024);
+  border: 1px solid var(--btn-stroke-highlight-secondary, #ff4043);
+  color: var(--txt-fill-warning-praimary, #f61024);
 }
 
 [data-story='bus-num-style'].badge--widearea {
-	border: 1px solid var(--btn-stroke-primary, #006cff);
-	color: var(--txt-fill-primary, #006cff);
+  border: 1px solid var(--btn-stroke-primary, #006cff);
+  color: var(--txt-fill-primary, #006cff);
 }
 
 [data-story='image-count-style'] {
-	display: inline-flex;
-	height: 22px;
-	padding: 3px 4px;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-	gap: 8px;
-	flex-shrink: 0;
+  display: inline-flex;
+  height: 22px;
+  padding: 3px 4px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
 
-	border-radius: 11px;
-	background: var(--bg-fill-cool-opacity-primary, rgba(34, 34, 37, 0.5));
+  border-radius: 11px;
+  background: var(--bg-fill-cool-opacity-primary, rgba(34, 34, 37, 0.5));
 
-	color: var(--txt-fill-white, #fff);
+  color: var(--txt-fill-white, #fff);
 
-	/* num/title/11/bold */
-	font-family: Pretendard;
-	font-size: 11px;
-	font-style: normal;
-	font-weight: 700;
-	line-height: normal;
+  /* num/title/11/bold */
+  font-family: Pretendard;
+  font-size: 11px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
 }
 
 [data-story='remaining-seats-style'] {
-	display: inline-flex;
-	padding: 1px 2px;
-	align-items: center;
+  display: inline-flex;
+  padding: 1px 2px;
+  align-items: center;
 
-	border-radius: 2px;
-	border: 1px solid var(--ic-stroke-cool-weak, #f0f0f3);
+  border-radius: 2px;
+  border: 1px solid var(--ic-stroke-cool-weak, #f0f0f3);
 }
 
 [data-story='remaining-seats-style'] .badge-num {
-	color: var(--txt-fill-cool-quaternary, #8b99ac);
-	font-family: Pretendard;
-	font-size: 10px;
-	font-style: normal;
-	font-weight: 400;
-	line-height: normal;
+  color: var(--txt-fill-cool-quaternary, #8b99ac);
+  font-family: Pretendard;
+  font-size: 10px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
 }
 
 [data-story='remaining-seats-style'] .badge-text {
-	color: var(--txt-fill-cool-quaternary, #8b99ac);
-	font-family: 'Noto Sans KR';
-	font-size: 10px;
-	font-style: normal;
-	font-weight: 400;
-	line-height: normal;
+  color: var(--txt-fill-cool-quaternary, #8b99ac);
+  font-family: 'Noto Sans KR';
+  font-size: 10px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
 }
 
 [data-story='stop-location-style'].badge--default {
-	display: inline-flex;
-	padding: 1px 2px;
-	align-items: center;
+  display: inline-flex;
+  padding: 1px 2px;
+  align-items: center;
 
-	border-radius: 2px;
-	border: 1px solid var(--txt-fill-primary, #03aa5a);
+  border-radius: 2px;
+  border: 1px solid var(--txt-fill-primary, #03aa5a);
 
-	color: var(--ic-fill-primary, #03aa5a);
+  color: var(--ic-fill-primary, #03aa5a);
 
-	/* kr/caption/10/regular */
-	font-family: 'Noto Sans KR';
-	font-size: 10px;
-	font-style: normal;
-	font-weight: 400;
-	line-height: normal;
+  /* kr/caption/10/regular */
+  font-family: 'Noto Sans KR';
+  font-size: 10px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
 }
 
 [data-story='stop-location-style'].badge--last {
-	display: flex;
-	width: 16px;
-	height: 16px;
-	padding: 1px 3px;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-	gap: 10px;
-	flex-shrink: 0;
-	aspect-ratio: 1/1;
+  display: flex;
+  width: 16px;
+  height: 16px;
+  padding: 1px 3px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+  aspect-ratio: 1/1;
 
-	border-radius: 15px;
-	border: 1px solid #1577ff;
+  border-radius: 15px;
+  border: 1px solid #1577ff;
 
-	align-self: stretch;
-	color: #1577ff;
+  align-self: stretch;
+  color: #1577ff;
 
-	/* kr/caption/10/regular */
-	font-family: 'Noto Sans KR';
-	font-size: 10px;
-	font-style: normal;
-	font-weight: 400;
-	line-height: normal;
+  /* kr/caption/10/regular */
+  font-family: 'Noto Sans KR';
+  font-size: 10px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
 }
 
 [data-story='stop-location-style'].badge--crowded {
-	display: inline-flex;
-	padding: 1px 2px;
-	justify-content: center;
-	align-items: center;
-	gap: 10px;
+  display: inline-flex;
+  padding: 1px 2px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
 
-	border-radius: 2px;
-	border: 1px solid #f00;
+  border-radius: 2px;
+  border: 1px solid #f00;
 
-	color: #f00;
+  color: #f00;
 
-	/* kr/caption/10/regular */
-	font-family: 'Noto Sans KR';
-	font-size: 10px;
-	font-style: normal;
-	font-weight: 400;
-	line-height: normal;
+  /* kr/caption/10/regular */
+  font-family: 'Noto Sans KR';
+  font-size: 10px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
 }
 
 [data-story='stop-location-style'].badge--usually {
-	display: inline-flex;
-	padding: 1px 2px;
-	align-items: center;
+  display: inline-flex;
+  padding: 1px 2px;
+  align-items: center;
 
-	border-radius: 2px;
-	border: 1px solid #ffac00;
+  border-radius: 2px;
+  border: 1px solid #ffac00;
 
-	color: #ffac00;
+  color: #ffac00;
 
-	/* kr/caption/10/regular */
-	font-family: 'Noto Sans KR';
-	font-size: 10px;
-	font-style: normal;
-	font-weight: 400;
-	line-height: normal;
+  /* kr/caption/10/regular */
+  font-family: 'Noto Sans KR';
+  font-size: 10px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
 }
 
 [data-story='village-style'].badge--default {
-	display: inline-flex;
-	padding: 1px 2px;
-	align-items: center;
+  display: inline-flex;
+  padding: 1px 2px;
+  align-items: center;
 
-	border-radius: 2px;
-	border: 1px solid var(--ic-stroke-cool-weak, #f0f0f3);
+  border-radius: 2px;
+  border: 1px solid var(--ic-stroke-cool-weak, #f0f0f3);
 
-	color: var(--txt-fill-cool-quaternary, #8b99ac);
+  color: var(--txt-fill-cool-quaternary, #8b99ac);
 
-	/* kr/caption/10/regular */
-	font-family: 'Noto Sans KR';
-	font-size: 10px;
-	font-style: normal;
-	font-weight: 400;
-	line-height: normal;
+  /* kr/caption/10/regular */
+  font-family: 'Noto Sans KR';
+  font-size: 10px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
 }
 
 [data-story='village-style'].badge--translucent {
-	display: inline-flex;
-	padding: 1px 2px;
-	align-items: center;
+  display: inline-flex;
+  padding: 1px 2px;
+  align-items: center;
 
-	border-radius: 1px;
-	border: 1px solid rgba(240, 240, 243, 0.4);
+  border-radius: 1px;
+  border: 1px solid rgba(240, 240, 243, 0.4);
 
-	color: var(--txt-fill-white, #fff);
+  color: var(--txt-fill-white, #fff);
 
-	/* kr/caption/10/regular */
-	font-family: 'Noto Sans KR';
-	font-size: 10px;
-	font-style: normal;
-	font-weight: 400;
-	line-height: normal;
+  /* kr/caption/10/regular */
+  font-family: 'Noto Sans KR';
+  font-size: 10px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
 }
 
 [data-story='transport-state-style'] {
-	display: flex;
-	padding: 2px 3px;
-	justify-content: center;
-	align-items: center;
-	gap: 10px;
+  display: flex;
+  padding: 2px 3px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
 
-	border-radius: 12px;
-	border: 1px solid var(--ic-stroke-cool-weak, #f0f0f3);
+  border-radius: 12px;
+  border: 1px solid var(--ic-stroke-cool-weak, #f0f0f3);
 
-	color: var(--txt-fill-cool-quaternary, #8b99ac);
+  color: var(--txt-fill-cool-quaternary, #8b99ac);
 
-	/* kr/caption/10/regular */
-	font-family: 'Noto Sans KR';
-	font-size: 10px;
-	font-style: normal;
-	font-weight: 400;
-	line-height: normal;
+  /* kr/caption/10/regular */
+  font-family: 'Noto Sans KR';
+  font-size: 10px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
 }
 
 [data-story='profile-style'] {
-	display: inline-flex;
-	align-items: center;
-	gap: 4px;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
 }
 
-[data-story='profile-style'].badge-icon {
-	width: 16px;
-	height: 16px;
-	justify-content: center;
-	align-items: center;
-	gap: 10px;
-	flex-shrink: 0;
-	aspect-ratio: 1/1;
+[data-story='profile-style'] .badge-icon {
+  width: 16px;
+  height: 16px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+  aspect-ratio: 1/1;
 
-	border-radius: 30px;
+  border-radius: 30px;
 
-	flex: 1 0 0;
-	align-self: stretch;
+  flex: 1 0 0;
+  align-self: stretch;
 
-	background: url(<path-to-image>) lightgray 50% / cover no-repeat;
+  background: url(<path-to-image>) lightgray 50% / cover no-repeat;
 }
 
-[data-story='profile-style'].badge-text {
-	color: var(--txt-fill-white, #fff);
+[data-story='profile-style'] .badge-text {
+  color: var(--txt-fill-white, #fff);
 
-	/* num/title/14/semibold */
-	font-family: Pretendard;
-	font-size: 14px;
-	font-style: normal;
-	font-weight: 600;
-	line-height: normal;
+  /* num/title/14/semibold */
+  font-family: Pretendard;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+
+[data-story='bus-badge-style'] {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+}
+
+[data-story='bus-badge-style'] .badge-icon {
+  display: flex;
+  width: 14px;
+  height: 14px;
+  justify-content: center;
+  align-items: center;
+}
+
+[data-story='bus-badge-style'] .badge-text {
+  color: var(--txt-fill-warm-primary, #222225);
+
+  /* num/body/13/semibold */
+  font-family: Pretendard;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  letter-spacing: 0.26px;
+}
+
+[data-story='npay-story'] {
+  width: 45px;
+  height: 14px;
+  flex-shrink: 0;
 }
