@@ -2,8 +2,8 @@
 export const HeaderType: Record<string, JSX.Element> = {
   default: (
     <svg
-      width="375"
-      height="30"
+      width="100%"
+      height="auto"
       viewBox="0 0 375 30"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
