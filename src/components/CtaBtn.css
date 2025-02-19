@@ -26,6 +26,21 @@
   font-style: normal;
   font-weight: 400;
   line-height: normal;
+
+  white-space: nowrap;
+}
+
+.cta-btn.s.secondary .text-style {
+  color: var(--txt-fill-primary, #006cff);
+
+  /* kr/title/14/regular */
+  font-family: 'Noto Sans KR';
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+
+  white-space: nowrap;
 }
 
 .cta-btn.primary.active {
