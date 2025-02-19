@@ -1,8 +1,8 @@
 import React from 'react';
-import { badgeIcons, IconName } from './IconMapMaker';
+import { badgeIcons, IconName, BadgeIconProps } from './IconMapMaker';
 
 interface MapMakerProps {
-  size: 'R' | 'M' | 'L';
+  size: 'R' | 'L';
   color: string;
   iconName?: IconName;
   theme?: 'Green' | 'Red'; // spot 아이콘에서만 사용됨
@@ -14,7 +14,10 @@ const MapMaker: React.FC<MapMakerProps> = ({
   iconName,
   theme,
 }) => {
-  const SelectedIcon = iconName ? badgeIcons[iconName] : null;
+  // SelectedIcon을 React 컴포넌트로 캐스팅 (ComponentType 사용)
+  const SelectedIcon = iconName
+    ? (badgeIcons[iconName] as React.ComponentType<BadgeIconProps>)
+    : null;
 
   return (
     <div
@@ -27,6 +30,8 @@ const MapMaker: React.FC<MapMakerProps> = ({
           <SelectedIcon backgroundColor={color} />
         ) : iconName === 'spot' ? (
           <SelectedIcon theme={theme} />
+        ) : iconName === 'pin' ? (
+          <SelectedIcon size={size} />
         ) : (
           <p>error</p>
         )

@@ -11,7 +11,7 @@ const meta: Meta<typeof MapMaker> = {
   argTypes: {
     iconName: {
       control: 'radio',
-      options: ['star_maker', 'spot'],
+      options: ['star_maker', 'spot', 'pin'],
     },
 
     theme: {
@@ -19,6 +19,18 @@ const meta: Meta<typeof MapMaker> = {
       options: ['Green', 'Red'],
       defaultValue: 'Green',
       if: { arg: 'iconName', eq: 'spot' },
+    },
+    color: {
+      control: 'radio',
+      options: ['Red', 'Blue'],
+      defaultValue: 'Red',
+      if: { arg: 'iconName', eq: 'pin' },
+    },
+    size: {
+      control: 'radio',
+      options: ['R', 'L'],
+      defaultValue: 'R',
+      if: { arg: 'iconName', eq: 'pin' },
     },
   },
 };
