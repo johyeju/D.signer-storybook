@@ -44,22 +44,31 @@ export const badgeIcons = {
       </svg>
     );
   },
-
   star_maker: ({ backgroundColor = '#CAD1DB' }: StarMakerProps) => (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      width="57"
-      height="52"
+      className="starMaker"
+      width="100%"
+      height="100%"
       viewBox="0 0 57 52"
       fill="none"
     >
       <g filter="url(#filter0_d_3137_7395)">
-        <circle cx="26" cy="26" r="16" fill={backgroundColor} />
-        <circle cx="26" cy="26" r="15.5" stroke="white" />
+        {/* 원 */}
+        <circle cx="21" cy="26" r="16" fill={backgroundColor} />
+        <circle cx="21" cy="26" r="15.5" stroke="white" />
+
+        {/* 별  */}
+        <g transform="translate(11, 16)">
+          <path
+            className="star"
+            d="M9.20745 2.4391C9.45691 1.67134 10.5431 1.67134 10.7925 2.4391L12.058 6.3339C12.1696 6.67725 12.4896 6.90972 12.8506 6.90972H16.9458C17.7531 6.90972 18.0887 7.94273 17.4356 8.41724L14.1225 10.8244C13.8305 11.0366 13.7082 11.4127 13.8198 11.7561L15.0853 15.6509C15.3348 16.4186 14.456 17.057 13.8029 16.5825L10.4898 14.1754C10.1977 13.9632 9.80225 13.9632 9.51018 14.1754L6.19706 16.5825C5.54397 17.057 4.66523 16.4186 4.91469 15.6509L6.18019 11.7561C6.29175 11.4127 6.16954 11.0366 5.87746 10.8244L2.56435 8.41724C1.91125 7.94273 2.2469 6.90972 3.05417 6.90972H7.1494C7.51043 6.90972 7.83039 6.67725 7.94195 6.3339L9.20745 2.4391Z"
+            fill="white"
+          />
+        </g>
       </g>
     </svg>
   ),
-
   spot: ({ theme = 'Green' }: SpotProps) => {
     const colorMap = {
       Green: { fill: '#00C768', stroke: '#01A054' },
