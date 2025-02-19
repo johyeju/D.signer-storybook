@@ -3,37 +3,40 @@ import { badgeIcons, IconName, BadgeIconProps } from './IconMapMaker';
 
 interface MapMakerProps {
   size: 'R' | 'L';
-  color: string;
-  iconName?: IconName;
-  theme?: 'Green' | 'Red'; // spot 아이콘에서만 사용됨
+  color?: string;
+  iconName: IconName;
+  theme?: 'Green' | 'Red' | 'Blue';
+  text?: '출발' | '도착';
 }
 
 const MapMaker: React.FC<MapMakerProps> = ({
   size,
   color,
+  text,
   iconName,
   theme,
 }) => {
-  // SelectedIcon을 React 컴포넌트로 캐스팅 (ComponentType 사용)
-  const SelectedIcon = iconName
-    ? (badgeIcons[iconName] as React.ComponentType<BadgeIconProps>)
-    : null;
+  const SelectedIcon = iconName ? badgeIcons[iconName] : null;
+
+  let iconProps: BadgeIconProps;
+
+  if (iconName === 'star_maker') {
+    iconProps = { backgroundColor: color };
+  } else if (iconName === 'spot') {
+    iconProps = { theme: theme as 'Green' | 'Red' };
+  } else if (iconName === 'pin') {
+    iconProps = { size, theme: theme as 'Red' | 'Blue' };
+  } else {
+    iconProps = {};
+  }
 
   return (
-    <div
-      className={`map-container ${size}`}
-      style={{ backgroundColor: color, padding: '10px', borderRadius: '8px' }}
-    >
-      {/* 동적 아이콘 렌더링 */}
+    <div className={`map-container ${size}`}>
+      <span>{text}</span>
       {SelectedIcon ? (
-        iconName === 'star_maker' ? (
-          <SelectedIcon backgroundColor={color} />
-        ) : iconName === 'spot' ? (
-          <SelectedIcon theme={theme} />
-        ) : iconName === 'pin' ? (
-          <SelectedIcon size={size} />
-        ) : (
-          <p>error</p>
+        React.createElement(
+          SelectedIcon as React.ComponentType<BadgeIconProps>,
+          iconProps
         )
       ) : (
         <p>error</p>
