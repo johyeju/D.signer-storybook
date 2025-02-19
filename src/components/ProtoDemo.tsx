@@ -49,7 +49,7 @@ export const ProtoDemoPage = () => {
     };
 
     document.body.appendChild(script);
-  }, []);
+  });
 
   return (
     <div
@@ -62,7 +62,7 @@ export const ProtoDemoPage = () => {
     >
       <h2 style={{ fontSize: '1.5rem', marginBottom: '10px' }}>🗺️ Naver Map</h2>
 
-      {/* ✅ 네이버 지도 렌더링 영역 */}
+      {/* 네이버 지도 렌더링 영역 */}
       <div
         id="naverMap"
         style={{
