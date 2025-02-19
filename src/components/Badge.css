@@ -282,3 +282,8 @@
   height: 14px;
   flex-shrink: 0;
 }
+[data-story='talktalk-style'] {
+  width: 34px;
+  height: 16px;
+  flex-shrink: 0;
+}
