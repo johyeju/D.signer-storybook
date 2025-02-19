@@ -3,7 +3,7 @@ import { icons } from './IIconTypes'; // 아이콘 목록 가져오기
 
 interface CtaBtnProps {
   label?: string;
-  size?: 'M' | 'R';
+  size?: 'S' | 'M' | 'R';
   type?: 'Primary' | 'Secondary' | 'Tertiary';
   icon?: keyof typeof icons;
   onClick?: () => void;
@@ -24,14 +24,14 @@ const CtaBtn: React.FC<CtaBtnProps> = ({
   return (
     <button
       className={`cta-btn ${size.toLowerCase()} ${type.toLowerCase()} ${
-        isPressed ? 'pressed' : ''
+        isPressed ? 'active' : ''
       }`}
       onMouseDown={() => setIsPressed(true)}
       onMouseUp={() => setIsPressed(false)}
       onMouseLeave={() => setIsPressed(false)}
       onClick={onClick}
     >
-      {icon && (
+      {icon && size !== 'S' && (
         <span className="icon">
           {React.cloneElement(icons[icon] as React.ReactElement, {
             fill: 'currentColor',
@@ -40,7 +40,7 @@ const CtaBtn: React.FC<CtaBtnProps> = ({
           })}
         </span>
       )}
-      <span>{label}</span>
+      <span className="text-style">{label}</span>
     </button>
   );
 };
