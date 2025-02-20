@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react';
 import './Badge.css';
 import { icons } from './IconTransport';
 import Avatar from './Avatar';
-import talktalk from '../../public/badge/talktalk.svg';
 import { badgeIcons } from './IconBadge';
 
 interface BadgeProps {
@@ -60,7 +59,7 @@ const Badge: React.FC<BadgeProps> = ({
       } ${className}`.trim()}
       data-story={className}
     >
-      {/* 프로필 스토리일 때만 avatar.svg 추가 */}
+      {/* 특정 조건시 svg 추가 */}
       {isProfile && <Avatar size="S" />}
       {isNpay && <>{badgeIcons.npay} </>}
       {isTalkTalk && <>{badgeIcons.talktalk} </>}
