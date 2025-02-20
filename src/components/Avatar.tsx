@@ -1,20 +1,20 @@
 import React from 'react';
+import avatar from '../../public/badge/avatar.svg';
+
 import './Avatar.css';
 
 interface AvatarProps {
-	size?: 'S' | 'L';
+  size?: 'S' | 'L';
 }
 
 const Avatar: React.FC<AvatarProps> = ({ size = 'S' }) => {
-	const avatarClass = size === 'S' ? 'avatar-small' : 'avatar-large';
+  const avatarClass = size === 'S' ? 'avatar-small' : 'avatar-large';
 
-	return (
-		<img
-			src="/avatars/avatar.svg"
-			alt="Avatar"
-			className={`avatar ${avatarClass}`}
-		/>
-	);
+  return (
+    <div>
+      <img src={avatar} alt="Profile" className={avatarClass} />
+    </div>
+  );
 };
 
 export default Avatar;
