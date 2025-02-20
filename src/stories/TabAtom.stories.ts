@@ -91,10 +91,9 @@ export const TabC: Story = {
 
 export const TabE: Story = {
   args: {
-    text: '33분',
     selected: false,
     showIcon: true,
-    Icon: 'call',
+    Icon: 'bus',
     className: 'e-style',
   },
   parameters: {
@@ -124,7 +123,7 @@ export const TabG: Story = {
     text: 'content',
     selected: false,
     showIcon: true,
-    Icon: 'call',
+    Icon: 'bus',
     className: 'g-style',
   },
   parameters: {

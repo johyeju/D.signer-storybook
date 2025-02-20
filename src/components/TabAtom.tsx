@@ -1,15 +1,15 @@
 import React from 'react';
-import { icons } from './IIconTypes';
 import './TabAtom.css';
+import { Trans } from './IconTransport';
 
 interface TabAtomProps {
   text?: string;
   num?: number;
   showIcon?: boolean;
-  Icon?: keyof typeof icons;
+  Icon?: keyof typeof Trans; // ✅ 아이콘 키 값 사용
   className?: string;
   selected?: boolean;
-  onClick?: () => void; // 부모에서 관리할 클릭 이벤트 핸들러
+  onClick?: () => void;
 }
 
 const TabAtom: React.FC<TabAtomProps> = ({
@@ -18,28 +18,28 @@ const TabAtom: React.FC<TabAtomProps> = ({
   showIcon = false,
   Icon,
   className,
-  selected = false, // 기본값 false (부모가 상태 관리)
-  onClick, // 부모에서 전달받은 클릭 이벤트
+  selected = false,
+  onClick,
 }) => {
   const maxNum = num !== undefined ? Math.min(Math.max(num, 0), 99) : undefined;
 
   return (
     <button
-      className={`tab-atom ${selected ? 'active' : ''} ${className || ''}`} // selected가 true면 active 추가
+      className={`tab-atom ${selected ? 'active' : ''} ${className || ''}`}
       onClick={onClick}
     >
       <div className="text-container">
         {/* 아이콘 표시 */}
-        {showIcon && Icon && (
+        {showIcon && Icon && Trans[Icon] && (
           <span className="icon-left">
-            {React.cloneElement(icons[Icon] as React.ReactElement, {
-              fill: 'currentColor',
+            {React.cloneElement(Trans[Icon] as React.ReactElement, {
+              fill: selected ? '#fff' : '#444447',
             })}
           </span>
         )}
         {/* 탭 텍스트 */}
         {text && <span className="text-style">{text}</span>}
-        {/* 숫자 (뱃지 형태로 표시 가능) */}
+        {/* 숫자 */}
         {maxNum !== undefined && <span className="tab-num">{maxNum}</span>}
       </div>
     </button>
