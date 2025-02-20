@@ -5,7 +5,7 @@ export default {
   title: 'Proto Demo | Naver Map',
   component: ProtoDemoPage,
   parameters: {
-    layout: 'fullscreen', // 스토리북에서 전체화면 레이아웃 사용
+    layout: 'centered',
   },
 } satisfies Meta<typeof ProtoDemoPage>;
 

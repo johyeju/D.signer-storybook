@@ -1,41 +1,23 @@
 import { Meta, StoryObj } from '@storybook/react';
 import BottomSheet from '../components/BottomSheet';
 
-const meta: Meta<typeof BottomSheet> = {
+const MetaConfig: Meta<typeof BottomSheet> = {
   title: 'BottomSheet/BottomSheet',
   component: BottomSheet,
   parameters: {
-    layout: 'centered',
+    layout: 'fullscreen',
   },
   argTypes: {
-    title: {
-      control: 'text',
-      defaultValue: '국제시장',
-    },
-    subtitle: {
-      control: 'text',
-      defaultValue: '시장',
-    },
-    address: {
-      control: 'text',
-      defaultValue: '부산 중구',
-    },
-    review: {
-      control: 'number',
-      defaultValue: 292,
-    },
-    score: {
-      control: 'number',
-      defaultValue: 4.28,
-    },
-    distance: {
-      control: 'number',
-      defaultValue: 3.2,
-    },
+    title: { control: 'text' },
+    subtitle: { control: 'text' },
+    address: { control: 'text' },
+    review: { control: { type: 'number', min: 0 } },
+    score: { control: { type: 'number', min: 0, max: 5, step: 0.1 } },
+    distance: { control: { type: 'number', min: 0, step: 0.1 } },
   },
 };
 
-export default meta;
+export default MetaConfig;
 
 type Story = StoryObj<typeof BottomSheet>;
 
@@ -47,10 +29,5 @@ export const Default: Story = {
     review: 292,
     score: 4.28,
     distance: 3.2,
-  },
-  parameters: {
-    controls: {
-      exclude: [],
-    },
   },
 };

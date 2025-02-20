@@ -1,22 +1,50 @@
+body {
+  overflow-x: hidden;
+}
+
+/* 3단일 때 헤더 숨기기 */
+/* .stage-3 .header {
+  display: none;
+} */
+
+/* 바텀시트 스타일 */
 .bottom-sheet {
-  position: absolute;
+  position: fixed;
   bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 375px;
-  max-width: 100%;
+  left: 0;
+  right: 0;
+  width: 100%;
+  max-width: 375px;
+  margin: 0 auto;
   background: white;
   border-radius: 20px 20px 0 0;
   box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease;
+  transition: all0.3s ease;
+}
+d
+/* 1단 바텀시트 */
+.stage-1 {
+  min-height: 200px;
+  height: 100%;
+}
+d
+/* 2단 바텀시트 */
+.stage-2 {
+  min-height: 568px;
+  height: 100%;
 }
 
-.content {
-  padding: 0px 16px;
-  margin-bottom: 26px;
+/* 3단 바텀시트 (전체 화면) */
+.stage-3 {
+  height: 100%;
+  max-height: 767px;
+  border-radius: 0;
 }
-.stage-1 {
-  transform: translateX(-50%);
+
+/* 컨텐츠 스타일 */
+.content {
+  padding: 16px;
+  margin-bottom: 26px;
 }
 
 .header {
