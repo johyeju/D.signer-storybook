@@ -1,5 +1,6 @@
 import React from 'react';
 import { HeaderType } from './BottomHeader';
+import './BottomSheetHeader.css';
 
 interface BottomSheetHeaderProps {
   type?: keyof typeof HeaderType;
