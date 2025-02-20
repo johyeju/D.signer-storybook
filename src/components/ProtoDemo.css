@@ -1,0 +1,33 @@
+/* 바텀시트 1단, 2단, 3단 기본 설정 */
+.bottom-sheet {
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  max-width: 375px; /* 🔥 375px로 고정 */
+  background: white;
+  box-shadow: 0px -4px 10px rgba(0, 0, 0, 0.2);
+  transition: height 0.3s ease-in-out, border-radius 0.3s ease-in-out,
+    bottom 0.3s ease-in-out;
+  z-index: 1000; /* 지도보다 위에 배치 */
+}
+
+/* 3단(전체 화면)일 때 */
+.stage-3 {
+  height: 100%;
+  overflow-y: auto;
+  z-index: 9999;
+  max-height: 767px;
+  border-radius: 0;
+  pointer-events: auto;
+}
+
+/* 프로토데모 컨테이너 */
+.proto-container {
+  width: 375px;
+  height: 812px;
+  position: relative;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+}
