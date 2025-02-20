@@ -22,7 +22,7 @@ export const NaverMap: React.FC<NaverMapProps> = ({
   const mapRef = useRef<naver.maps.Map | null>(null);
   const markerRef = useRef<naver.maps.Marker | null>(null);
 
-  // ✅ 지도 중심 변경 (부드럽게 panTo 사용)
+  // 지도 중심 변경 (부드럽게 panTo 사용)
   const updateMapCenter = useCallback(() => {
     if (mapRef.current) {
       console.log('지도 중심 변경 실행됨!');
@@ -88,14 +88,14 @@ export const NaverMap: React.FC<NaverMapProps> = ({
       markerRef.current = newMarker;
       console.log('마커 초기화 완료', markerRef.current);
 
-      // ✅ 마커 클릭 시 지도 중심 부드럽게 변경 & 바텀시트 열기
+      // 마커 클릭 시 지도 중심 부드럽게 변경 & 바텀시트 열기
       window.naver.maps.Event.addListener(newMarker, 'click', () => {
         setBottomSheetStage(2);
         updateMapCenter();
         onMarkerClick();
       });
 
-      // ✅ 지도 초기화 후 중심 업데이트 실행
+      // 지도 초기화 후 중심 업데이트 실행
       setTimeout(() => {
         updateMapCenter();
       }, 100);
@@ -109,7 +109,7 @@ export const NaverMap: React.FC<NaverMapProps> = ({
     onMarkerClick,
   ]);
 
-  // ✅ `lat`, `lng` 변경 시 지도 중심 업데이트 실행
+  // `lat`, `lng` 변경 시 지도 중심 업데이트 실행
   useEffect(() => {
     updateMapCenter();
   }, [lat, lng, updateMapCenter]);
