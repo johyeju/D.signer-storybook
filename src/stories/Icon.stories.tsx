@@ -1,10 +1,10 @@
-import { Meta, StoryFn } from '@storybook/react';
+import { Meta, StoryObj } from '@storybook/react';
 import Icon from '../components/Icon';
 import { iconNames } from '../components/IIconTypes';
 
 const iconSizes = [12, 14, 16, 18, 24, 32];
 
-export default {
+const meta: Meta<typeof Icon> = {
   title: 'Buttons/Icon',
   component: Icon,
   parameters: {
@@ -20,12 +20,14 @@ export default {
       options: iconSizes,
     },
   },
-} as Meta<typeof Icon>;
+};
 
-const Template: StoryFn<typeof Icon> = (args) => <Icon {...args} />;
+export default meta;
+type Story = StoryObj<typeof Icon>;
 
-export const Default = Template.bind({});
-Default.args = {
-  name: 'badge',
-  size: 24,
+export const Default: Story = {
+  args: {
+    name: 'place',
+    size: 24,
+  },
 };
