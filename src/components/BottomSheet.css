@@ -112,6 +112,9 @@ body {
   right: 4px;
   bottom: 4px;
 }
+.icon-getoff .icon svg {
+  fill: #0385ff; /* 출발 아이콘 파란색 */
+}
 
 .bold-style {
   color: #484848;

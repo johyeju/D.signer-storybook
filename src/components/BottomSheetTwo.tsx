@@ -6,6 +6,7 @@ import Badge from './Badge';
 import { Dividers } from './DividerType';
 import { icons } from './IIconTypes';
 import ImageGrid from './imgList';
+import BoxSwitch from './BoxSwitch';
 
 type BottomSheetProps = {
   stage: number;
@@ -125,8 +126,20 @@ const BottomSheetTwo: React.FC<BottomSheetProps> = ({
                 </div>
 
                 <div className="button-active-style">
-                  <CtaBtn label="출발" size="M" type="Secondary" icon="call" />
-                  <CtaBtn label="도착" size="M" type="Primary" icon="call" />
+                  <CtaBtn
+                    label="출발"
+                    size="R"
+                    type="Secondary"
+                    icon="getoff"
+                    className="icon-getoff"
+                  />
+                  <CtaBtn
+                    label="도착"
+                    size="R"
+                    type="Primary"
+                    icon="place"
+                    className="icon-place"
+                  />
                 </div>
               </div>
             </div>
@@ -139,6 +152,12 @@ const BottomSheetTwo: React.FC<BottomSheetProps> = ({
                   fill: 'currentColor',
                 })}
               </div>
+            </div>
+            <div>
+              <BoxSwitch name="star" isOn={false}></BoxSwitch>{' '}
+              <BoxSwitch name="star" isOn={false}></BoxSwitch>
+              <BoxSwitch name="star" isOn={false}></BoxSwitch>
+              <BoxSwitch name="star" isOn={false}></BoxSwitch>
             </div>
           </div>
         </div>

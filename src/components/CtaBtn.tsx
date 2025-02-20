@@ -8,7 +8,7 @@ interface CtaBtnProps {
   type?: 'Primary' | 'Secondary' | 'Tertiary';
   icon?: keyof typeof icons;
   onClick?: () => void;
-  className?: string; // ✅ 추가됨
+  className?: string;
 }
 
 const CtaBtn: React.FC<CtaBtnProps> = ({
