@@ -52,7 +52,7 @@ const BottomSheetTwo: React.FC<BottomSheetProps> = ({
                   <div className="black-style">20:00에 영업 종료</div>
                 </div>
                 <div className="reviews">
-                  <IconSwitch name="star" type="red" isOn={true} />
+                  <IconSwitch name="star" type="red" isOn={true} size="S" />
                   <span className="black-style">{score}</span>
                   {Dividers.circle}
                   <div className="black-style">방문자 리뷰 {review}</div>
@@ -74,7 +74,7 @@ const BottomSheetTwo: React.FC<BottomSheetProps> = ({
             {/* 버튼 영역 */}
             <div className="buttons">
               <div className="icons">
-                <IconSwitch name="star" type="green" isOn={true} />
+                <IconSwitch name="star" type="green" isOn={true} size="M" />
                 {React.cloneElement(icons['share'] as React.ReactElement, {
                   fill: 'currentColor',
                 })}
@@ -113,7 +113,7 @@ const BottomSheetTwo: React.FC<BottomSheetProps> = ({
                   <div className="black-style">20:00에 영업 종료</div>
                 </div>
                 <div className="reviews">
-                  <IconSwitch name="star" type="red" isOn={true} />
+                  <IconSwitch name="star" type="red" isOn={true} size="S" />
                   <span className="black-style">{score}</span>
                   {Dividers.circle}
                   <div className="black-style">방문자 리뷰 {review}</div>
@@ -129,7 +129,7 @@ const BottomSheetTwo: React.FC<BottomSheetProps> = ({
             {/* 버튼 영역 */}
             <div className="buttons">
               <div className="icons">
-                <IconSwitch name="star" type="green" isOn={true} />
+                <IconSwitch name="star" type="green" isOn={true} size="S" />
                 {React.cloneElement(icons['share'] as React.ReactElement, {
                   fill: 'currentColor',
                 })}
