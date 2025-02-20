@@ -33,7 +33,7 @@ const MapMaker: React.FC<MapMakerProps> = ({
 
   return (
     <div className={`map-container ${size}`}>
-      <span>{text}</span>
+      <span className="text-box">{text}</span>
       {SelectedIcon ? (
         <div className={`star-marker-size ${size} map-icon`}>
           {React.createElement(
