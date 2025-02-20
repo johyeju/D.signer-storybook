@@ -11,7 +11,7 @@
   width: 118px;
   align-items: center;
   gap: 4px;
-  position: relative;
+  justify-content: space-between;
 
   /* 헤더 중복 폰트값 */
   color: var(--txt-fill-warm-primary, #222225);
@@ -21,7 +21,6 @@
 }
 
 .icon-container {
-  position: absolute;
   display: flex;
   width: 14px;
   height: 14px;
