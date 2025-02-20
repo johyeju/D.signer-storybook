@@ -213,7 +213,7 @@
 }
 
 .ellipse-style svg {
-  display: inline-flex;
+  display: flex;
   width: 16px;
   height: 16px;
   justify-content: center;

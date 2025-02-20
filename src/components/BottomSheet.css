@@ -91,8 +91,14 @@ body {
 
 .thumbnail {
   position: relative;
+  display: inline-block;
 }
 
+.image-count-style {
+  position: absolute;
+  top: 95px;
+  right: 20px;
+}
 .thumbnail .image {
   width: 20px;
   height: 20px;
