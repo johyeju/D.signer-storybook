@@ -10,7 +10,7 @@ const meta: Meta<typeof MapMaker> = {
   argTypes: {
     size: {
       control: 'radio',
-      options: ['R', 'L'],
+      options: ['R', 'M', 'L'],
       defaultValue: 'R',
     },
     theme: {
@@ -42,6 +42,12 @@ export const StarMaker: Story = {
     size: 'L',
     color: '#CAD1DB',
   },
+  argTypes: {
+    size: {
+      control: 'radio',
+      options: ['R', 'L'],
+    },
+  },
   parameters: {
     controls: {
       exclude: ['iconName', 'theme'],
@@ -62,6 +68,10 @@ export const Pin: Story = {
     theme: {
       control: 'radio',
       options: ['Red', 'Blue'],
+    },
+    size: {
+      control: 'radio',
+      options: ['R', 'L'],
     },
   },
 

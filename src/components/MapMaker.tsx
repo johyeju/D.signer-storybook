@@ -1,8 +1,9 @@
 import React from 'react';
 import { badgeIcons, IconName, BadgeIconProps } from './IconMapMaker';
+import './MapMaker.css';
 
 interface MapMakerProps {
-  size: 'R' | 'L';
+  size: 'R' | 'M' | 'L';
   color?: string;
   iconName: IconName;
   theme?: 'Green' | 'Red' | 'Blue';
@@ -21,11 +22,11 @@ const MapMaker: React.FC<MapMakerProps> = ({
   let iconProps: BadgeIconProps;
 
   if (iconName === 'star_maker') {
-    iconProps = { backgroundColor: color };
+    iconProps = { backgroundColor: color, size: size as 'R' | 'M' | 'L' };
   } else if (iconName === 'spot') {
     iconProps = { theme: theme as 'Green' | 'Red' };
   } else if (iconName === 'pin') {
-    iconProps = { size, theme: theme as 'Red' | 'Blue' };
+    iconProps = { size: size as 'R' | 'L', theme: theme as 'Red' | 'Blue' };
   } else {
     iconProps = {};
   }
@@ -34,10 +35,12 @@ const MapMaker: React.FC<MapMakerProps> = ({
     <div className={`map-container ${size}`}>
       <span>{text}</span>
       {SelectedIcon ? (
-        React.createElement(
-          SelectedIcon as React.ComponentType<BadgeIconProps>,
-          iconProps
-        )
+        <div className={`star-marker-size ${size} map-icon`}>
+          {React.createElement(
+            SelectedIcon as React.ComponentType<BadgeIconProps>,
+            iconProps
+          )}
+        </div>
       ) : (
         <p>error</p>
       )}
