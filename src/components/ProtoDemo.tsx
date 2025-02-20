@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, SetStateAction } from 'react';
 import NaverMap from './NaverMap';
 import BottomSheet from './BottomSheet';
 import './ProtoDemo.css';
@@ -7,14 +7,14 @@ export const ProtoDemoPage = () => {
   const [bottomSheetStage, setBottomSheetStage] = useState(1);
   const [mapCenter, setMapCenter] = useState({ lat: 35.1006, lng: 129.0305 });
 
-  // ✅ 마커의 위치 (국제시장)
+  // 마커의 위치 (국제시장)
   // eslint-disable-next-line react-hooks/exhaustive-deps
   const markerPosition = { lat: 35.1006, lng: 129.0305 };
 
   useEffect(() => {
     if (bottomSheetStage === 1) {
       setTimeout(() => {
-        setMapCenter(markerPosition); // ✅ 1단 변경 시 지도 중심 이동 (딜레이 추가)
+        setMapCenter(markerPosition); // 1단 변경 시 지도 중심 이동 (딜레이 추가)
       }, 300); // 300ms 후 이동
     }
   }, [bottomSheetStage, markerPosition]);
@@ -38,8 +38,8 @@ export const ProtoDemoPage = () => {
         setBottomSheetStage={setBottomSheetStage}
         markerPosition={markerPosition}
         onMarkerClick={() => {
-          setBottomSheetStage(2); // ✅ 마커 클릭 시 바텀시트 2단 전환
-          setMapCenter(markerPosition); // ✅ 지도 중심 변경
+          setBottomSheetStage(2); // 마커 클릭 시 바텀시트 2단 전환
+          setMapCenter(markerPosition); //  지도 중심 변경
         }}
       />
 
@@ -52,11 +52,11 @@ export const ProtoDemoPage = () => {
           review={292}
           score={4.28}
           distance={0.3}
-          onStageChange={(stage) => {
+          onStageChange={(stage: SetStateAction<number>) => {
             setBottomSheetStage(stage);
             if (stage === 1) {
               setTimeout(() => {
-                setMapCenter(markerPosition); // ✅ 1단으로 변경될 때 지도 중심 이동 (부드럽게)
+                setMapCenter(markerPosition); // 1단으로 변경될 때 지도 중심 이동 (부드럽게)
               }, 300); // 300ms 후 이동
             }
           }}

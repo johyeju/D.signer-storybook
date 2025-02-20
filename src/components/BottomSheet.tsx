@@ -15,8 +15,8 @@ const BottomSheet: React.FC = () => {
         subtitle="시장"
         address="부산 중구"
         review={292}
-        score={4.28}
         distance={3.2}
+        score={3.4}
       />
     </div>
   );

@@ -62,6 +62,8 @@ export const NaverMap: React.FC<NaverMapProps> = ({
       const newMap = new window.naver.maps.Map('naverMap', {
         center: new window.naver.maps.LatLng(lat, lng),
         zoom: 14,
+        mapDataControl: false,
+        scaleControl: false,
       });
 
       mapRef.current = newMap;
