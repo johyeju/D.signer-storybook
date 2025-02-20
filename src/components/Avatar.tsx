@@ -3,7 +3,7 @@ import avatar from '../../public/badge/avatar.svg';
 
 import './Avatar.css';
 
-interface AvatarProps {
+export interface AvatarProps {
   size?: 'S' | 'L';
 }
 
