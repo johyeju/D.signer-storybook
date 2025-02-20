@@ -2,7 +2,7 @@ import { useRef, useState, useEffect } from 'react';
 
 export default function useBottomSheet() {
   const sheetRef = useRef<HTMLDivElement>(null);
-  const [stage, setStage] = useState(2); // 초기 2단
+  const [stage, setStage] = useState(1); // 초기 1단
   const [height, setHeight] = useState(window.innerHeight * 0.6);
   const startY = useRef(0);
   const isDragging = useRef(false);
@@ -14,8 +14,6 @@ export default function useBottomSheet() {
       startY.current =
         'touches' in event ? event.touches[0].clientY : event.clientY;
       isDragging.current = true;
-      if (sheetRef.current)
-        sheetRef.current.style.transition = 'height 0.3s ease-out';
     };
 
     const handleMove = (event: MouseEvent | TouchEvent) => {
@@ -35,24 +33,15 @@ export default function useBottomSheet() {
 
       console.log('드래그 종료, 최종 height:', height);
 
-      if (sheetRef.current) {
-        sheetRef.current.style.transition = 'height 0.3s ease-out';
-      }
-
       // 3단으로 확장
       if (height > screenHeight * 0.75) {
         setStage(3);
         setHeight(screenHeight);
       }
-      // 2단 유지
-      // else if (height > screenHeight * 0.4) {
-      //   setStage(2);
-      //   setHeight(screenHeight * 0.6);
-      // }
       // 1단으로 축소
       else {
         setStage(1);
-        setHeight(200);
+        setHeight(220);
       }
     };
 

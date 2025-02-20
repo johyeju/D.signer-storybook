@@ -28,24 +28,15 @@ const BottomSheetTwo: React.FC<BottomSheetProps> = ({
   distance,
 }) => {
   return (
-    <div ref={sheetRef} className={'bottom-sheet'}>
+    <div ref={sheetRef} className={`bottom-sheet stage-${stage}`}>
       {/* 드래그 핸들 */}
       <div className="drag-handle"></div>
-      {/*
-      3단에서는 헤더 숨기기
-      {stage !== 3 && <BottomSheetHeader type="default" />} */}
 
       {/*  1단 UI (내용 유지) */}
       {stage === 1 && (
         <div>
           <div>
             <BottomSheetHeader type="default" />
-            {/* 우측 썸네일 */}
-            <div className="thumbnail">
-              <div className="image">
-                <Badge className="image-count-style" text={'7'} />
-              </div>
-            </div>
           </div>
           <div className="container">
             <div className="content">
@@ -70,6 +61,12 @@ const BottomSheetTwo: React.FC<BottomSheetProps> = ({
                   <span className="bold-style">{distance}km</span>
                   {Dividers.circle}
                   <span className="black-style">{address}</span>
+                </div>
+              </div>
+              {/* 우측 썸네일 */}
+              <div className="thumbnail">
+                <div className="image">
+                  <Badge className="image-count-style" text={'7'} />
                 </div>
               </div>
             </div>

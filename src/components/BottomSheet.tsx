@@ -7,7 +7,7 @@ const BottomSheet: React.FC = () => {
   const { sheetRef, stage } = useBottomSheet();
 
   return (
-    <div ref={sheetRef} className={`bottom-sheet-container stage-${stage}`}>
+    <div ref={sheetRef} className={`bottom-sheet-container`}>
       <BottomSheetTwo
         stage={stage}
         sheetRef={sheetRef}
