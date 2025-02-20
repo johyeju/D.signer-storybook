@@ -53,12 +53,7 @@ const BottomSheetOne: React.FC<BottomSheetProps> = ({
               <div className="black-style">20:00에 영업 종료</div>
             </div>
             <div className="reviews">
-              <IconSwitch
-                name="star"
-                type="red"
-                isOn={true}
-                style={{ width: '16px', height: '16px' }}
-              />
+              <IconSwitch name="star" type="red" isOn={true} size={'S'} />
               <span className="black-style">{score}</span>
               {Dividers.circle}
               <div className="black-style">방문자 리뷰 {review}</div>
@@ -81,6 +76,7 @@ const BottomSheetOne: React.FC<BottomSheetProps> = ({
               style={{
                 display: 'block',
               }}
+              size={'M'}
             />
             {React.cloneElement(icons['share'] as React.ReactElement, {
               fill: 'currentColor',
