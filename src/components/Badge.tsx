@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import './Badge.css';
 import { icons } from './IconTransport';
-import avatar from '../../public/badge/avatar.svg';
-import npay from '../../public/badge/npay.svg';
+import Avatar from './Avatar';
 import talktalk from '../../public/badge/talktalk.svg';
+import { badgeIcons } from './IconBadge';
 
 interface BadgeProps {
   className?: string;
@@ -61,11 +61,9 @@ const Badge: React.FC<BadgeProps> = ({
       data-story={className}
     >
       {/* 프로필 스토리일 때만 avatar.svg 추가 */}
-      {isProfile && <img src={avatar} alt="Profile" className="profile-icon" />}
-      {isNpay && <img src={npay} alt="Npay" className="npay-icon" />}
-      {isTalkTalk && (
-        <img src={talktalk} alt="TalkTalk" className="talktalk-icon" />
-      )}
+      {isProfile && <Avatar size="S" />}
+      {isNpay && <>{badgeIcons.npay} </>}
+      {isTalkTalk && <>{badgeIcons.talktalk} </>}
       {/* isIcon이 true이고 icon 값이 존재하면 버스 SVG 아이콘 표시 */}
       {selectedIcon && <span className="badge-icon">{selectedIcon}</span>}{' '}
       {/* 텍스트박스 */}
