@@ -45,10 +45,10 @@ export default function useBottomSheet() {
         setHeight(screenHeight);
       }
       // 2단 유지
-      else if (height > screenHeight * 0.4) {
-        setStage(2);
-        setHeight(screenHeight * 0.6);
-      }
+      // else if (height > screenHeight * 0.4) {
+      //   setStage(2);
+      //   setHeight(screenHeight * 0.6);
+      // }
       // 1단으로 축소
       else {
         setStage(1);

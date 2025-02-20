@@ -28,16 +28,16 @@ const BottomSheetTwo: React.FC<BottomSheetProps> = ({
   distance,
 }) => {
   return (
-    <div ref={sheetRef} className={`bottom-sheet stage-${stage}`}>
+    <div ref={sheetRef} className={'bottom-sheet'}>
       {/* 드래그 핸들 */}
       <div className="drag-handle"></div>
-      {/* 
+      {/*
       3단에서는 헤더 숨기기
       {stage !== 3 && <BottomSheetHeader type="default" />} */}
 
       {/*  1단 UI (내용 유지) */}
       {stage === 1 && (
-        <div className="bottom-sheet stage-1">
+        <div>
           <div>
             <BottomSheetHeader type="default" />
             {/* 우측 썸네일 */}
