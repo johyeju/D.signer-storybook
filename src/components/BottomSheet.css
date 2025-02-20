@@ -73,7 +73,7 @@ body {
   font-family: 'Noto Sans KR';
   font-size: 20px;
   font-style: normal;
-  font-weight: 500;
+  font-weight: 600;
   line-height: normal;
   letter-spacing: -1.2px;
 }
@@ -90,12 +90,6 @@ body {
 }
 
 .thumbnail {
-  width: 88px;
-  height: 88px;
-  background: #00e5ff;
-  border-radius: 10px;
-  font-weight: bold;
-  color: white;
   position: relative;
 }
 
@@ -165,9 +159,30 @@ body {
   align-items: center;
 }
 
-.button-active-style {
+.bottom-sheet.stage-1 .button-active-style {
   display: flex;
   gap: 6px;
   justify-content: space-between;
   margin-top: 10px;
+}
+
+.bottom-sheet.stage-3 .title {
+  color: var(--txt-fill-warm-primary, #222225);
+
+  /* kr/title/20/medium */
+  font-family: 'Noto Sans KR';
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  letter-spacing: -1.2px;
+}
+
+.bottom-sheet.stage-3 .button-active-style {
+  display: flex;
+  padding: 20px 90px;
+  align-items: center;
+  align-self: stretch;
+  width: 100%;
+  gap: 6px;
 }

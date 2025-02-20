@@ -5,6 +5,7 @@ import BottomSheetHeader from './BottomSheetHeader';
 import Badge from './Badge';
 import { Dividers } from './DividerType';
 import { icons } from './IIconTypes';
+import ImageGrid from './imgList';
 
 type BottomSheetProps = {
   stage: number;
@@ -65,10 +66,14 @@ const BottomSheetTwo: React.FC<BottomSheetProps> = ({
               </div>
               {/* 우측 썸네일 */}
               <div className="thumbnail">
-                <div className="image">
-                  <Badge className="image-count-style" text={'7'} />
-                </div>
+                <ImageGrid
+                  imageCount={1}
+                  images={[
+                    'https://search.pstatic.net/common/?src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20150901_208%2F14410456696401P9Uq_JPEG%2F13491723_0.jpg',
+                  ]}
+                />
               </div>
+              <Badge className="image-count-style" text={'7'} />
             </div>
 
             {/* 버튼 영역 */}
@@ -92,11 +97,16 @@ const BottomSheetTwo: React.FC<BottomSheetProps> = ({
       {stage > 1 && (
         <div className="bottom-sheet-expanded">
           {/* 우측 썸네일 */}
-          <div className="thumbnail">
-            <div className="image">
-              <Badge className="image-count-style" text={'7'} />
-            </div>
-          </div>
+          <ImageGrid
+            imageCount={5}
+            images={[
+              'https://search.pstatic.net/common/?src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20150901_208%2F14410456696401P9Uq_JPEG%2F13491723_0.jpg',
+              'https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAxOTAzMjNfMTM3%2FMDAxNTUzMzMxNDEyNjQ1.0PQ8A8Lb0R6ZyvuBbtn99mTreoMLli1Rdf2VwCxtREUg.YucjlZSUKPszlO-Y2M22I_9f0Xr_9PxK3bDVwRbrkIkg.JPEG.tnrwlschl%2FIMG_6320.jpg%23886x590',
+              'https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAxOTAzMjNfMTcz%2FMDAxNTUzMzMxNDA2OTE1.YjZQekLaqBm1SQv_FZ8M1WQ-5ZRvwLchRf5miJ-HpYog.fe3yMZnQVJEFSk0FUeoN-t65ZWrvcLzn0MhHuMB394wg.JPEG.tnrwlschl%2FIMG_6314.jpg%23886x590',
+              'https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAxOTAzMTBfMTky%2FMDAxNTUyMjA5NjQ5MjI3.-gNkn_EpeX9rAFg647sFzZzWGZZ2WBrA6rw81bvR1NAg.-HU18rFi8kYn4gBeJkvry6u45PVTFrITWJ-LmOTz8UUg.JPEG.tnrwlschl%2FIMG_6326.jpg%23886x590',
+              'https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAxOTAzMjNfMTQ4%2FMDAxNTUzMzMxMzkxODI0.YDJ_JWkUkNcJOL2MobAKgVZy9tYkfWH0kk843GiFWg8g.GuBGoKaERlhNiTLCaoxwd9b1dg82Y3Z3vZPUjzl1o18g.JPEG.tnrwlschl%2FIMG_6318.jpg%23886x590',
+            ]}
+          />
 
           {/* 바텀시트 콘텐츠 */}
           <div className="container">
@@ -108,20 +118,15 @@ const BottomSheetTwo: React.FC<BottomSheetProps> = ({
                     <p className="subtitle">{subtitle}</p>
                   </div>
                 </div>
-                <div className="state">
-                  <div className="bold-style">영업 중</div> {Dividers.circle}
-                  <div className="black-style">20:00에 영업 종료</div>
-                </div>
                 <div className="reviews">
-                  <IconSwitch name="star" type="red" isOn={true} size="S" />
-                  <span className="black-style">{score}</span>
-                  {Dividers.circle}
                   <div className="black-style">방문자 리뷰 {review}</div>
-                </div>
-                <div className="location">
-                  <span className="bold-style">{distance}km</span>
                   {Dividers.circle}
-                  <span className="black-style">{address}</span>
+                  <div className="black-style">블로그 리뷰 {review}</div>
+                </div>
+
+                <div className="button-active-style">
+                  <CtaBtn label="출발" size="M" type="Secondary" icon="call" />
+                  <CtaBtn label="도착" size="M" type="Primary" icon="call" />
                 </div>
               </div>
             </div>
@@ -133,10 +138,6 @@ const BottomSheetTwo: React.FC<BottomSheetProps> = ({
                 {React.cloneElement(icons['share'] as React.ReactElement, {
                   fill: 'currentColor',
                 })}
-              </div>
-              <div className="button-active-style">
-                <CtaBtn label="출발" size="S" type="Secondary" />
-                <CtaBtn label="도착" size="S" type="Primary" />
               </div>
             </div>
           </div>

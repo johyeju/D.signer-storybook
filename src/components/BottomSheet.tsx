@@ -12,8 +12,8 @@ const BottomSheet: React.FC = () => {
         stage={stage}
         sheetRef={sheetRef}
         title="국제시장"
-        subtitle="부산 중구 신창동4가"
-        address="부산 중구 신창동4가"
+        subtitle="시장"
+        address="부산 중구"
         review={292}
         score={4.28}
         distance={3.2}
