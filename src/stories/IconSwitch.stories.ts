@@ -22,6 +22,11 @@ const meta: Meta<typeof IconSwitch> = {
       options: ['blue', 'green'],
       if: { arg: 'name', eq: 'star' }, // star일 때만 type 선택 가능
     },
+    size: {
+      control: { type: 'select' },
+      options: ['S', 'M'],
+      if: { arg: 'name', eq: 'star' },
+    },
   },
 };
 
