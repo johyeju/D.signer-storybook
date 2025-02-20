@@ -8,6 +8,7 @@ interface CtaBtnProps {
   type?: 'Primary' | 'Secondary' | 'Tertiary';
   icon?: keyof typeof icons;
   onClick?: () => void;
+  className?: string; // ✅ 추가됨
 }
 
 const CtaBtn: React.FC<CtaBtnProps> = ({
@@ -16,6 +17,7 @@ const CtaBtn: React.FC<CtaBtnProps> = ({
   type = 'Primary',
   icon,
   onClick,
+  className,
 }) => {
   const [isPressed, setIsPressed] = useState(false);
 
@@ -26,7 +28,7 @@ const CtaBtn: React.FC<CtaBtnProps> = ({
     <button
       className={`cta-btn ${size.toLowerCase()} ${type.toLowerCase()} ${
         isPressed ? 'active' : ''
-      }`}
+      } ${className}`}
       onMouseDown={() => setIsPressed(true)}
       onMouseUp={() => setIsPressed(false)}
       onMouseLeave={() => setIsPressed(false)}

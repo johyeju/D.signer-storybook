@@ -45,6 +45,12 @@ export const Ellipse: Story = {
     size: 'M',
     type: 'Primary',
     icon: 'call',
+    className: 'ellipse-style',
+  },
+  parameters: {
+    controls: {
+      exclude: ['className'], // 패널 숨김
+    },
   },
 };
 
@@ -53,10 +59,11 @@ export const RoundSquare: Story = {
     label: 'content',
     type: 'Primary',
     icon: 'call',
+    className: 'round-square-style',
   },
   parameters: {
     controls: {
-      exclude: ['size'], // 패널 숨김
+      exclude: ['size', 'className'], // 패널 숨김
     },
   },
   argTypes: {

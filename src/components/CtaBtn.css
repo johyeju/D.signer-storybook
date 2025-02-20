@@ -4,10 +4,10 @@
   justify-content: center;
   border-radius: 160px;
   flex-shrink: 0;
-  border-radius: 160px;
   box-sizing: border-box;
 }
 
+/* 크기 */
 .cta-btn.s {
   display: flex;
   width: 62px;
@@ -17,32 +17,53 @@
   align-items: center;
 }
 
-.cta-btn.s .text-style {
-  color: #fff;
+.cta-btn.m {
+  padding: 8px 10px 8px 14px;
+  gap: 2px;
+}
 
-  /* kr/title/14/regular */
+.cta-btn.r {
+  padding: 8px 22px;
+  gap: 6px;
+}
+
+/*텍스트 스타일 */
+.cta-btn .text-style {
   font-family: 'Noto Sans KR';
   font-size: 14px;
   font-style: normal;
-  font-weight: 400;
   line-height: normal;
-
   white-space: nowrap;
+}
+
+.cta-btn.s .text-style {
+  color: #fff;
+  font-weight: 400;
 }
 
 .cta-btn.s.secondary .text-style {
   color: var(--txt-fill-primary, #006cff);
-
-  /* kr/title/14/regular */
-  font-family: 'Noto Sans KR';
-  font-size: 14px;
-  font-style: normal;
   font-weight: 400;
-  line-height: normal;
-
-  white-space: nowrap;
 }
 
+/* 타입 */
+.cta-btn.primary {
+  background: var(--btn-fill-primary, #006cff);
+  border: none;
+  color: #fff;
+}
+
+.cta-btn.secondary {
+  border: 1px solid var(--btn-stroke-primary, #006cff);
+  background: var(--btn-fill-white, #fff);
+}
+
+.cta-btn.tertiary {
+  border: 1px solid var(--btn-stroke-cool-secondary, #cad1db);
+  background: var(--btn-fill-white, #fff);
+}
+
+/* 액티브 모음 */
 .cta-btn.primary.active {
   background: var(--btn-fill-primary_pressed, #244287);
 }
@@ -57,36 +78,7 @@
   background: var(--btn-fill-cool-primary_pressed, #dadde6);
 }
 
-.cta-btn.m {
-  padding: 8px 10px 8px 14px;
-  gap: 2px;
-}
-
-.cta-btn.r {
-  padding: 8px 22px;
-  gap: 6px;
-}
-
-.cta-btn.primary {
-  background: var(--btn-fill-primary, #006cff);
-  border: none;
-  color: #fff;
-  font-family: 'Noto Sans KR';
-  font-size: 14px;
-  font-style: normal;
-  line-height: normal;
-}
-
-.cta-btn.secondary {
-  border: 1px solid var(--btn-stroke-primary, #006cff);
-  background: var(--btn-fill-white, #fff);
-}
-
-.cta-btn.tertiary {
-  border: 1px solid var(--btn-stroke-cool-secondary, #cad1db);
-  background: var(--btn-fill-white, #fff);
-}
-
+/* 폰트 */
 .cta-btn.m.primary {
   font-weight: 500; /* Medium */
 }
@@ -95,6 +87,7 @@
   font-weight: 400; /* Regular */
 }
 
+/* 아이콘 */
 .cta-btn .icon {
   display: inline-flex;
   align-items: center;
@@ -107,4 +100,19 @@
 .cta-btn.m.primary .icon {
   width: 16px;
   height: 16px;
+}
+
+.ellipse-style {
+  border-radius: 50px;
+  padding: 10px 20px;
+  justify-content: center;
+  align-items: center;
+}
+
+.round-square-style {
+  border-radius: 8px;
+  padding: 10px 24px;
+  font-weight: 600;
+  justify-content: center;
+  align-items: center;
 }
