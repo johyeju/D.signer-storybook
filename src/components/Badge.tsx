@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import './Badge.css';
-import { icons } from './IconTransport';
+import { Trans } from './IconTransport';
 import Avatar from './Avatar';
 import { badgeIcons } from './IconBadge';
 
@@ -15,7 +15,7 @@ interface BadgeProps {
   isNpay?: boolean;
   isTalkTalk?: boolean;
   isIcon?: boolean;
-  iconName?: keyof typeof icons; // icons에서 가져올 아이콘 키
+  iconName?: keyof typeof Trans; // icons에서 가져올 아이콘 키
 }
 
 const Badge: React.FC<BadgeProps> = ({
@@ -50,7 +50,7 @@ const Badge: React.FC<BadgeProps> = ({
     }
   }, [congestion]);
 
-  const selectedIcon = isIcon ? icons[iconName || 'bus'] ?? null : null;
+  const selectedIcon = isIcon ? Trans[iconName || 'bus'] ?? null : null;
 
   return (
     <span
