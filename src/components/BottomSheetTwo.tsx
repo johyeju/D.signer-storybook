@@ -19,6 +19,8 @@ type BottomSheetProps = {
   distance: number;
 };
 
+const frameImage = new URL('/frame.png', import.meta.url).href;
+
 const BottomSheetTwo: React.FC<BottomSheetProps> = ({
   stage,
   sheetRef,
@@ -38,7 +40,7 @@ const BottomSheetTwo: React.FC<BottomSheetProps> = ({
       {stage === 3 ? (
         <div className="image-container">
           <img
-            src="D.signer-storybook/frame.png"
+            src={frameImage}
             alt="로드된 화면 이미지"
             className="w-full h-auto"
             loading="lazy"
