@@ -1,6 +1,5 @@
 .dropdown-container {
   display: flex;
-  width: 145px;
   flex-direction: column;
   align-items: flex-start;
   gap: 8px;
@@ -34,6 +33,8 @@
 }
 
 .title {
+  white-space: nowrap;
+
   font-family: 'Noto Sans', sans-serif;
 
   color: var(--txt-fill-warm-primary, #222225);

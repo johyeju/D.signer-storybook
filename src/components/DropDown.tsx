@@ -1,5 +1,6 @@
 import React from 'react';
 import { icons } from './IIconTypes';
+
 import './DropDown.css';
 
 export interface DropDownProps {
@@ -31,7 +32,7 @@ const DropDown: React.FC<DropDownProps> = ({
           전체 리스트 <span className="number">{total}</span>
         </span>
         <div className="icon-container">
-          {React.cloneElement(icons['call'] as React.ReactElement, {
+          {React.cloneElement(icons['down_arrow'] as React.ReactElement, {
             fill: 'currentColor',
             className: 'icon-svg',
           })}
@@ -51,11 +52,11 @@ const DropDown: React.FC<DropDownProps> = ({
               <span className="number-style">{item2}</span>
             </div>
           </div>
-          <div className="text-box">
-            <div className="item-style last-item">
+          <div className="item-style">
+            <div className="text-box">
               <span className="content-style">Content</span>
-              <span className="number-style">{item3}</span>
-            </div>{' '}
+              <span className="number-style">{item2}</span>
+            </div>
           </div>
         </div>
       )}
