@@ -4,7 +4,7 @@
   right: 0;
   bottom: 0;
   width: 100%;
-  max-width: 375px; /* 🔥 375px로 고정 */
+  max-width: 375px; /* 375px로 고정 */
   background: white;
   box-shadow: 0px -4px 10px rgba(0, 0, 0, 0.2);
   transition: height 0.3s ease-in-out, border-radius 0.3s ease-in-out,

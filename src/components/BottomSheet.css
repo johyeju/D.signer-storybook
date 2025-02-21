@@ -4,7 +4,6 @@ body {
 }
 .bottom-sheet-container {
   position: fixed;
-  pointer-events: none;
   width: 100%;
   max-width: 375px;
   background: white;
