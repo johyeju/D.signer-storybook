@@ -1,5 +1,9 @@
 import { Meta } from '@storybook/blocks';
 
+import func from './assets//func.png';
+import communi from './assets//communi.png';
+import notion from './assets//notion.png';
+import index from './assets//index.png';
 import Github from './assets/github.svg';
 import Discord from './assets/discord.svg';
 import Youtube from './assets/youtube.svg';
@@ -39,43 +43,47 @@ export const RightArrow = () => (
   <div className='sb-section-title'>
     # D.signer
 
-    컴포넌트와 UI 요소를 체계적으로 정리하고, 누구나 쉽게 참고할 수 있도록 만들었습니다.
+체계화 한 시스템을 원활히 사용할 수 있도록 스토리북을 통한 가이드
 
   </div>
   <div className="sb-section">
     <div className="sb-section-item">
       <img
-        src={Styling}
+        src={index}
         alt="A wall of logos representing different styling technologies"
+     style={{ width: "20%", height: "auto" }}
       />
-      <h4 className="sb-section-item-heading">Add styling and CSS</h4>
-      <p className="sb-section-item-paragraph">웹 애플리케이션과 마찬가지로 스토리북에도 CSS를 포함하는 방법은 다양합니다.</p>
+      <h4 className="sb-section-item-heading">시각적 인지</h4>
+      <p className="sb-section-item-paragraph">UI 컴포넌트가 각각 독립적으로 어떻게 렌더링 되는지 직접 시각적으로 테스트 하면서 개발 진행 가능합니다. UI컴포넌트의 동작을 빠르게 확인하고, 특정 상태에서의 동작을 쉽게 재현할 수 있습니다.</p>
       <a
-        href="https://storybook.js.org/docs/configure/styling-and-css/?renderer=react"
+        href="https://storybook.js.org/tutorials/intro-to-storybook/react/ko/get-started/"
         target="_blank"
       >Learn more<RightArrow /></a>
     </div>
     <div className="sb-section-item">
       <img
-        src={Context}
-        alt="An abstraction representing the composition of data for a component"
+        src={communi}
+        alt="A wall of logos representing different styling technologies"
+     style={{ width: "12%", height: "auto" }}
       />
-      <h4 className="sb-section-item-heading">Provide context and mocking</h4>
-      <p className="sb-section-item-paragraph">Often when a story doesn't render, it's because your component is expecting a specific environment or context (like a theme provider) to be available.</p>
+      <h4 className="sb-section-item-heading">원활한 커뮤니케이션</h4>
+      <p className="sb-section-item-paragraph">개발자와 디자이너가 같은 문서를 통해 정확한 소통이 가능합니다. 프로토타입을 디자인 툴로 구현할 필요 없이 모든 케이스의 컴포넌트를 테스트해본 뒤, 피드백을 주고 받을 수 있습니다.</p>
       <a
-        href="https://storybook.js.org/docs/writing-stories/decorators/?renderer=react#context-for-mocking"
+        href="https://storybook.js.org/tutorials/design-systems-for-developers/react/ko/introduction/"
         target="_blank"
       >Learn more<RightArrow /></a>
     </div>
     <div className="sb-section-item">
-      <img src={Assets} alt="A representation of typography and image assets" />
+      <img
+        src={func}
+        alt="A wall of logos representing different styling technologies"
+     style={{ width: "12%", height: "auto" }}
+      />
       <div>
-        <h4 className="sb-section-item-heading">Load assets and resources</h4>
-        <p className="sb-section-item-paragraph">To link static files (like fonts) to your projects and stories, use the
-        `staticDirs` configuration option to specify folders to load when
-        starting Storybook.</p>
+        <h4 className="sb-section-item-heading">모든 기능 구현 가능</h4>
+        <p className="sb-section-item-paragraph">디자인 툴에서는 프로토타입을 구현하는데에 한계가 있어 PRD를 통해 설명을 덧붙여 요구사항을 전달합니다. 이러한 부분을 스토리북을 통해 해소할 수 있습니다.</p>
         <a
-          href="https://storybook.js.org/docs/configure/images-and-assets/?renderer=react"
+          href="https://storybook.js.org/tutorials/design-systems-for-developers/react/ko/document/"
           target="_blank"
         >Learn more<RightArrow /></a>
       </div>
@@ -85,14 +93,11 @@ export const RightArrow = () => (
 
 <div className="sb-addon">
   <div className="sb-addon-text">
-    <h4>Addons</h4>
+    <h4>Integrations</h4>
     <p className="sb-section-item-paragraph">
-      Integrate your tools with Storybook to connect workflows.
+      Integrate D.signer Team's Storybook with various tools to streamline
+      workflows.{' '}
     </p>
-    <a href="https://storybook.js.org/addons/" target="_blank">
-      Discover all addons
-      <RightArrow />
-    </a>
   </div>
   <div className="sb-addon-img">
     <img
@@ -105,43 +110,21 @@ export const RightArrow = () => (
 <div className="sb-section sb-socials">
     <div className="sb-section-item">
       <img src={Github} alt="Github logo" className="sb-explore-image"/>
-      Join our contributors building the future of UI development.
+      Visit D.signer Team's Storybook GitHub repository.
 
       <a
-        href="https://github.com/storybookjs/storybook"
+        href="https://github.com/524hhhhhh/D.signer-storybook"
         target="_blank"
-      >Star on GitHub<RightArrow /></a>
+      >GitHub<RightArrow /></a>
     </div>
     <div className="sb-section-item">
-      <img src={Discord} alt="Discord logo" className="sb-explore-image"/>
-      <div>
-        Get support and chat with frontend developers.
-
-        <a
-          href="https://discord.gg/storybook"
-          target="_blank"
-        >Join Discord server<RightArrow /></a>
-      </div>
-    </div>
-    <div className="sb-section-item">
-      <img src={Youtube} alt="Youtube logo" className="sb-explore-image"/>
-      <div>
-        Watch tutorials, feature previews and interviews.
-
-        <a
-          href="https://www.youtube.com/@chromaticui"
-          target="_blank"
-        >Watch on YouTube<RightArrow /></a>
-      </div>
-    </div>
-    <div className="sb-section-item">
-      <img src={Tutorials} alt="A book" className="sb-explore-image"/>
-      <p>Follow guided walkthroughs on for key workflows.</p>
+      <img src={notion} alt="Notion logo" className="sb-explore-image"/>
+      Visit D.signer Team's Storybook Notion.
 
       <a
-          href="https://storybook.js.org/tutorials/"
-          target="_blank"
-        >Discover tutorials<RightArrow /></a>
+        href="https://fallacious-brownie-0fb.notion.site/17e17a5bbcd080ca840cc32f81672b9d?pvs=4"
+        target="_blank"
+      >GitHub<RightArrow /></a>
     </div>
 
 </div>
