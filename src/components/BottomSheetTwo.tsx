@@ -38,7 +38,7 @@ const BottomSheetTwo: React.FC<BottomSheetProps> = ({
       {stage === 3 ? (
         <div className="image-container">
           <img
-            src="/frame.png"
+            src="D.signer-storybook/frame.png"
             alt="로드된 화면 이미지"
             className="w-full h-auto"
             loading="lazy"
