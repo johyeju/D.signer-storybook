@@ -1,4 +1,4 @@
-import { useEffect, useRef, useCallback } from 'react';
+import { useEffect, useRef } from 'react';
 import { createRoot } from 'react-dom/client';
 import MapMaker from './MapMaker';
 
@@ -22,23 +22,61 @@ export const NaverMap: React.FC<NaverMapProps> = ({
   const mapRef = useRef<naver.maps.Map | null>(null);
   const markerRef = useRef<naver.maps.Marker | null>(null);
 
-  // 지도 중심 변경 (부드럽게 panTo 사용)
-  const updateMapCenter = useCallback(() => {
-    if (mapRef.current) {
-      console.log('지도 중심 변경 실행됨!');
-      const newCenter = new window.naver.maps.LatLng(lat, lng);
-      mapRef.current.panTo(newCenter, { duration: 500 });
-    } else {
-      console.warn('mapRef가 아직 초기화되지 않음. 100ms 후 재시도');
-      setTimeout(() => {
-        if (mapRef.current) {
-          const newCenter = new window.naver.maps.LatLng(lat, lng);
-          mapRef.current.panTo(newCenter, { duration: 500 });
-        }
-      }, 100);
-    }
-  }, [lat, lng]);
+  // 마커 클릭 시에만 지도 초기화하는 함수
+  const resetMap = () => {
+    console.log('🔄 마커 클릭됨 → 지도 다시 초기화');
 
+    if (!window.naver) return;
+
+    // 기존 지도 제거
+    if (mapRef.current) {
+      mapRef.current.destroy();
+      mapRef.current = null;
+    }
+
+    // 새 지도 생성
+    const newMap = new window.naver.maps.Map('naverMap', {
+      center: new window.naver.maps.LatLng(lat, lng),
+      zoom: 14,
+      mapDataControl: false,
+      scaleControl: false,
+    });
+
+    mapRef.current = newMap;
+    console.log('🆕 새 지도 초기화 완료', mapRef.current);
+
+    // 새 마커 생성
+    const markerElement = document.createElement('div');
+    createRoot(markerElement).render(
+      <MapMaker size="L" iconName="pin" theme="Red" color={''} />
+    );
+
+    const newMarker = new window.naver.maps.Marker({
+      position: new window.naver.maps.LatLng(
+        markerPosition.lat,
+        markerPosition.lng
+      ),
+      map: newMap,
+      icon: {
+        content: markerElement,
+        size: new window.naver.maps.Size(40, 40),
+        anchor: new window.naver.maps.Point(20, 40),
+      },
+    });
+
+    markerRef.current = newMarker;
+    console.log('마커 재설정 완료', markerRef.current);
+
+    // 마커 클릭 이벤트 추가 (지도 초기화)
+    window.naver.maps.Event.addListener(newMarker, 'click', () => {
+      console.log('마커 클릭됨 → 지도 다시 초기화');
+      setBottomSheetStage(2);
+      resetMap();
+      onMarkerClick();
+    });
+  };
+
+  // 초기 실행 시 한 번만 지도 로드
   useEffect(() => {
     if (!window.naver) {
       console.log('네이버 지도 API 로드 중');
@@ -47,74 +85,22 @@ export const NaverMap: React.FC<NaverMapProps> = ({
       script.async = true;
       script.onload = () => {
         console.log('네이버 지도 API 로드 완료');
-        initializeMap();
+        resetMap();
       };
       document.body.appendChild(script);
     } else {
       console.log('네이버 지도 API 이미 로드됨, 바로 지도 초기화');
-      initializeMap();
+      resetMap();
     }
+  }, []); // 최초 실행 시 한 번만 실행
 
-    function initializeMap() {
-      if (!window.naver) return;
-
-      console.log('지도 초기화 실행');
-      const newMap = new window.naver.maps.Map('naverMap', {
-        center: new window.naver.maps.LatLng(lat, lng),
-        zoom: 14,
-        mapDataControl: false,
-        scaleControl: false,
-      });
-
-      mapRef.current = newMap;
-      console.log('mapRef가 초기화', mapRef.current);
-
-      const markerElement = document.createElement('div');
-      createRoot(markerElement).render(
-        <MapMaker size="L" iconName="pin" theme="Red" color={''} />
-      );
-
-      const newMarker = new window.naver.maps.Marker({
-        position: new window.naver.maps.LatLng(
-          markerPosition.lat,
-          markerPosition.lng
-        ),
-        map: newMap,
-        icon: {
-          content: markerElement,
-          size: new window.naver.maps.Size(40, 40),
-          anchor: new window.naver.maps.Point(20, 40),
-        },
-      });
-
-      markerRef.current = newMarker;
-      console.log('마커 초기화 완료', markerRef.current);
-
-      // 마커 클릭 시 지도 중심 부드럽게 변경 & 바텀시트 열기
-      window.naver.maps.Event.addListener(newMarker, 'click', () => {
-        setBottomSheetStage(2);
-        updateMapCenter();
-        onMarkerClick();
-      });
-
-      // 지도 초기화 후 중심 업데이트 실행
-      setTimeout(() => {
-        updateMapCenter();
-      }, 100);
-    }
-  }, [
-    lat,
-    lng,
-    setBottomSheetStage,
-    markerPosition,
-    updateMapCenter,
-    onMarkerClick,
-  ]);
-
-  // `lat`, `lng` 변경 시 지도 중심 업데이트 실행
+  // `lat`, `lng` 변경 시 지도 이동 (초기화 X, `panTo()` 사용)
   useEffect(() => {
-    updateMapCenter();
-  }, [lat, lng, updateMapCenter]);
+    if (mapRef.current) {
+      const newCenter = new window.naver.maps.LatLng(lat, lng);
+      mapRef.current.panTo(newCenter, { duration: 500 });
+    }
+  }, [lat, lng]); // lat, lng이 변경될 때 지도 이동만 실행
 
   return (
     <div

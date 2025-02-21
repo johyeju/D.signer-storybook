@@ -47,11 +47,11 @@ export const ProtoDemoPage = () => {
       <div style={{ bottom: 0, width: '100%' }}>
         <BottomSheet
           title="국제시장"
-          subtitle="부산 중구 신창동4가"
-          address="부산 중구 신창동4가"
+          subtitle="시장"
+          address="부산 중구"
           review={292}
-          score={4.28}
-          distance={0.3}
+          distance={3.2}
+          score={3.4}
           onStageChange={(stage: SetStateAction<number>) => {
             setBottomSheetStage(stage);
             if (stage === 1) {

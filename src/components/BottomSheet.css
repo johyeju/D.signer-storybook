@@ -4,6 +4,7 @@ body {
 }
 .bottom-sheet-container {
   position: fixed;
+  pointer-events: none;
   width: 100%;
   max-width: 375px;
   background: white;
@@ -12,6 +13,7 @@ body {
   left: 50%;
   transform: translateX(-50%);
   cursor: pointer;
+  z-index: 1000;
 }
 
 /* 바텀시트 스타일 */
