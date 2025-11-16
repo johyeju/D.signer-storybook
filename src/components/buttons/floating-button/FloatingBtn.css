@@ -1,0 +1,192 @@
+.floating-btn {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 10px;
+	flex-shrink: 0;
+	border-radius: 50%;
+	box-shadow: 0px 2px 12px 0px rgba(0, 0, 0, 0.15);
+}
+
+.default-style {
+	position: absolute;
+	padding: 8px;
+}
+
+.default-style.s {
+	width: 40px;
+	height: 40px;
+	border-radius: 20px;
+	background: var(--btn-fill-white, #fff);
+}
+
+.default-style.m {
+	width: 44px;
+	height: 44px;
+	background: var(--btn-fill-white, #fff);
+}
+.translucent-style.m {
+	display: flex;
+	width: 44px;
+	height: 44px;
+	padding: 8px;
+	justify-content: center;
+	align-items: center;
+	gap: 10px;
+	flex-shrink: 0;
+}
+
+.translucent-style.m svg {
+	display: flex;
+	width: 24px;
+	height: 24px;
+	justify-content: center;
+	align-items: center;
+	flex-shrink: 0;
+}
+
+.default-style.l {
+	width: 50px;
+	height: 50px;
+	border-radius: 25px;
+	border: 1px solid var(--btn-stroke-cool-tertiary, #36424e);
+	background: var(--btn-fill-cool-secondary, #3d4a57);
+}
+
+.translucent-style.l {
+	display: flex;
+	width: 50px;
+	height: 50px;
+	padding: 6px 8px;
+	justify-content: center;
+	align-items: center;
+	gap: 10px;
+
+	border-radius: 35px;
+	border: 1px solid var(--btn-stroke-primary, #006cff);
+	background: var(--btn-fill-primary, #006cff);
+	box-shadow: 0px 2px 12px 0px rgba(0, 0, 0, 0.15);
+
+	color: var(--txt-fill-white, #fff);
+	font-family: "Noto Sans KR";
+	font-size: 9px;
+	font-style: normal;
+	font-weight: 400;
+	line-height: normal;
+}
+
+/* 아이콘 크기 조정 */
+.default-style.s .icon,
+.default-style.m .icon {
+	width: 24px;
+	height: 24px;
+}
+
+.default-style.l .icon {
+	width: 32px;
+	height: 32px;
+}
+
+.default-style .label {
+	position: absolute;
+	right: 17px;
+	top: 18px;
+	color: var(--txt-fill-white, #fff);
+	font-family: Pretendard;
+	font-size: 12px;
+	font-style: normal;
+	font-weight: 400;
+	line-height: normal;
+}
+
+.translucent-style .text-box {
+	justify-content: center;
+	align-items: center;
+	gap: 2px;
+}
+
+.round-square-style {
+	height: 38px;
+	padding: 5px 11px;
+	justify-content: center;
+	align-items: center;
+	gap: 10px;
+	flex-shrink: 0;
+
+	border-radius: 8px;
+	border: 1px solid var(--btn-stroke-primary, #006cff);
+	background: var(--btn-fill-primary, #006cff);
+	box-shadow: 0px 2px 12px 0px rgba(0, 0, 0, 0.15);
+	color: var(--txt-fill-white, #fff);
+}
+
+.round-square-style .text-box {
+	justify-content: center;
+	align-items: center;
+	gap: 2px;
+}
+
+.round-square-style .label {
+	align-self: stretch;
+	color: var(--txt-fill-white, #fff);
+
+	/* kr/caption/10/regular */
+	font-family: "Noto Sans KR";
+	font-size: 10px;
+	font-style: normal;
+	font-weight: 400;
+	line-height: normal;
+}
+
+.round-square-style svg {
+	display: inline-flex;
+	width: 24px;
+	height: 24px;
+	justify-content: center;
+	align-items: center;
+}
+
+.ellipse-style {
+	height: 20px;
+	width: 70px;
+	padding: 8px 16px;
+	justify-content: center;
+	align-items: center;
+	gap: 2px;
+	flex-shrink: 0;
+
+	border-radius: 160px;
+	border: 1px solid var(--btn-stroke-primary, #006cff);
+	background: var(--btn-fill-primary, #006cff);
+	box-shadow: 0px 2px 12px 0px rgba(0, 0, 0, 0.15);
+	color: var(--txt-fill-white, #fff);
+}
+
+.ellipse-style .text-box {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	gap: 2px;
+}
+
+.ellipse-style .label {
+	align-self: stretch;
+	color: var(--txt-fill-white, #fff);
+
+	/* kr/title/14/regular */
+	font-family: "Noto Sans KR";
+	font-size: 14px;
+	font-style: normal;
+	font-weight: 400;
+	line-height: normal;
+}
+
+.ellipse-style svg {
+	display: flex;
+	width: 16px;
+	height: 16px;
+	justify-content: center;
+	align-items: center;
+	flex-shrink: 0; /* 크기 유지 */
+}

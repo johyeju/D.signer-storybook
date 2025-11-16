@@ -1,24 +1,24 @@
-import type { Preview } from '@storybook/react';
-import '../src/index.css'; //Global Css
+import type { Preview } from "@storybook/react";
+import "../src/index.css";
 
 const preview: Preview = {
-  parameters: {
-    backgrounds: {
-      default: 'light', // 기본 배경색을 dark로 설정
-      values: [
-        { name: 'light', value: '#ffffff' }, // 밝은 배경
-        { name: 'dark', value: '#DADADA' }, // 어두운 배경
-      ],
-    },
-    controls: {
-      matchers: {
-        color: /(background|color)$/i,
-        date: /Date$/i,
-      },
-    },
-  },
+	parameters: {
+		backgrounds: {
+			default: "light",
+			values: [
+				{ name: "light", value: "#ffffff" },
+				{ name: "dark", value: "#DADADA" },
+			],
+		},
+		controls: {
+			matchers: {
+				color: /(background|color)$/i,
+				date: /Date$/i,
+			},
+		},
+	},
 
-  tags: ['autodocs'],
+	tags: ["autodocs"],
 };
 
 export default preview;
