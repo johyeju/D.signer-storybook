@@ -1,50 +1,24 @@
-# React + TypeScript + Vite
+# Naver Map Storybook
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+<img style="center" src="public/readme/cover.png"> </img>
 
-Currently, two official plugins are available:
+<div align="center">
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+**Naver Map Storybook**은 네이버 지도 기반의 UI 컴포넌트를  
+아토믹 디자인 패턴으로 설계하고 컴포넌트 주도 개발 방식으로 구현한 *학습 목적의 실습 프로젝트*입니다.
 
-## Expanding the ESLint configuration
+</div>
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+<br />
 
-- Configure the top-level `parserOptions` property like this:
+<p align="center">
+  <a href="https://www.naver-map-storybook.site" target="_blank">
+    🔗 배포 링크
+  </a>
+</p>
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+<br />
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+## 미리 보기
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
-
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+<img style="center" src="public/readme/main.png"> </img>
